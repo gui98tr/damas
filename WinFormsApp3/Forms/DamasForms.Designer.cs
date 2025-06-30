@@ -97,6 +97,8 @@
             P1 = new PictureBox();
             P2 = new PictureBox();
             label1 = new Label();
+            panel1 = new Panel();
+            Letreiro = new Label();
             ((System.ComponentModel.ISupportInitialize)A8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)A2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)A4).BeginInit();
@@ -163,12 +165,13 @@
             ((System.ComponentModel.ISupportInitialize)G8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)P1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)P2).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // A8
             // 
             A8.Cursor = Cursors.Hand;
-            A8.Location = new Point(80, 39);
+            A8.Location = new Point(23, 23);
             A8.Name = "A8";
             A8.Size = new Size(50, 50);
             A8.TabIndex = 1;
@@ -177,7 +180,7 @@
             // A2
             // 
             A2.Cursor = Cursors.Hand;
-            A2.Location = new Point(80, 331);
+            A2.Location = new Point(23, 315);
             A2.Name = "A2";
             A2.Size = new Size(50, 50);
             A2.TabIndex = 2;
@@ -186,7 +189,7 @@
             // A4
             // 
             A4.Cursor = Cursors.Hand;
-            A4.Location = new Point(80, 232);
+            A4.Location = new Point(23, 216);
             A4.Name = "A4";
             A4.Size = new Size(50, 50);
             A4.TabIndex = 3;
@@ -195,7 +198,7 @@
             // A6
             // 
             A6.Cursor = Cursors.Hand;
-            A6.Location = new Point(80, 134);
+            A6.Location = new Point(23, 118);
             A6.Name = "A6";
             A6.Size = new Size(50, 50);
             A6.TabIndex = 4;
@@ -206,7 +209,7 @@
             A7.BackColor = Color.Black;
             A7.Cursor = Cursors.Hand;
             A7.Image = (Image)resources.GetObject("A7.Image");
-            A7.Location = new Point(80, 84);
+            A7.Location = new Point(23, 68);
             A7.Name = "A7";
             A7.Size = new Size(50, 50);
             A7.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -218,7 +221,7 @@
             // 
             A5.BackColor = Color.Black;
             A5.Cursor = Cursors.Hand;
-            A5.Location = new Point(80, 182);
+            A5.Location = new Point(23, 166);
             A5.Name = "A5";
             A5.Size = new Size(50, 50);
             A5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -231,7 +234,7 @@
             A3.BackColor = Color.Black;
             A3.Cursor = Cursors.Hand;
             A3.Image = (Image)resources.GetObject("A3.Image");
-            A3.Location = new Point(80, 281);
+            A3.Location = new Point(23, 265);
             A3.Name = "A3";
             A3.Size = new Size(50, 50);
             A3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -244,7 +247,7 @@
             A1.BackColor = Color.Black;
             A1.Cursor = Cursors.Hand;
             A1.Image = (Image)resources.GetObject("A1.Image");
-            A1.Location = new Point(80, 378);
+            A1.Location = new Point(23, 362);
             A1.Name = "A1";
             A1.Size = new Size(50, 50);
             A1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -257,7 +260,7 @@
             B2.BackColor = Color.Black;
             B2.Cursor = Cursors.Hand;
             B2.Image = (Image)resources.GetObject("B2.Image");
-            B2.Location = new Point(130, 331);
+            B2.Location = new Point(73, 315);
             B2.Name = "B2";
             B2.Size = new Size(50, 50);
             B2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -269,7 +272,7 @@
             // 
             B4.BackColor = Color.Black;
             B4.Cursor = Cursors.Hand;
-            B4.Location = new Point(130, 234);
+            B4.Location = new Point(73, 218);
             B4.Name = "B4";
             B4.Size = new Size(50, 50);
             B4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -282,7 +285,7 @@
             B6.BackColor = Color.Black;
             B6.Cursor = Cursors.Hand;
             B6.Image = (Image)resources.GetObject("B6.Image");
-            B6.Location = new Point(130, 135);
+            B6.Location = new Point(73, 119);
             B6.Name = "B6";
             B6.Size = new Size(50, 50);
             B6.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -295,7 +298,7 @@
             B8.BackColor = Color.Black;
             B8.Cursor = Cursors.Hand;
             B8.Image = (Image)resources.GetObject("B8.Image");
-            B8.Location = new Point(130, 38);
+            B8.Location = new Point(73, 22);
             B8.Name = "B8";
             B8.Size = new Size(50, 50);
             B8.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -306,7 +309,7 @@
             // B7
             // 
             B7.Cursor = Cursors.Hand;
-            B7.Location = new Point(130, 87);
+            B7.Location = new Point(73, 71);
             B7.Name = "B7";
             B7.Size = new Size(50, 50);
             B7.TabIndex = 12;
@@ -315,7 +318,7 @@
             // B5
             // 
             B5.Cursor = Cursors.Hand;
-            B5.Location = new Point(130, 185);
+            B5.Location = new Point(73, 169);
             B5.Name = "B5";
             B5.Size = new Size(50, 50);
             B5.TabIndex = 11;
@@ -324,7 +327,7 @@
             // B3
             // 
             B3.Cursor = Cursors.Hand;
-            B3.Location = new Point(130, 284);
+            B3.Location = new Point(73, 268);
             B3.Name = "B3";
             B3.Size = new Size(50, 50);
             B3.TabIndex = 10;
@@ -333,7 +336,7 @@
             // B1
             // 
             B1.Cursor = Cursors.Hand;
-            B1.Location = new Point(130, 380);
+            B1.Location = new Point(73, 364);
             B1.Name = "B1";
             B1.Size = new Size(50, 50);
             B1.TabIndex = 9;
@@ -344,7 +347,7 @@
             D2.BackColor = Color.Black;
             D2.Cursor = Cursors.Hand;
             D2.Image = (Image)resources.GetObject("D2.Image");
-            D2.Location = new Point(231, 330);
+            D2.Location = new Point(174, 314);
             D2.Name = "D2";
             D2.Size = new Size(50, 50);
             D2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -356,7 +359,7 @@
             // 
             D4.BackColor = Color.Black;
             D4.Cursor = Cursors.Hand;
-            D4.Location = new Point(231, 233);
+            D4.Location = new Point(174, 217);
             D4.Name = "D4";
             D4.Size = new Size(50, 50);
             D4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -369,7 +372,7 @@
             D6.BackColor = Color.Black;
             D6.Cursor = Cursors.Hand;
             D6.Image = (Image)resources.GetObject("D6.Image");
-            D6.Location = new Point(231, 134);
+            D6.Location = new Point(174, 118);
             D6.Name = "D6";
             D6.Size = new Size(50, 50);
             D6.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -382,7 +385,7 @@
             D8.BackColor = Color.Black;
             D8.Cursor = Cursors.Hand;
             D8.Image = (Image)resources.GetObject("D8.Image");
-            D8.Location = new Point(231, 37);
+            D8.Location = new Point(174, 21);
             D8.Name = "D8";
             D8.Size = new Size(50, 50);
             D8.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -393,7 +396,7 @@
             // D7
             // 
             D7.Cursor = Cursors.Hand;
-            D7.Location = new Point(231, 86);
+            D7.Location = new Point(174, 70);
             D7.Name = "D7";
             D7.Size = new Size(50, 50);
             D7.TabIndex = 28;
@@ -402,7 +405,7 @@
             // D5
             // 
             D5.Cursor = Cursors.Hand;
-            D5.Location = new Point(231, 184);
+            D5.Location = new Point(174, 168);
             D5.Name = "D5";
             D5.Size = new Size(50, 50);
             D5.TabIndex = 27;
@@ -411,7 +414,7 @@
             // D3
             // 
             D3.Cursor = Cursors.Hand;
-            D3.Location = new Point(231, 283);
+            D3.Location = new Point(174, 267);
             D3.Name = "D3";
             D3.Size = new Size(50, 50);
             D3.TabIndex = 26;
@@ -420,7 +423,7 @@
             // D1
             // 
             D1.Cursor = Cursors.Hand;
-            D1.Location = new Point(231, 379);
+            D1.Location = new Point(174, 363);
             D1.Name = "D1";
             D1.Size = new Size(50, 50);
             D1.TabIndex = 25;
@@ -431,7 +434,7 @@
             C1.BackColor = Color.Black;
             C1.Cursor = Cursors.Hand;
             C1.Image = (Image)resources.GetObject("C1.Image");
-            C1.Location = new Point(181, 377);
+            C1.Location = new Point(124, 361);
             C1.Name = "C1";
             C1.Size = new Size(50, 50);
             C1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -444,7 +447,7 @@
             C3.BackColor = Color.Black;
             C3.Cursor = Cursors.Hand;
             C3.Image = (Image)resources.GetObject("C3.Image");
-            C3.Location = new Point(181, 280);
+            C3.Location = new Point(124, 264);
             C3.Name = "C3";
             C3.Size = new Size(50, 50);
             C3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -456,7 +459,7 @@
             // 
             C5.BackColor = Color.Black;
             C5.Cursor = Cursors.Hand;
-            C5.Location = new Point(181, 181);
+            C5.Location = new Point(124, 165);
             C5.Name = "C5";
             C5.Size = new Size(50, 50);
             C5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -469,7 +472,7 @@
             C7.BackColor = Color.Black;
             C7.Cursor = Cursors.Hand;
             C7.Image = (Image)resources.GetObject("C7.Image");
-            C7.Location = new Point(181, 83);
+            C7.Location = new Point(124, 67);
             C7.Name = "C7";
             C7.Size = new Size(50, 50);
             C7.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -480,7 +483,7 @@
             // pictureBox29
             // 
             pictureBox29.Cursor = Cursors.Hand;
-            pictureBox29.Location = new Point(181, 133);
+            pictureBox29.Location = new Point(124, 117);
             pictureBox29.Name = "pictureBox29";
             pictureBox29.Size = new Size(50, 50);
             pictureBox29.TabIndex = 20;
@@ -490,7 +493,7 @@
             // C4
             // 
             C4.Cursor = Cursors.Hand;
-            C4.Location = new Point(181, 231);
+            C4.Location = new Point(124, 215);
             C4.Name = "C4";
             C4.Size = new Size(50, 50);
             C4.TabIndex = 19;
@@ -499,7 +502,7 @@
             // C2
             // 
             C2.Cursor = Cursors.Hand;
-            C2.Location = new Point(181, 330);
+            C2.Location = new Point(124, 314);
             C2.Name = "C2";
             C2.Size = new Size(50, 50);
             C2.TabIndex = 18;
@@ -508,7 +511,7 @@
             // C8
             // 
             C8.Cursor = Cursors.Hand;
-            C8.Location = new Point(181, 38);
+            C8.Location = new Point(124, 22);
             C8.Name = "C8";
             C8.Size = new Size(50, 50);
             C8.TabIndex = 17;
@@ -519,7 +522,7 @@
             F2.BackColor = Color.Black;
             F2.Cursor = Cursors.Hand;
             F2.Image = (Image)resources.GetObject("F2.Image");
-            F2.Location = new Point(331, 327);
+            F2.Location = new Point(274, 311);
             F2.Name = "F2";
             F2.Size = new Size(50, 50);
             F2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -531,7 +534,7 @@
             // 
             F4.BackColor = Color.Black;
             F4.Cursor = Cursors.Hand;
-            F4.Location = new Point(331, 230);
+            F4.Location = new Point(274, 214);
             F4.Name = "F4";
             F4.Size = new Size(50, 50);
             F4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -544,7 +547,7 @@
             F6.BackColor = Color.Black;
             F6.Cursor = Cursors.Hand;
             F6.Image = (Image)resources.GetObject("F6.Image");
-            F6.Location = new Point(331, 131);
+            F6.Location = new Point(274, 115);
             F6.Name = "F6";
             F6.Size = new Size(50, 50);
             F6.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -557,7 +560,7 @@
             F8.BackColor = Color.Black;
             F8.Cursor = Cursors.Hand;
             F8.Image = (Image)resources.GetObject("F8.Image");
-            F8.Location = new Point(331, 34);
+            F8.Location = new Point(274, 18);
             F8.Name = "F8";
             F8.Size = new Size(50, 50);
             F8.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -568,7 +571,7 @@
             // F7
             // 
             F7.Cursor = Cursors.Hand;
-            F7.Location = new Point(331, 83);
+            F7.Location = new Point(274, 67);
             F7.Name = "F7";
             F7.Size = new Size(50, 50);
             F7.TabIndex = 44;
@@ -577,7 +580,7 @@
             // F5
             // 
             F5.Cursor = Cursors.Hand;
-            F5.Location = new Point(331, 181);
+            F5.Location = new Point(274, 165);
             F5.Name = "F5";
             F5.Size = new Size(50, 50);
             F5.TabIndex = 43;
@@ -586,7 +589,7 @@
             // F3
             // 
             F3.Cursor = Cursors.Hand;
-            F3.Location = new Point(331, 280);
+            F3.Location = new Point(274, 264);
             F3.Name = "F3";
             F3.Size = new Size(50, 50);
             F3.TabIndex = 42;
@@ -595,7 +598,7 @@
             // F1
             // 
             F1.Cursor = Cursors.Hand;
-            F1.Location = new Point(331, 376);
+            F1.Location = new Point(274, 360);
             F1.Name = "F1";
             F1.Size = new Size(50, 50);
             F1.TabIndex = 41;
@@ -606,7 +609,7 @@
             E1.BackColor = Color.Black;
             E1.Cursor = Cursors.Hand;
             E1.Image = (Image)resources.GetObject("E1.Image");
-            E1.Location = new Point(281, 374);
+            E1.Location = new Point(224, 358);
             E1.Name = "E1";
             E1.Size = new Size(50, 50);
             E1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -619,7 +622,7 @@
             E3.BackColor = Color.Black;
             E3.Cursor = Cursors.Hand;
             E3.Image = (Image)resources.GetObject("E3.Image");
-            E3.Location = new Point(281, 277);
+            E3.Location = new Point(224, 261);
             E3.Name = "E3";
             E3.Size = new Size(50, 50);
             E3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -631,7 +634,7 @@
             // 
             pictureBox43.BackColor = Color.Black;
             pictureBox43.Cursor = Cursors.Hand;
-            pictureBox43.Location = new Point(281, 178);
+            pictureBox43.Location = new Point(224, 162);
             pictureBox43.Name = "pictureBox43";
             pictureBox43.Size = new Size(50, 50);
             pictureBox43.SizeMode = PictureBoxSizeMode.Zoom;
@@ -644,7 +647,7 @@
             E7.BackColor = Color.Black;
             E7.Cursor = Cursors.Hand;
             E7.Image = (Image)resources.GetObject("E7.Image");
-            E7.Location = new Point(281, 80);
+            E7.Location = new Point(224, 64);
             E7.Name = "E7";
             E7.Size = new Size(50, 50);
             E7.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -655,7 +658,7 @@
             // E6
             // 
             E6.Cursor = Cursors.Hand;
-            E6.Location = new Point(281, 130);
+            E6.Location = new Point(224, 114);
             E6.Name = "E6";
             E6.Size = new Size(50, 50);
             E6.TabIndex = 36;
@@ -664,7 +667,7 @@
             // E5
             // 
             E5.Cursor = Cursors.Hand;
-            E5.Location = new Point(281, 228);
+            E5.Location = new Point(224, 212);
             E5.Name = "E5";
             E5.Size = new Size(50, 50);
             E5.TabIndex = 35;
@@ -673,7 +676,7 @@
             // E2
             // 
             E2.Cursor = Cursors.Hand;
-            E2.Location = new Point(281, 327);
+            E2.Location = new Point(224, 311);
             E2.Name = "E2";
             E2.Size = new Size(50, 50);
             E2.TabIndex = 34;
@@ -682,7 +685,7 @@
             // E8
             // 
             E8.Cursor = Cursors.Hand;
-            E8.Location = new Point(281, 35);
+            E8.Location = new Point(224, 19);
             E8.Name = "E8";
             E8.Size = new Size(50, 50);
             E8.TabIndex = 33;
@@ -693,7 +696,7 @@
             H2.BackColor = Color.Black;
             H2.Cursor = Cursors.Hand;
             H2.Image = (Image)resources.GetObject("H2.Image");
-            H2.Location = new Point(431, 327);
+            H2.Location = new Point(374, 311);
             H2.Name = "H2";
             H2.Size = new Size(50, 50);
             H2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -705,7 +708,7 @@
             // 
             H4.BackColor = Color.Black;
             H4.Cursor = Cursors.Hand;
-            H4.Location = new Point(431, 230);
+            H4.Location = new Point(374, 214);
             H4.Name = "H4";
             H4.Size = new Size(50, 50);
             H4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -718,7 +721,7 @@
             H6.BackColor = Color.Black;
             H6.Cursor = Cursors.Hand;
             H6.Image = (Image)resources.GetObject("H6.Image");
-            H6.Location = new Point(431, 131);
+            H6.Location = new Point(374, 115);
             H6.Name = "H6";
             H6.Size = new Size(50, 50);
             H6.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -731,7 +734,7 @@
             H8.BackColor = Color.Black;
             H8.Cursor = Cursors.Hand;
             H8.Image = (Image)resources.GetObject("H8.Image");
-            H8.Location = new Point(431, 34);
+            H8.Location = new Point(374, 18);
             H8.Name = "H8";
             H8.Size = new Size(50, 50);
             H8.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -742,7 +745,7 @@
             // H7
             // 
             H7.Cursor = Cursors.Hand;
-            H7.Location = new Point(431, 83);
+            H7.Location = new Point(374, 67);
             H7.Name = "H7";
             H7.Size = new Size(50, 50);
             H7.TabIndex = 60;
@@ -751,7 +754,7 @@
             // H5
             // 
             H5.Cursor = Cursors.Hand;
-            H5.Location = new Point(431, 181);
+            H5.Location = new Point(374, 165);
             H5.Name = "H5";
             H5.Size = new Size(50, 50);
             H5.TabIndex = 59;
@@ -760,7 +763,7 @@
             // H3
             // 
             H3.Cursor = Cursors.Hand;
-            H3.Location = new Point(431, 280);
+            H3.Location = new Point(374, 264);
             H3.Name = "H3";
             H3.Size = new Size(50, 50);
             H3.TabIndex = 58;
@@ -769,7 +772,7 @@
             // H1
             // 
             H1.Cursor = Cursors.Hand;
-            H1.Location = new Point(431, 376);
+            H1.Location = new Point(374, 360);
             H1.Name = "H1";
             H1.Size = new Size(50, 50);
             H1.TabIndex = 57;
@@ -780,7 +783,7 @@
             G1.BackColor = Color.Black;
             G1.Cursor = Cursors.Hand;
             G1.Image = (Image)resources.GetObject("G1.Image");
-            G1.Location = new Point(381, 374);
+            G1.Location = new Point(324, 358);
             G1.Name = "G1";
             G1.Size = new Size(50, 50);
             G1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -793,7 +796,7 @@
             G3.BackColor = Color.Black;
             G3.Cursor = Cursors.Hand;
             G3.Image = (Image)resources.GetObject("G3.Image");
-            G3.Location = new Point(381, 277);
+            G3.Location = new Point(324, 261);
             G3.Name = "G3";
             G3.Size = new Size(50, 50);
             G3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -805,7 +808,7 @@
             // 
             G5.BackColor = Color.Black;
             G5.Cursor = Cursors.Hand;
-            G5.Location = new Point(381, 178);
+            G5.Location = new Point(324, 162);
             G5.Name = "G5";
             G5.Size = new Size(50, 50);
             G5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -818,7 +821,7 @@
             G7.BackColor = Color.Black;
             G7.Cursor = Cursors.Hand;
             G7.Image = (Image)resources.GetObject("G7.Image");
-            G7.Location = new Point(381, 80);
+            G7.Location = new Point(324, 64);
             G7.Name = "G7";
             G7.Size = new Size(50, 50);
             G7.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -829,7 +832,7 @@
             // G6
             // 
             G6.Cursor = Cursors.Hand;
-            G6.Location = new Point(381, 130);
+            G6.Location = new Point(324, 114);
             G6.Name = "G6";
             G6.Size = new Size(50, 50);
             G6.TabIndex = 52;
@@ -838,7 +841,7 @@
             // G4
             // 
             G4.Cursor = Cursors.Hand;
-            G4.Location = new Point(381, 228);
+            G4.Location = new Point(324, 212);
             G4.Name = "G4";
             G4.Size = new Size(50, 50);
             G4.TabIndex = 51;
@@ -847,7 +850,7 @@
             // G2
             // 
             G2.Cursor = Cursors.Hand;
-            G2.Location = new Point(381, 327);
+            G2.Location = new Point(324, 311);
             G2.Name = "G2";
             G2.Size = new Size(50, 50);
             G2.TabIndex = 50;
@@ -856,7 +859,7 @@
             // G8
             // 
             G8.Cursor = Cursors.Hand;
-            G8.Location = new Point(381, 35);
+            G8.Location = new Point(324, 19);
             G8.Name = "G8";
             G8.Size = new Size(50, 50);
             G8.TabIndex = 49;
@@ -866,7 +869,7 @@
             // 
             LP1.AutoSize = true;
             LP1.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            LP1.Location = new Point(537, 239);
+            LP1.Location = new Point(480, 223);
             LP1.Name = "LP1";
             LP1.Size = new Size(15, 18);
             LP1.TabIndex = 65;
@@ -877,7 +880,7 @@
             P1.BackColor = Color.Black;
             P1.Cursor = Cursors.Hand;
             P1.Image = (Image)resources.GetObject("P1.Image");
-            P1.Location = new Point(525, 308);
+            P1.Location = new Point(468, 292);
             P1.Name = "P1";
             P1.Size = new Size(50, 50);
             P1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -889,7 +892,7 @@
             // 
             P2.BackColor = Color.Black;
             P2.Image = (Image)resources.GetObject("P2.Image");
-            P2.Location = new Point(525, 112);
+            P2.Location = new Point(468, 96);
             P2.Name = "P2";
             P2.Size = new Size(50, 50);
             P2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -900,87 +903,109 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(525, 210);
+            label1.Location = new Point(468, 194);
             label1.Name = "label1";
             label1.Size = new Size(47, 18);
             label1.TabIndex = 69;
             label1.Text = "Lances";
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(pictureBox43);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(A8);
+            panel1.Controls.Add(P2);
+            panel1.Controls.Add(A2);
+            panel1.Controls.Add(P1);
+            panel1.Controls.Add(A4);
+            panel1.Controls.Add(LP1);
+            panel1.Controls.Add(A6);
+            panel1.Controls.Add(H2);
+            panel1.Controls.Add(A7);
+            panel1.Controls.Add(H4);
+            panel1.Controls.Add(A5);
+            panel1.Controls.Add(H6);
+            panel1.Controls.Add(A3);
+            panel1.Controls.Add(H8);
+            panel1.Controls.Add(A1);
+            panel1.Controls.Add(H7);
+            panel1.Controls.Add(B1);
+            panel1.Controls.Add(H5);
+            panel1.Controls.Add(B3);
+            panel1.Controls.Add(H3);
+            panel1.Controls.Add(B5);
+            panel1.Controls.Add(H1);
+            panel1.Controls.Add(B7);
+            panel1.Controls.Add(G1);
+            panel1.Controls.Add(B8);
+            panel1.Controls.Add(G3);
+            panel1.Controls.Add(B6);
+            panel1.Controls.Add(G5);
+            panel1.Controls.Add(B4);
+            panel1.Controls.Add(G7);
+            panel1.Controls.Add(B2);
+            panel1.Controls.Add(G6);
+            panel1.Controls.Add(C8);
+            panel1.Controls.Add(G4);
+            panel1.Controls.Add(C2);
+            panel1.Controls.Add(G2);
+            panel1.Controls.Add(C4);
+            panel1.Controls.Add(G8);
+            panel1.Controls.Add(pictureBox29);
+            panel1.Controls.Add(F2);
+            panel1.Controls.Add(C7);
+            panel1.Controls.Add(F4);
+            panel1.Controls.Add(C5);
+            panel1.Controls.Add(F6);
+            panel1.Controls.Add(C3);
+            panel1.Controls.Add(F8);
+            panel1.Controls.Add(C1);
+            panel1.Controls.Add(F7);
+            panel1.Controls.Add(D1);
+            panel1.Controls.Add(F5);
+            panel1.Controls.Add(D3);
+            panel1.Controls.Add(F3);
+            panel1.Controls.Add(D5);
+            panel1.Controls.Add(F1);
+            panel1.Controls.Add(D7);
+            panel1.Controls.Add(E1);
+            panel1.Controls.Add(D8);
+            panel1.Controls.Add(E3);
+            panel1.Controls.Add(D6);
+            panel1.Controls.Add(D4);
+            panel1.Controls.Add(E7);
+            panel1.Controls.Add(D2);
+            panel1.Controls.Add(E6);
+            panel1.Controls.Add(E8);
+            panel1.Controls.Add(E5);
+            panel1.Controls.Add(E2);
+            panel1.Location = new Point(12, 43);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(549, 433);
+            panel1.TabIndex = 70;
+            // 
+            // Letreiro
+            // 
+            Letreiro.AutoSize = true;
+            Letreiro.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Letreiro.Location = new Point(203, 11);
+            Letreiro.Name = "Letreiro";
+            Letreiro.Size = new Size(133, 29);
+            Letreiro.TabIndex = 70;
+            Letreiro.Text = "Damas_GSF";
+            // 
             // DamasForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(662, 442);
-            Controls.Add(label1);
-            Controls.Add(P2);
-            Controls.Add(P1);
-            Controls.Add(LP1);
-            Controls.Add(H2);
-            Controls.Add(H4);
-            Controls.Add(H6);
-            Controls.Add(H8);
-            Controls.Add(H7);
-            Controls.Add(H5);
-            Controls.Add(H3);
-            Controls.Add(H1);
-            Controls.Add(G1);
-            Controls.Add(G3);
-            Controls.Add(G5);
-            Controls.Add(G7);
-            Controls.Add(G6);
-            Controls.Add(G4);
-            Controls.Add(G2);
-            Controls.Add(G8);
-            Controls.Add(F2);
-            Controls.Add(F4);
-            Controls.Add(F6);
-            Controls.Add(F8);
-            Controls.Add(F7);
-            Controls.Add(F5);
-            Controls.Add(F3);
-            Controls.Add(F1);
-            Controls.Add(E1);
-            Controls.Add(E3);
-            Controls.Add(pictureBox43);
-            Controls.Add(E7);
-            Controls.Add(E6);
-            Controls.Add(E5);
-            Controls.Add(E2);
-            Controls.Add(E8);
-            Controls.Add(D2);
-            Controls.Add(D4);
-            Controls.Add(D6);
-            Controls.Add(D8);
-            Controls.Add(D7);
-            Controls.Add(D5);
-            Controls.Add(D3);
-            Controls.Add(D1);
-            Controls.Add(C1);
-            Controls.Add(C3);
-            Controls.Add(C5);
-            Controls.Add(C7);
-            Controls.Add(pictureBox29);
-            Controls.Add(C4);
-            Controls.Add(C2);
-            Controls.Add(C8);
-            Controls.Add(B2);
-            Controls.Add(B4);
-            Controls.Add(B6);
-            Controls.Add(B8);
-            Controls.Add(B7);
-            Controls.Add(B5);
-            Controls.Add(B3);
-            Controls.Add(B1);
-            Controls.Add(A1);
-            Controls.Add(A3);
-            Controls.Add(A5);
-            Controls.Add(A7);
-            Controls.Add(A6);
-            Controls.Add(A4);
-            Controls.Add(A2);
-            Controls.Add(A8);
+            BackColor = Color.Gray;
+            ClientSize = new Size(588, 479);
+            Controls.Add(Letreiro);
+            Controls.Add(panel1);
             Name = "DamasForms";
             Text = "DamasForms";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)A8).EndInit();
             ((System.ComponentModel.ISupportInitialize)A2).EndInit();
             ((System.ComponentModel.ISupportInitialize)A4).EndInit();
@@ -1047,6 +1072,8 @@
             ((System.ComponentModel.ISupportInitialize)G8).EndInit();
             ((System.ComponentModel.ISupportInitialize)P1).EndInit();
             ((System.ComponentModel.ISupportInitialize)P2).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1120,5 +1147,7 @@
         private PictureBox P1;
         private PictureBox P2;
         private Label label1;
+        private Panel panel1;
+        private Label Letreiro;
     }
 }
