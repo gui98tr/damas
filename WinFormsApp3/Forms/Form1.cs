@@ -28,9 +28,9 @@ namespace WinFormsApp3
             string senha = txtsenha.Text;
             Usuario usuario1 = new Usuario();
             usuario1.nome = nome;
-            usuario1.senha = senha;
+           usuario1.senha = senha;
             Usuario usuario2 = new Usuario();
-            usuario2 = repo.ObterUsuario(nome, senha);
+           usuario2 = repo.ObterUsuario(nome, senha);
             try
             {
                 if(usuario2 != null)

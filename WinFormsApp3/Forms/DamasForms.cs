@@ -66,6 +66,10 @@ namespace WinFormsApp3.Forms
                     {
                         B4.BackColor = Color.Purple;
                     }
+                    if (Util.CompararImagem(B4.Image, P2.Image) == true && Util.CompararImagem(D5.Image, P1.Image) == false && Util.CompararImagem(D5.Image, P2.Image) == false)
+                    {
+                        C5.BackColor = Color.Red;
+                    }
                 }
                 else
                 {
@@ -535,7 +539,7 @@ namespace WinFormsApp3.Forms
                     if (C3.BackColor == Color.Purple)
                     {
                         C3.Image = D4.Image;
-                        C3.BackColor = Color.Black;
+                        D4.BackColor = Color.Black;
                         D4.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
@@ -635,14 +639,14 @@ namespace WinFormsApp3.Forms
                     {
                         E3.Image = D2.Image;
                         E3.BackColor = Color.Black;
-                        B2.Image = A8.Image;
+                        D2.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     if (E3.BackColor == Color.Yellow)
                     {
-                        E3.Image = D2.Image;
+                        E3.Image = F2.Image;
                         E3.BackColor = Color.Black;
-                        D2.Image = A8.Image;
+                        F2.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     A1.BackColor = Color.Black;
@@ -732,11 +736,11 @@ namespace WinFormsApp3.Forms
                         F4.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
-                    if (C3.BackColor == Color.Yellow)
+                    if (E3.BackColor == Color.Yellow)
                     {
-                        C3.Image = D4.Image;
-                        D4.BackColor = Color.Black;
-                        C3.Image = A8.Image;
+                        E3.Image = D4.Image;
+                        E3.BackColor = Color.Black;
+                        D4.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     A1.BackColor = Color.Black;
@@ -826,9 +830,9 @@ namespace WinFormsApp3.Forms
                    
                     if (G3.BackColor == Color.Purple)
                     {
-                        G3.Image = E2.Image;
+                        G3.Image = F2.Image;
                         G3.BackColor = Color.Black;
-                        B2.Image = A8.Image;
+                        F2.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     if (G3.BackColor == Color.Yellow)
@@ -1005,9 +1009,9 @@ namespace WinFormsApp3.Forms
                     H4.BackColor = Color.Black;
                     H6.BackColor = Color.Black;
                     H8.BackColor = Color.Black;
-                    if (Util.CompararImagem(E5.Image, P1.Image) == false && Util.CompararImagem(E5.Image, P2.Image) == false)
+                    if (Util.CompararImagem(pictureBox43.Image, P1.Image) == false && Util.CompararImagem(pictureBox43.Image, P2.Image) == false)
                     {
-                        E5.BackColor = Color.Purple;
+                        pictureBox43.BackColor = Color.Purple;
                     }
                     if (Util.CompararImagem(C5.Image, P1.Image) == false && Util.CompararImagem(C5.Image, P2.Image) == false)
                     {
@@ -1113,9 +1117,9 @@ namespace WinFormsApp3.Forms
 
                     if (D4.BackColor == Color.Purple)
                     {
-                        D4.Image = E5.Image;
+                        D4.Image = pictureBox43.Image;
                         D4.BackColor = Color.Black;
-                        E5.Image = A8.Image;
+                        pictureBox43.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     if (D4.BackColor == Color.Yellow)
@@ -1202,9 +1206,9 @@ namespace WinFormsApp3.Forms
                     {
                         G5.BackColor = Color.Purple;
                     }
-                    if (Util.CompararImagem(E5.Image, P1.Image) == false && Util.CompararImagem(E5.Image, P2.Image) == false)
+                    if (Util.CompararImagem(pictureBox43.Image, P1.Image) == false && Util.CompararImagem(pictureBox43.Image, P2.Image) == false)
                     {
-                        E5.BackColor = Color.Yellow;
+                        pictureBox43.BackColor = Color.Yellow;
                     }
                 }
                 else
@@ -1219,9 +1223,9 @@ namespace WinFormsApp3.Forms
                     }
                     if (F4.BackColor == Color.Yellow)
                     {
-                        F4.Image = C3.Image;
+                        F4.Image = G3.Image;
                         F4.BackColor = Color.Black;
-                        C3.Image = A8.Image;
+                        G3.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     A1.BackColor = Color.Black;
@@ -1313,9 +1317,9 @@ namespace WinFormsApp3.Forms
                     }
                     if (F4.BackColor == Color.Yellow)
                     {
-                        F4.Image = E5.Image;
+                        F4.Image = pictureBox43.Image;
                         F4.BackColor = Color.Black;
-                        E5.Image = A8.Image;
+                        pictureBox43.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     A1.BackColor = Color.Black;
@@ -3172,6 +3176,14 @@ namespace WinFormsApp3.Forms
                         D4.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
+                    if (C5.BackColor == Color.Red)
+                    {
+                        C5.Image = A3.Image;
+                        C5.BackColor = Color.Black;
+                        A3.Image = A8.Image;
+                        B4.Image = A8.Image;
+                        LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
+                    }
                     A1.BackColor = Color.Black;
                     A3.BackColor = Color.Black;
                     A5.BackColor = Color.Black;
@@ -3254,16 +3266,16 @@ namespace WinFormsApp3.Forms
 
                     if (C5.BackColor == Color.Purple)
                     {
-                        C5.Image = D4.Image;
+                        C5.Image = D6.Image;
                         C5.BackColor = Color.Black;
-                        D4.Image = A8.Image;
+                        D6.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     if (C5.BackColor == Color.Yellow)
                     {
-                        C5.Image = B4.Image;
+                        C5.Image = B6.Image;
                         C5.BackColor = Color.Black;
-                        B4.Image = A8.Image;
+                        B6.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     A1.BackColor = Color.Black;
@@ -3923,9 +3935,9 @@ namespace WinFormsApp3.Forms
                     {
                         E7.BackColor = Color.Purple;
                     }
-                    if (Util.CompararImagem(D7.Image, P1.Image) == false && Util.CompararImagem(D7.Image, P2.Image) == false)
+                    if (Util.CompararImagem(C7.Image, P1.Image) == false && Util.CompararImagem(C7.Image, P2.Image) == false)
                     {
-                        D7.BackColor = Color.Yellow;
+                        C7.BackColor = Color.Yellow;
                     }
                 }
                 else
@@ -3940,9 +3952,9 @@ namespace WinFormsApp3.Forms
                     }
                     if (D6.BackColor == Color.Yellow)
                     {
-                        D6.Image = E5.Image;
+                        D6.Image = pictureBox43.Image;
                         D6.BackColor = Color.Black;
-                        E5.Image = A8.Image;
+                        pictureBox43.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     A1.BackColor = Color.Black;
@@ -4017,9 +4029,9 @@ namespace WinFormsApp3.Forms
                     {
                         C5.BackColor = Color.Purple;
                     }
-                    if (Util.CompararImagem(E5.Image, P1.Image) == false && Util.CompararImagem(E5.Image, P2.Image) == false)
+                    if (Util.CompararImagem(pictureBox43.Image, P1.Image) == false && Util.CompararImagem(pictureBox43.Image, P2.Image) == false)
                     {
-                        E5.BackColor = Color.Yellow;
+                        pictureBox43.BackColor = Color.Yellow;
                     }
                 }
                 else
@@ -4126,9 +4138,9 @@ namespace WinFormsApp3.Forms
                     
                     if (F6.BackColor == Color.Purple)
                     {
-                        F6.Image = E5.Image;
+                        F6.Image = pictureBox43.Image;
                         F6.BackColor = Color.Black;
-                        E5.Image = A8.Image;
+                        pictureBox43.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     if (F6.BackColor == Color.Yellow)
@@ -4206,9 +4218,9 @@ namespace WinFormsApp3.Forms
                     H4.BackColor = Color.Black;
                     H6.BackColor = Color.Black;
                     H8.BackColor = Color.Black;
-                    if (Util.CompararImagem(E5.Image, P1.Image) == false && Util.CompararImagem(E5.Image, P2.Image) == false)
+                    if (Util.CompararImagem(pictureBox43.Image, P1.Image) == false && Util.CompararImagem(pictureBox43.Image, P2.Image) == false)
                     {
-                        E5.BackColor = Color.Purple;
+                        pictureBox43.BackColor = Color.Purple;
                     }
                     if (Util.CompararImagem(G5.Image, P1.Image) == false && Util.CompararImagem(G5.Image, P2.Image) == false)
                     {
@@ -4388,9 +4400,9 @@ namespace WinFormsApp3.Forms
                     H4.BackColor = Color.Black;
                     H6.BackColor = Color.Black;
                     H8.BackColor = Color.Black;
-                    if (Util.CompararImagem(E5.Image, P1.Image) == false && Util.CompararImagem(E5.Image, P2.Image) == false)
+                    if (Util.CompararImagem(pictureBox43.Image, P1.Image) == false && Util.CompararImagem(pictureBox43.Image, P2.Image) == false)
                     {
-                        E5.BackColor = Color.Purple;
+                        pictureBox43.BackColor = Color.Purple;
                     }
                     if (Util.CompararImagem(G5.Image, P1.Image) == false && Util.CompararImagem(G5.Image, P2.Image) == false)
                     {
@@ -5055,17 +5067,17 @@ namespace WinFormsApp3.Forms
                 else
                 {
                     
-                    if (E7.BackColor == Color.Purple)
+                    if (G7.BackColor == Color.Purple)
                     {
-                        E7.Image = F6.Image;
-                        E7.BackColor = Color.Black;
+                        G7.Image = F6.Image;
+                        G7.BackColor = Color.Black;
                         F6.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
-                    if (E7.BackColor == Color.Yellow)
+                    if (G7.BackColor == Color.Yellow)
                     {
-                        E7.Image = H6.Image;
-                        E7.BackColor = Color.Black;
+                        G7.Image = H6.Image;
+                        G7.BackColor = Color.Black;
                         H6.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
