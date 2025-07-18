@@ -57,7 +57,7 @@
             C3 = new PictureBox();
             C5 = new PictureBox();
             C7 = new PictureBox();
-            pictureBox29 = new PictureBox();
+            C6 = new PictureBox();
             C4 = new PictureBox();
             C2 = new PictureBox();
             C8 = new PictureBox();
@@ -71,10 +71,10 @@
             F1 = new PictureBox();
             E1 = new PictureBox();
             E3 = new PictureBox();
-            pictureBox43 = new PictureBox();
+            E5 = new PictureBox();
             E7 = new PictureBox();
             E6 = new PictureBox();
-            E5 = new PictureBox();
+            E4 = new PictureBox();
             E2 = new PictureBox();
             E8 = new PictureBox();
             H2 = new PictureBox();
@@ -127,7 +127,7 @@
             ((System.ComponentModel.ISupportInitialize)C3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)C5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)C7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox29).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)C6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)C4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)C2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)C8).BeginInit();
@@ -141,10 +141,10 @@
             ((System.ComponentModel.ISupportInitialize)F1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)E1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)E3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox43).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)E5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)E7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)E6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)E5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)E4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)E2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)E8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)H2).BeginInit();
@@ -482,13 +482,13 @@
             // 
             // pictureBox29
             // 
-            pictureBox29.Cursor = Cursors.Hand;
-            pictureBox29.Location = new Point(124, 117);
-            pictureBox29.Name = "pictureBox29";
-            pictureBox29.Size = new Size(50, 50);
-            pictureBox29.TabIndex = 20;
-            pictureBox29.TabStop = false;
-            pictureBox29.Click += pictureBox29_Click;
+            C6.Cursor = Cursors.Hand;
+            C6.Location = new Point(124, 117);
+            C6.Name = "pictureBox29";
+            C6.Size = new Size(50, 50);
+            C6.TabIndex = 20;
+            C6.TabStop = false;
+            C6.Click += pictureBox29_Click;
             // 
             // C4
             // 
@@ -632,15 +632,15 @@
             // 
             // pictureBox43
             // 
-            pictureBox43.BackColor = Color.Black;
-            pictureBox43.Cursor = Cursors.Hand;
-            pictureBox43.Location = new Point(224, 162);
-            pictureBox43.Name = "pictureBox43";
-            pictureBox43.Size = new Size(50, 50);
-            pictureBox43.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox43.TabIndex = 38;
-            pictureBox43.TabStop = false;
-            pictureBox43.Click += pictureBox43_Click;
+            E5.BackColor = Color.Black;
+            E5.Cursor = Cursors.Hand;
+            E5.Location = new Point(224, 162);
+            E5.Name = "pictureBox43";
+            E5.Size = new Size(50, 50);
+            E5.SizeMode = PictureBoxSizeMode.Zoom;
+            E5.TabIndex = 38;
+            E5.TabStop = false;
+            E5.Click += pictureBox43_Click;
             // 
             // E7
             // 
@@ -666,12 +666,12 @@
             // 
             // E5
             // 
-            E5.Cursor = Cursors.Hand;
-            E5.Location = new Point(224, 212);
-            E5.Name = "E5";
-            E5.Size = new Size(50, 50);
-            E5.TabIndex = 35;
-            E5.TabStop = false;
+            E4.Cursor = Cursors.Hand;
+            E4.Location = new Point(224, 212);
+            E4.Name = "E5";
+            E4.Size = new Size(50, 50);
+            E4.TabIndex = 35;
+            E4.TabStop = false;
             // 
             // E2
             // 
@@ -912,7 +912,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
-            panel1.Controls.Add(pictureBox43);
+            panel1.Controls.Add(E5);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(A8);
             panel1.Controls.Add(P2);
@@ -952,7 +952,7 @@
             panel1.Controls.Add(G2);
             panel1.Controls.Add(C4);
             panel1.Controls.Add(G8);
-            panel1.Controls.Add(pictureBox29);
+            panel1.Controls.Add(C6);
             panel1.Controls.Add(F2);
             panel1.Controls.Add(C7);
             panel1.Controls.Add(F4);
@@ -978,7 +978,7 @@
             panel1.Controls.Add(D2);
             panel1.Controls.Add(E6);
             panel1.Controls.Add(E8);
-            panel1.Controls.Add(E5);
+            panel1.Controls.Add(E4);
             panel1.Controls.Add(E2);
             panel1.Location = new Point(12, 43);
             panel1.Name = "panel1";
@@ -1034,7 +1034,7 @@
             ((System.ComponentModel.ISupportInitialize)C3).EndInit();
             ((System.ComponentModel.ISupportInitialize)C5).EndInit();
             ((System.ComponentModel.ISupportInitialize)C7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox29).EndInit();
+            ((System.ComponentModel.ISupportInitialize)C6).EndInit();
             ((System.ComponentModel.ISupportInitialize)C4).EndInit();
             ((System.ComponentModel.ISupportInitialize)C2).EndInit();
             ((System.ComponentModel.ISupportInitialize)C8).EndInit();
@@ -1048,10 +1048,10 @@
             ((System.ComponentModel.ISupportInitialize)F1).EndInit();
             ((System.ComponentModel.ISupportInitialize)E1).EndInit();
             ((System.ComponentModel.ISupportInitialize)E3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox43).EndInit();
+            ((System.ComponentModel.ISupportInitialize)E5).EndInit();
             ((System.ComponentModel.ISupportInitialize)E7).EndInit();
             ((System.ComponentModel.ISupportInitialize)E6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)E5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)E4).EndInit();
             ((System.ComponentModel.ISupportInitialize)E2).EndInit();
             ((System.ComponentModel.ISupportInitialize)E8).EndInit();
             ((System.ComponentModel.ISupportInitialize)H2).EndInit();
@@ -1107,7 +1107,7 @@
         private PictureBox C3;
         private PictureBox C5;
         private PictureBox C7;
-        private PictureBox pictureBox29;
+        private PictureBox C6;
         private PictureBox C4;
         private PictureBox C2;
         private PictureBox C8;
@@ -1121,10 +1121,10 @@
         private PictureBox F1;
         private PictureBox E1;
         private PictureBox E3;
-        private PictureBox pictureBox43;
+        private PictureBox E5;
         private PictureBox E7;
         private PictureBox E6;
-        private PictureBox E5;
+        private PictureBox E4;
         private PictureBox E2;
         private PictureBox E8;
         private PictureBox H2;

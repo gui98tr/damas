@@ -23,25 +23,25 @@ namespace WinFormsApp3
 
         private void btnentrar_Click(object sender, EventArgs e)
         {
-            UsuarioRepositorio repo = new UsuarioRepositorio(BdUtil.ConnectionString);
+            /*UsuarioRepositorio repo = new UsuarioRepositorio(BdUtil.ConnectionString);
             string nome = txtnome.Text;
             string senha = txtsenha.Text;
             Usuario usuario1 = new Usuario();
             usuario1.nome = nome;
            usuario1.senha = senha;
             Usuario usuario2 = new Usuario();
-           usuario2 = repo.ObterUsuario(nome, senha);
+           usuario2 = repo.ObterUsuario(nome, senha);*/
             try
             {
-                if(usuario2 != null)
-                {
+                //if(usuario2 != null)
+                //{
                     DamasForms damas = new DamasForms();
                     damas.ShowDialog();
                     this.Close();
-                }
+                //}
 
-                else
-                    labelerro.ForeColor = Color.Red;
+                //else
+                  //  labelerro.ForeColor = Color.Red;
             }
             catch (Exception ex) 
             {

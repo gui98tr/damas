@@ -13,10 +13,124 @@ namespace WinFormsApp3.Forms
 {
     public partial class DamasForms : Form
     {
+        const int ALTURA = 8;
+        const int LARGURA = 8;
+
+        //List<List<PictureBox>> tabuleiro;
+
+        PictureBox[,] tabuleiro = new PictureBox[ALTURA, LARGURA];
+
         public DamasForms()
         {
             InitializeComponent();
+
+            tabuleiro[0,0] = A1;
+            tabuleiro[0,1] = A2;
+            tabuleiro[0,2] = A3;
+            tabuleiro[0,3] = A4;
+            tabuleiro[0,4] = A5;
+            tabuleiro[0,5] = A6;
+            tabuleiro[0,6] = A7;
+            tabuleiro[0,7] = A8;
+            tabuleiro[1,0] = B1;
+            tabuleiro[1,1] = B2;
+            tabuleiro[1,2] = B3;
+            tabuleiro[1,3] = B4;
+            tabuleiro[1,4] = B5;
+            tabuleiro[1,5] = B6;
+            tabuleiro[1,6] = B7;
+            tabuleiro[1,7] = B8; 
+            tabuleiro[2,0] = C1;
+            tabuleiro[2,1] = C2;
+            tabuleiro[2,2] = C3;
+            tabuleiro[2,3] = C4;
+            tabuleiro[2,4] = C5;
+            tabuleiro[2,5] = C6;
+            tabuleiro[2,6] = C7;
+            tabuleiro[2,7] = C8; 
+            tabuleiro[3,0] = D1;
+            tabuleiro[3,1] = D2;
+            tabuleiro[3,2] = D3;
+            tabuleiro[3,3] = D4;
+            tabuleiro[3,4] = D5;
+            tabuleiro[3,5] = D6;
+            tabuleiro[3,6] = D7;
+            tabuleiro[3,7] = D8; 
+            tabuleiro[4,0] = E1;
+            tabuleiro[4,1] = E2;
+            tabuleiro[4,2] = E3;
+            tabuleiro[4,3] = E4;
+            tabuleiro[4,4] = E5;
+            tabuleiro[4,5] = E6;
+            tabuleiro[4,6] = E7;
+            tabuleiro[4,7] = E8; 
+            tabuleiro[5,0] = F1;
+            tabuleiro[5,1] = F2;
+            tabuleiro[5,2] = F3;
+            tabuleiro[5,3] = F4;
+            tabuleiro[5,4] = F5;
+            tabuleiro[5,5] = F6;
+            tabuleiro[5,6] = F7;
+            tabuleiro[5,7] = F8; 
+            tabuleiro[6,0] = G1;
+            tabuleiro[6,1] = G2;
+            tabuleiro[6,2] = G3;
+            tabuleiro[6,3] = G4;
+            tabuleiro[6,4] = G5;
+            tabuleiro[6,5] = G6;
+            tabuleiro[6,6] = G7;
+            tabuleiro[6,7] = G8; 
+            tabuleiro[7,0] = H1;
+            tabuleiro[7,1] = H2;
+            tabuleiro[7,2] = H3;
+            tabuleiro[7,3] = H4;
+            tabuleiro[7,4] = H5;
+            tabuleiro[7,5] = H6;
+            tabuleiro[7,6] = H7;
+            tabuleiro[7,7] = H8;
+
+            for(int i = 0; i < ALTURA; i++)
+            {
+                for(int j = 0; j < LARGURA; j++)
+                {
+                    tabuleiro[i,j].MouseDoubleClick += posicao_DoubleClick;
+                }
+            }
         }
+
+        private void posicao_DoubleClick(object sender, EventArgs e)
+        {
+            PictureBox pictureBox_clicada = (PictureBox)sender;
+
+            Point posicao = recuperarPosicaoNoTabuleiro(pictureBox_clicada);
+
+            int x = posicao.X;
+            int y = posicao.Y;
+
+            PictureBox esquerda = tabuleiro[x-1,y+1];
+            PictureBox direita = tabuleiro[x + 1, y + 1];
+
+            esquerda.BackColor = Color.Yellow;
+            direita.BackColor = Color.Purple;
+        }
+
+        private Point recuperarPosicaoNoTabuleiro(PictureBox pictureBox)
+        {
+            for (int i = 0; i < ALTURA; i++)
+            {
+                for (int j = 0; j < LARGURA; j++)
+                {
+                    if (pictureBox == tabuleiro[i, j])
+                    {
+                        return new Point(i, j);
+                    }
+                }
+            }
+
+            return new Point(0, 0);
+        }
+
+
 
         private void pictureBox29_Click(object sender, EventArgs e)
         {
@@ -49,7 +163,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -66,7 +180,7 @@ namespace WinFormsApp3.Forms
                     {
                         B4.BackColor = Color.Purple;
                     }
-                    if (Util.CompararImagem(B4.Image, P2.Image) == true && Util.CompararImagem(D5.Image, P1.Image) == false && Util.CompararImagem(D5.Image, P2.Image) == false)
+                    if (Util.CompararImagem(B4.Image, P2.Image) == true && Util.CompararImagem(D5.Image, P1.Image) == false && Util.CompararImagem(D5.Image, P2.Image) == false && Util.CompararImagem(C5.Image, P2.Image) == false && Util.CompararImagem(C5.Image, P1.Image) == false)
                     {
                         C5.BackColor = Color.Red;
                     }
@@ -78,6 +192,14 @@ namespace WinFormsApp3.Forms
                     {
                         A3.Image = B2.Image;
                         A3.BackColor = Color.Black;
+                        B2.Image = A8.Image;
+                        LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
+                    }
+                    if (A3.BackColor == Color.DarkRed)
+                    {
+                        A3.Image = C1.Image;
+                        A3.BackColor = Color.Black;
+                        C1.Image = A8.Image;
                         B2.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
@@ -99,7 +221,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -136,7 +258,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -152,6 +274,10 @@ namespace WinFormsApp3.Forms
                     if (Util.CompararImagem(B2.Image, P1.Image) == false && Util.CompararImagem(B2.Image, P2.Image) == false)
                     {
                         B2.BackColor = Color.Yellow;
+                    }
+                    if (Util.CompararImagem(B2.Image, P1.Image) == true && Util.CompararImagem(C1.Image, P1.Image) == false && Util.CompararImagem(C1.Image, P2.Image) == false)
+                    {
+                        C1.BackColor = Color.Red;
                     }
                 }
                 else
@@ -182,7 +308,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -224,7 +350,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -281,7 +407,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -318,7 +444,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -375,7 +501,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -417,7 +543,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -474,7 +600,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -511,7 +637,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -568,7 +694,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -610,7 +736,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -667,7 +793,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -704,7 +830,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -761,7 +887,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -803,7 +929,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -860,7 +986,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -897,7 +1023,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -954,7 +1080,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -996,7 +1122,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1009,9 +1135,9 @@ namespace WinFormsApp3.Forms
                     H4.BackColor = Color.Black;
                     H6.BackColor = Color.Black;
                     H8.BackColor = Color.Black;
-                    if (Util.CompararImagem(pictureBox43.Image, P1.Image) == false && Util.CompararImagem(pictureBox43.Image, P2.Image) == false)
+                    if (Util.CompararImagem(E5.Image, P1.Image) == false && Util.CompararImagem(E5.Image, P2.Image) == false)
                     {
-                        pictureBox43.BackColor = Color.Purple;
+                        E5.BackColor = Color.Purple;
                     }
                     if (Util.CompararImagem(C5.Image, P1.Image) == false && Util.CompararImagem(C5.Image, P2.Image) == false)
                     {
@@ -1053,7 +1179,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1090,7 +1216,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1117,9 +1243,9 @@ namespace WinFormsApp3.Forms
 
                     if (D4.BackColor == Color.Purple)
                     {
-                        D4.Image = pictureBox43.Image;
+                        D4.Image = E5.Image;
                         D4.BackColor = Color.Black;
-                        pictureBox43.Image = A8.Image;
+                        E5.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     if (D4.BackColor == Color.Yellow)
@@ -1147,7 +1273,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1189,7 +1315,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1206,9 +1332,9 @@ namespace WinFormsApp3.Forms
                     {
                         G5.BackColor = Color.Purple;
                     }
-                    if (Util.CompararImagem(pictureBox43.Image, P1.Image) == false && Util.CompararImagem(pictureBox43.Image, P2.Image) == false)
+                    if (Util.CompararImagem(E5.Image, P1.Image) == false && Util.CompararImagem(E5.Image, P2.Image) == false)
                     {
-                        pictureBox43.BackColor = Color.Yellow;
+                        E5.BackColor = Color.Yellow;
                     }
                 }
                 else
@@ -1246,7 +1372,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1283,7 +1409,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1317,9 +1443,9 @@ namespace WinFormsApp3.Forms
                     }
                     if (F4.BackColor == Color.Yellow)
                     {
-                        F4.Image = pictureBox43.Image;
+                        F4.Image = E5.Image;
                         F4.BackColor = Color.Black;
-                        pictureBox43.Image = A8.Image;
+                        E5.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     A1.BackColor = Color.Black;
@@ -1340,7 +1466,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1382,7 +1508,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1428,7 +1554,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1465,7 +1591,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1510,7 +1636,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1552,7 +1678,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1609,7 +1735,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1646,7 +1772,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1703,7 +1829,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1745,7 +1871,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1802,7 +1928,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1839,7 +1965,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1896,7 +2022,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1938,7 +2064,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -1995,7 +2121,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2032,7 +2158,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2089,7 +2215,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2131,7 +2257,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2177,7 +2303,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2214,7 +2340,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2259,7 +2385,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2301,7 +2427,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2339,7 +2465,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2376,7 +2502,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2417,7 +2543,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2459,7 +2585,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2501,7 +2627,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2538,7 +2664,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2586,7 +2712,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2628,7 +2754,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2670,7 +2796,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2707,7 +2833,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2755,7 +2881,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2797,7 +2923,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2839,7 +2965,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2876,7 +3002,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2924,7 +3050,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -2966,7 +3092,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3012,7 +3138,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3049,7 +3175,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3095,7 +3221,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3137,7 +3263,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3202,7 +3328,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3239,7 +3365,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3296,7 +3422,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3319,7 +3445,7 @@ namespace WinFormsApp3.Forms
             //E5 == pictureBox43 esqueci de trocar a name//
             if (Convert.ToInt32(LP1.Text) % 2 != 1 || Convert.ToInt32(LP1.Text) == 0)
             {
-                if (Util.CompararImagem(pictureBox43.Image, P1.Image))
+                if (Util.CompararImagem(E5.Image, P1.Image))
                 {
                     A1.BackColor = Color.Black;
                     A3.BackColor = Color.Black;
@@ -3339,7 +3465,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3364,17 +3490,17 @@ namespace WinFormsApp3.Forms
                 else
                 {
                     
-                    if (pictureBox43.BackColor == Color.Purple)
+                    if (E5.BackColor == Color.Purple)
                     {
-                        pictureBox43.Image = D4.Image;
-                        pictureBox43.BackColor = Color.Black;
+                        E5.Image = D4.Image;
+                        E5.BackColor = Color.Black;
                         D4.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
-                    if (pictureBox43.BackColor == Color.Yellow)
+                    if (E5.BackColor == Color.Yellow)
                     {
-                        pictureBox43.Image = F4.Image;
-                        pictureBox43.BackColor = Color.Black;
+                        E5.Image = F4.Image;
+                        E5.BackColor = Color.Black;
                         F4.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
@@ -3396,7 +3522,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3413,7 +3539,7 @@ namespace WinFormsApp3.Forms
             }
             else /*vez das pretas*/
             {
-                if (Util.CompararImagem(pictureBox43.Image, P2.Image))
+                if (Util.CompararImagem(E5.Image, P2.Image))
                 {
                     A1.BackColor = Color.Black;
                     A3.BackColor = Color.Black;
@@ -3433,7 +3559,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3458,17 +3584,17 @@ namespace WinFormsApp3.Forms
                 else
                 {
 
-                    if (pictureBox43.BackColor == Color.Purple)
+                    if (E5.BackColor == Color.Purple)
                     {
-                        pictureBox43.Image = F6.Image;
-                        pictureBox43.BackColor = Color.Black;
+                        E5.Image = F6.Image;
+                        E5.BackColor = Color.Black;
                         F6.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
-                    if (pictureBox43.BackColor == Color.Yellow)
+                    if (E5.BackColor == Color.Yellow)
                     {
-                        pictureBox43.Image = D6.Image;
-                        pictureBox43.BackColor = Color.Black;
+                        E5.Image = D6.Image;
+                        E5.BackColor = Color.Black;
                         D6.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
@@ -3490,7 +3616,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3532,7 +3658,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3589,7 +3715,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3626,7 +3752,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3683,7 +3809,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3725,7 +3851,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3782,7 +3908,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3819,7 +3945,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3876,7 +4002,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3918,7 +4044,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -3952,9 +4078,9 @@ namespace WinFormsApp3.Forms
                     }
                     if (D6.BackColor == Color.Yellow)
                     {
-                        D6.Image = pictureBox43.Image;
+                        D6.Image = E5.Image;
                         D6.BackColor = Color.Black;
-                        pictureBox43.Image = A8.Image;
+                        E5.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     A1.BackColor = Color.Black;
@@ -3975,7 +4101,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4012,7 +4138,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4029,9 +4155,9 @@ namespace WinFormsApp3.Forms
                     {
                         C5.BackColor = Color.Purple;
                     }
-                    if (Util.CompararImagem(pictureBox43.Image, P1.Image) == false && Util.CompararImagem(pictureBox43.Image, P2.Image) == false)
+                    if (Util.CompararImagem(E5.Image, P1.Image) == false && Util.CompararImagem(E5.Image, P2.Image) == false)
                     {
-                        pictureBox43.BackColor = Color.Yellow;
+                        E5.BackColor = Color.Yellow;
                     }
                 }
                 else
@@ -4069,7 +4195,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4111,7 +4237,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4138,9 +4264,9 @@ namespace WinFormsApp3.Forms
                     
                     if (F6.BackColor == Color.Purple)
                     {
-                        F6.Image = pictureBox43.Image;
+                        F6.Image = E5.Image;
                         F6.BackColor = Color.Black;
-                        pictureBox43.Image = A8.Image;
+                        E5.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     if (F6.BackColor == Color.Yellow)
@@ -4168,7 +4294,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4205,7 +4331,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4218,9 +4344,9 @@ namespace WinFormsApp3.Forms
                     H4.BackColor = Color.Black;
                     H6.BackColor = Color.Black;
                     H8.BackColor = Color.Black;
-                    if (Util.CompararImagem(pictureBox43.Image, P1.Image) == false && Util.CompararImagem(pictureBox43.Image, P2.Image) == false)
+                    if (Util.CompararImagem(E5.Image, P1.Image) == false && Util.CompararImagem(E5.Image, P2.Image) == false)
                     {
-                        pictureBox43.BackColor = Color.Purple;
+                        E5.BackColor = Color.Purple;
                     }
                     if (Util.CompararImagem(G5.Image, P1.Image) == false && Util.CompararImagem(G5.Image, P2.Image) == false)
                     {
@@ -4262,7 +4388,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4304,7 +4430,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4350,7 +4476,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4367,7 +4493,7 @@ namespace WinFormsApp3.Forms
             }
             else /*vez das pretas*/
             {
-                if (Util.CompararImagem(F6.Image, P2.Image))
+                if (Util.CompararImagem(H6.Image, P2.Image))
                 {
                     A1.BackColor = Color.Black;
                     A3.BackColor = Color.Black;
@@ -4387,7 +4513,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4400,10 +4526,6 @@ namespace WinFormsApp3.Forms
                     H4.BackColor = Color.Black;
                     H6.BackColor = Color.Black;
                     H8.BackColor = Color.Black;
-                    if (Util.CompararImagem(pictureBox43.Image, P1.Image) == false && Util.CompararImagem(pictureBox43.Image, P2.Image) == false)
-                    {
-                        pictureBox43.BackColor = Color.Purple;
-                    }
                     if (Util.CompararImagem(G5.Image, P1.Image) == false && Util.CompararImagem(G5.Image, P2.Image) == false)
                     {
                         G5.BackColor = Color.Yellow;
@@ -4444,7 +4566,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4486,7 +4608,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4532,7 +4654,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4569,7 +4691,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4614,7 +4736,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4656,7 +4778,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4713,7 +4835,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4750,7 +4872,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4807,7 +4929,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4849,7 +4971,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4906,7 +5028,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -4943,7 +5065,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5000,7 +5122,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5042,7 +5164,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5099,7 +5221,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5136,7 +5258,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5193,7 +5315,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5235,7 +5357,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5284,7 +5406,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5321,7 +5443,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5363,7 +5485,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5405,7 +5527,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5454,7 +5576,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5491,7 +5613,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5533,7 +5655,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5575,7 +5697,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5594,15 +5716,15 @@ namespace WinFormsApp3.Forms
                    
                     if (F8.BackColor == Color.Purple)
                     {
-                        F8.Image = C7.Image;
-                        F8.BackColor = Color.Black;
-                        C7.Image = A8.Image;
-                    }
-                    if (F8.BackColor == Color.Yellow)
-                    {
                         F8.Image = E7.Image;
                         F8.BackColor = Color.Black;
                         E7.Image = A8.Image;
+                    }
+                    if (F8.BackColor == Color.Yellow)
+                    {
+                        F8.Image = G7.Image;
+                        F8.BackColor = Color.Black;
+                        G7.Image = A8.Image;
                     }
                     A1.BackColor = Color.Black;
                     A3.BackColor = Color.Black;
@@ -5622,7 +5744,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5659,7 +5781,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5701,7 +5823,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5743,7 +5865,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5785,7 +5907,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5822,7 +5944,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
@@ -5860,7 +5982,7 @@ namespace WinFormsApp3.Forms
                     D8.BackColor = Color.Black;
                     E1.BackColor = Color.Black;
                     E3.BackColor = Color.Black;
-                    pictureBox43.BackColor = Color.Black;
+                    E5.BackColor = Color.Black;
                     F2.BackColor = Color.Black;
                     F4.BackColor = Color.Black;
                     F6.BackColor = Color.Black;
