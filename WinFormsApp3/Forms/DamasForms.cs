@@ -24,94 +24,168 @@ namespace WinFormsApp3.Forms
         {
             InitializeComponent();
 
-            tabuleiro[0,0] = A1;
-            tabuleiro[0,1] = A2;
-            tabuleiro[0,2] = A3;
-            tabuleiro[0,3] = A4;
-            tabuleiro[0,4] = A5;
-            tabuleiro[0,5] = A6;
-            tabuleiro[0,6] = A7;
-            tabuleiro[0,7] = A8;
-            tabuleiro[1,0] = B1;
-            tabuleiro[1,1] = B2;
-            tabuleiro[1,2] = B3;
-            tabuleiro[1,3] = B4;
-            tabuleiro[1,4] = B5;
-            tabuleiro[1,5] = B6;
-            tabuleiro[1,6] = B7;
-            tabuleiro[1,7] = B8; 
-            tabuleiro[2,0] = C1;
-            tabuleiro[2,1] = C2;
-            tabuleiro[2,2] = C3;
-            tabuleiro[2,3] = C4;
-            tabuleiro[2,4] = C5;
-            tabuleiro[2,5] = C6;
-            tabuleiro[2,6] = C7;
-            tabuleiro[2,7] = C8; 
-            tabuleiro[3,0] = D1;
-            tabuleiro[3,1] = D2;
-            tabuleiro[3,2] = D3;
-            tabuleiro[3,3] = D4;
-            tabuleiro[3,4] = D5;
-            tabuleiro[3,5] = D6;
-            tabuleiro[3,6] = D7;
-            tabuleiro[3,7] = D8; 
-            tabuleiro[4,0] = E1;
-            tabuleiro[4,1] = E2;
-            tabuleiro[4,2] = E3;
-            tabuleiro[4,3] = E4;
-            tabuleiro[4,4] = E5;
-            tabuleiro[4,5] = E6;
-            tabuleiro[4,6] = E7;
-            tabuleiro[4,7] = E8; 
-            tabuleiro[5,0] = F1;
-            tabuleiro[5,1] = F2;
-            tabuleiro[5,2] = F3;
-            tabuleiro[5,3] = F4;
-            tabuleiro[5,4] = F5;
-            tabuleiro[5,5] = F6;
-            tabuleiro[5,6] = F7;
-            tabuleiro[5,7] = F8; 
-            tabuleiro[6,0] = G1;
-            tabuleiro[6,1] = G2;
-            tabuleiro[6,2] = G3;
-            tabuleiro[6,3] = G4;
-            tabuleiro[6,4] = G5;
-            tabuleiro[6,5] = G6;
-            tabuleiro[6,6] = G7;
-            tabuleiro[6,7] = G8; 
-            tabuleiro[7,0] = H1;
-            tabuleiro[7,1] = H2;
-            tabuleiro[7,2] = H3;
-            tabuleiro[7,3] = H4;
-            tabuleiro[7,4] = H5;
-            tabuleiro[7,5] = H6;
-            tabuleiro[7,6] = H7;
-            tabuleiro[7,7] = H8;
+            tabuleiro[0, 0] = A1;
+            tabuleiro[0, 1] = A2;
+            tabuleiro[0, 2] = A3;
+            tabuleiro[0, 3] = A4;
+            tabuleiro[0, 4] = A5;
+            tabuleiro[0, 5] = A6;
+            tabuleiro[0, 6] = A7;
+            tabuleiro[0, 7] = A8;
+            tabuleiro[1, 0] = B1;
+            tabuleiro[1, 1] = B2;
+            tabuleiro[1, 2] = B3;
+            tabuleiro[1, 3] = B4;
+            tabuleiro[1, 4] = B5;
+            tabuleiro[1, 5] = B6;
+            tabuleiro[1, 6] = B7;
+            tabuleiro[1, 7] = B8;
+            tabuleiro[2, 0] = C1;
+            tabuleiro[2, 1] = C2;
+            tabuleiro[2, 2] = C3;
+            tabuleiro[2, 3] = C4;
+            tabuleiro[2, 4] = C5;
+            tabuleiro[2, 5] = C6;
+            tabuleiro[2, 6] = C7;
+            tabuleiro[2, 7] = C8;
+            tabuleiro[3, 0] = D1;
+            tabuleiro[3, 1] = D2;
+            tabuleiro[3, 2] = D3;
+            tabuleiro[3, 3] = D4;
+            tabuleiro[3, 4] = D5;
+            tabuleiro[3, 5] = D6;
+            tabuleiro[3, 6] = D7;
+            tabuleiro[3, 7] = D8;
+            tabuleiro[4, 0] = E1;
+            tabuleiro[4, 1] = E2;
+            tabuleiro[4, 2] = E3;
+            tabuleiro[4, 3] = E4;
+            tabuleiro[4, 4] = E5;
+            tabuleiro[4, 5] = E6;
+            tabuleiro[4, 6] = E7;
+            tabuleiro[4, 7] = E8;
+            tabuleiro[5, 0] = F1;
+            tabuleiro[5, 1] = F2;
+            tabuleiro[5, 2] = F3;
+            tabuleiro[5, 3] = F4;
+            tabuleiro[5, 4] = F5;
+            tabuleiro[5, 5] = F6;
+            tabuleiro[5, 6] = F7;
+            tabuleiro[5, 7] = F8;
+            tabuleiro[6, 0] = G1;
+            tabuleiro[6, 1] = G2;
+            tabuleiro[6, 2] = G3;
+            tabuleiro[6, 3] = G4;
+            tabuleiro[6, 4] = G5;
+            tabuleiro[6, 5] = G6;
+            tabuleiro[6, 6] = G7;
+            tabuleiro[6, 7] = G8;
+            tabuleiro[7, 0] = H1;
+            tabuleiro[7, 1] = H2;
+            tabuleiro[7, 2] = H3;
+            tabuleiro[7, 3] = H4;
+            tabuleiro[7, 4] = H5;
+            tabuleiro[7, 5] = H6;
+            tabuleiro[7, 6] = H7;
+            tabuleiro[7, 7] = H8;
 
-            for(int i = 0; i < ALTURA; i++)
+            for (int i = 0; i < ALTURA; i++)
             {
-                for(int j = 0; j < LARGURA; j++)
+                for (int j = 0; j < LARGURA; j++)
                 {
-                    tabuleiro[i,j].MouseDoubleClick += posicao_DoubleClick;
+                    tabuleiro[i, j].MouseDoubleClick += posicao_DoubleClick;
                 }
             }
         }
 
         private void posicao_DoubleClick(object sender, EventArgs e)
         {
+            UtilCompImg Util = new UtilCompImg();
+
             PictureBox pictureBox_clicada = (PictureBox)sender;
 
             Point posicao = recuperarPosicaoNoTabuleiro(pictureBox_clicada);
 
-            int x = posicao.X;
-            int y = posicao.Y;
+            if (Convert.ToInt32(LP1.Text) % 2 != 1 || Convert.ToInt32(LP1.Text) == 0 && Util.CompararImagem(pictureBox_clicada.Image, P1.Image) /* branco */)
+            {
+                int x = posicao.X;
+                int y = posicao.Y;
+                
+                try
+                { 
+                    PictureBox esquerda = tabuleiro[x - 1, y + 1];
+                    if (Util.CompararImagem(esquerda.Image, P1.Image) == false && Util.CompararImagem(esquerda.Image, P2.Image) == false)
+                    esquerda.BackColor = Color.Yellow;
+                    else
+                    {
+                        Point posicao2 = recuperarPosicaoNoTabuleiro(esquerda);
+                        int X = posicao2.X;
+                        int Y = posicao2.Y;
+                        PictureBox esquerda2 = tabuleiro[X - 1, Y + 1];
+                        if (Util.CompararImagem(esquerda.Image, P1.Image) == false)
+                            esquerda2.BackColor = Color.Red;
+                    }
+                }
+                catch (Exception ex) { }
+                try
+                {
+                    PictureBox direita = tabuleiro[x + 1, y + 1];
+                    if (Util.CompararImagem(direita.Image, P1.Image) == false && Util.CompararImagem(direita.Image, P2.Image) == false)
+                        direita.BackColor = Color.Purple;
+                    else
+                    {
+                        Point posicao2 = recuperarPosicaoNoTabuleiro(direita);
+                        int X = posicao2.X;
+                        int Y = posicao2.Y;
+                        PictureBox direita2 = tabuleiro[X + 1, Y + 1];
+                        if (Util.CompararImagem(direita.Image, P1.Image) == false)
+                            direita2.BackColor = Color.Red;
+                    }
+                }
+                catch (Exception ex) { }
 
-            PictureBox esquerda = tabuleiro[x-1,y+1];
-            PictureBox direita = tabuleiro[x + 1, y + 1];
 
-            esquerda.BackColor = Color.Yellow;
-            direita.BackColor = Color.Purple;
+            }
+            else if (Convert.ToInt32(LP1.Text) % 2 == 1 && Util.CompararImagem(pictureBox_clicada.Image, P2.Image) /* preto */)
+            {
+                int x = posicao.X;
+                int y = posicao.Y;
+
+                try
+                {
+                    PictureBox esquerda = tabuleiro[x - 1, y - 1];
+                    if (Util.CompararImagem(esquerda.Image, P1.Image) == false && Util.CompararImagem(esquerda.Image, P2.Image) == false)
+                    esquerda.BackColor = Color.Purple;
+                    else
+                    {
+                        Point posicao2 = recuperarPosicaoNoTabuleiro(esquerda);
+                        int X = posicao2.X;
+                        int Y = posicao2.Y;
+                        PictureBox esquerda2 = tabuleiro[X - 1, Y - 1];
+                        if(Util.CompararImagem(esquerda.Image, P2.Image) == false)
+                        esquerda2.BackColor = Color.Red;
+                    }
+                }
+                catch (Exception ex) { }
+                try
+                {
+                    PictureBox direita = tabuleiro[x + 1, y - 1];
+                    if (Util.CompararImagem(direita.Image, P1.Image) == false && Util.CompararImagem(direita.Image, P2.Image) == false)
+                        direita.BackColor = Color.Yellow;
+                    else
+                    {
+                        Point posicao2 = recuperarPosicaoNoTabuleiro(direita);
+                        int X = posicao2.X;
+                        int Y = posicao2.Y;
+                        PictureBox direita2 = tabuleiro[X + 1, Y - 1];
+                        if (Util.CompararImagem(direita.Image, P2.Image) == false)
+                            direita2.BackColor = Color.Red;
+                    }
+                }
+                catch (Exception ex) { }
+            }
+
+
         }
 
         private Point recuperarPosicaoNoTabuleiro(PictureBox pictureBox)
@@ -132,7 +206,7 @@ namespace WinFormsApp3.Forms
 
 
 
-        private void pictureBox29_Click(object sender, EventArgs e)
+       private void pictureBox29_Click(object sender, EventArgs e)
         {
 
         }
@@ -143,7 +217,7 @@ namespace WinFormsApp3.Forms
 
             if (Convert.ToInt32(LP1.Text) % 2 != 1 || Convert.ToInt32(LP1.Text) == 0 /*vez das brancas*/)
             {
-                if (Util.CompararImagem(A3.Image,P1.Image))
+                if (Util.CompararImagem(A3.Image, P1.Image))
                 {
                     A1.BackColor = Color.Black;
                     A3.BackColor = Color.Black;
@@ -187,7 +261,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (A3.BackColor == Color.Yellow)
                     {
                         A3.Image = B2.Image;
@@ -195,7 +269,7 @@ namespace WinFormsApp3.Forms
                         B2.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
-                    if (A3.BackColor == Color.DarkRed)
+                    if (A3.BackColor == Color.Red)
                     {
                         A3.Image = C1.Image;
                         A3.BackColor = Color.Black;
@@ -282,11 +356,19 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (A3.BackColor == Color.Purple)
                     {
                         A3.Image = B4.Image;
                         A3.BackColor = Color.Black;
+                        B4.Image = A8.Image;
+                        LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
+                    }
+                    if (A3.BackColor == Color.Red)
+                    {
+                        A3.Image = C5.Image;
+                        A3.BackColor = Color.Black;
+                        C5.Image = A8.Image;
                         B4.Image = A8.Image;
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
@@ -374,7 +456,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (B4.BackColor == Color.Purple)
                     {
                         B4.Image = A3.Image;
@@ -481,7 +563,15 @@ namespace WinFormsApp3.Forms
                         B4.Image = A5.Image;
                         B4.BackColor = Color.Black;
                         A5.Image = A8.Image;
-                        LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1) ;
+                        LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
+                    }
+                    if (B4.BackColor == Color.Red)
+                    {
+                        A3.Image = C1.Image;
+                        A3.BackColor = Color.Black;
+                        C1.Image = A8.Image;
+                        B2.Image = A8.Image;
+                        LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     A1.BackColor = Color.Black;
                     A3.BackColor = Color.Black;
@@ -567,7 +657,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (C3.BackColor == Color.Purple)
                     {
                         C3.Image = B2.Image;
@@ -760,7 +850,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                   
+
                     if (E3.BackColor == Color.Purple)
                     {
                         E3.Image = D2.Image;
@@ -953,7 +1043,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                   
+
                     if (G3.BackColor == Color.Purple)
                     {
                         G3.Image = F2.Image;
@@ -1146,7 +1236,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                   
+
                     if (D4.BackColor == Color.Purple)
                     {
                         D4.Image = C3.Image;
@@ -1339,7 +1429,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (F4.BackColor == Color.Purple)
                     {
                         F4.Image = E3.Image;
@@ -1528,7 +1618,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (H4.BackColor == Color.Purple)
                     {
                         H4.Image = G3.Image;
@@ -1702,7 +1792,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (B2.BackColor == Color.Purple)
                     {
                         B2.Image = A1.Image;
@@ -1895,7 +1985,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (D2.BackColor == Color.Purple)
                     {
                         D2.Image = C1.Image;
@@ -2088,7 +2178,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (F2.BackColor == Color.Purple)
                     {
                         F2.Image = E1.Image;
@@ -2277,7 +2367,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (H2.BackColor == Color.Purple)
                     {
                         H2.Image = G1.Image;
@@ -3112,7 +3202,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (A5.BackColor == Color.Yellow)
                     {
                         A5.Image = B4.Image;
@@ -3287,7 +3377,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                   
+
                     if (C5.BackColor == Color.Purple)
                     {
                         C5.Image = B4.Image;
@@ -3489,7 +3579,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (E5.BackColor == Color.Purple)
                     {
                         E5.Image = D4.Image;
@@ -3682,7 +3772,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (G5.BackColor == Color.Purple)
                     {
                         G5.Image = F4.Image;
@@ -3875,7 +3965,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (B6.BackColor == Color.Purple)
                     {
                         B6.Image = A5.Image;
@@ -4068,7 +4158,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (D6.BackColor == Color.Purple)
                     {
                         D6.Image = C5.Image;
@@ -4261,7 +4351,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (F6.BackColor == Color.Purple)
                     {
                         F6.Image = E5.Image;
@@ -4450,7 +4540,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (H6.BackColor == Color.Purple)
                     {
                         H6.Image = G5.Image;
@@ -4628,7 +4718,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                   
+
                     if (A7.BackColor == Color.Yellow)
                     {
                         A7.Image = B6.Image;
@@ -4710,7 +4800,7 @@ namespace WinFormsApp3.Forms
                     }
                 }
                 else
-                { 
+                {
                     if (A7.BackColor == Color.Purple)
                     {
                         A7.Image = B8.Image;
@@ -4802,7 +4892,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                   
+
                     if (C7.BackColor == Color.Purple)
                     {
                         C7.Image = B6.Image;
@@ -4995,7 +5085,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (E7.BackColor == Color.Purple)
                     {
                         E7.Image = D6.Image;
@@ -5188,7 +5278,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (G7.BackColor == Color.Purple)
                     {
                         G7.Image = F6.Image;
@@ -5373,7 +5463,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (B8.BackColor == Color.Purple)
                     {
                         B8.Image = A7.Image;
@@ -5543,7 +5633,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                    
+
                     if (D8.BackColor == Color.Purple)
                     {
                         D8.Image = C7.Image;
@@ -5713,7 +5803,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                   
+
                     if (F8.BackColor == Color.Purple)
                     {
                         F8.Image = E7.Image;
@@ -5881,7 +5971,7 @@ namespace WinFormsApp3.Forms
                 }
                 else
                 {
-                   
+
                     if (H8.BackColor == Color.Purple)
                     {
                         H8.Image = G7.Image;
