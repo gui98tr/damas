@@ -215,7 +215,7 @@
             A7.SizeMode = PictureBoxSizeMode.StretchImage;
             A7.TabIndex = 5;
             A7.TabStop = false;
-            A7.Click += A7_Click;
+            //A7.Click += A7_Click;
             // 
             // A5
             // 
@@ -227,7 +227,7 @@
             A5.SizeMode = PictureBoxSizeMode.Zoom;
             A5.TabIndex = 6;
             A5.TabStop = false;
-            A5.Click += A5_Click;
+            //A5.Click += A5_Click;
             // 
             // A3
             // 
@@ -240,7 +240,7 @@
             A3.SizeMode = PictureBoxSizeMode.Zoom;
             A3.TabIndex = 7;
             A3.TabStop = false;
-            A3.Click += A3_Click;
+            //A3.Click += A3_Click;
             // 
             // A1
             // 
@@ -253,7 +253,7 @@
             A1.SizeMode = PictureBoxSizeMode.Zoom;
             A1.TabIndex = 8;
             A1.TabStop = false;
-            A1.Click += A1_Click;
+            //A1.Click += A1_Click;
             // 
             // B2
             // 
@@ -266,7 +266,7 @@
             B2.SizeMode = PictureBoxSizeMode.Zoom;
             B2.TabIndex = 16;
             B2.TabStop = false;
-            B2.Click += B2_Click;
+            //B2.Click += B2_Click;
             // 
             // B4
             // 
@@ -278,7 +278,7 @@
             B4.SizeMode = PictureBoxSizeMode.Zoom;
             B4.TabIndex = 15;
             B4.TabStop = false;
-            B4.Click += B4_Click;
+            //B4.Click += B4_Click;
             // 
             // B6
             // 
@@ -291,7 +291,7 @@
             B6.SizeMode = PictureBoxSizeMode.StretchImage;
             B6.TabIndex = 14;
             B6.TabStop = false;
-            B6.Click += B6_Click;
+            //B6.Click += B6_Click;
             // 
             // B8
             // 
@@ -304,7 +304,7 @@
             B8.SizeMode = PictureBoxSizeMode.StretchImage;
             B8.TabIndex = 13;
             B8.TabStop = false;
-            B8.Click += B8_Click;
+            //B8.Click += B8_Click;
             // 
             // B7
             // 
@@ -353,7 +353,7 @@
             D2.SizeMode = PictureBoxSizeMode.Zoom;
             D2.TabIndex = 32;
             D2.TabStop = false;
-            D2.Click += D2_Click;
+            //D2.Click += D2_Click;
             // 
             // D4
             // 
@@ -365,7 +365,7 @@
             D4.SizeMode = PictureBoxSizeMode.Zoom;
             D4.TabIndex = 31;
             D4.TabStop = false;
-            D4.Click += D4_Click;
+            //D4.Click += D4_Click;
             // 
             // D6
             // 
@@ -378,7 +378,7 @@
             D6.SizeMode = PictureBoxSizeMode.StretchImage;
             D6.TabIndex = 30;
             D6.TabStop = false;
-            D6.Click += D6_Click;
+            //D6.Click += D6_Click;
             // 
             // D8
             // 
@@ -391,7 +391,7 @@
             D8.SizeMode = PictureBoxSizeMode.StretchImage;
             D8.TabIndex = 29;
             D8.TabStop = false;
-            D8.Click += D8_Click;
+            //D8.Click += D8_Click;
             // 
             // D7
             // 
@@ -440,7 +440,7 @@
             C1.SizeMode = PictureBoxSizeMode.Zoom;
             C1.TabIndex = 24;
             C1.TabStop = false;
-            C1.Click += C1_Click;
+            //C1.Click += C1_Click;
             // 
             // C3
             // 
@@ -453,7 +453,7 @@
             C3.SizeMode = PictureBoxSizeMode.Zoom;
             C3.TabIndex = 23;
             C3.TabStop = false;
-            C3.Click += C3_Click;
+          //  C3.Click += C3_Click;
             // 
             // C5
             // 
@@ -465,7 +465,7 @@
             C5.SizeMode = PictureBoxSizeMode.Zoom;
             C5.TabIndex = 22;
             C5.TabStop = false;
-            C5.Click += C5_Click;
+          //  C5.Click += C5_Click;
             // 
             // C7
             // 
@@ -478,7 +478,7 @@
             C7.SizeMode = PictureBoxSizeMode.StretchImage;
             C7.TabIndex = 21;
             C7.TabStop = false;
-            C7.Click += C7_Click;
+          //  C7.Click += C7_Click;
             // 
             // pictureBox29
             // 
@@ -488,7 +488,7 @@
             C6.Size = new Size(50, 50);
             C6.TabIndex = 20;
             C6.TabStop = false;
-            C6.Click += pictureBox29_Click;
+           // C6.Click += pictureBox29_Click;
             // 
             // C4
             // 
@@ -528,7 +528,7 @@
             F2.SizeMode = PictureBoxSizeMode.Zoom;
             F2.TabIndex = 48;
             F2.TabStop = false;
-            F2.Click += F2_Click;
+          //  F2.Click += F2_Click;
             // 
             // F4
             // 
@@ -540,7 +540,7 @@
             F4.SizeMode = PictureBoxSizeMode.Zoom;
             F4.TabIndex = 47;
             F4.TabStop = false;
-            F4.Click += F4_Click;
+          //  F4.Click += F4_Click;
             // 
             // F6
             // 
@@ -553,7 +553,7 @@
             F6.SizeMode = PictureBoxSizeMode.StretchImage;
             F6.TabIndex = 46;
             F6.TabStop = false;
-            F6.Click += F6_Click;
+          //  F6.Click += F6_Click;
             // 
             // F8
             // 
@@ -566,7 +566,7 @@
             F8.SizeMode = PictureBoxSizeMode.StretchImage;
             F8.TabIndex = 45;
             F8.TabStop = false;
-            F8.Click += F8_Click;
+          //  F8.Click += F8_Click;
             // 
             // F7
             // 
@@ -615,7 +615,7 @@
             E1.SizeMode = PictureBoxSizeMode.Zoom;
             E1.TabIndex = 40;
             E1.TabStop = false;
-            E1.Click += E1_Click;
+          //  E1.Click += E1_Click;
             // 
             // E3
             // 
@@ -628,7 +628,7 @@
             E3.SizeMode = PictureBoxSizeMode.Zoom;
             E3.TabIndex = 39;
             E3.TabStop = false;
-            E3.Click += E3_Click;
+           // E3.Click += E3_Click;
             // 
             // pictureBox43
             // 
@@ -640,7 +640,7 @@
             E5.SizeMode = PictureBoxSizeMode.Zoom;
             E5.TabIndex = 38;
             E5.TabStop = false;
-            E5.Click += pictureBox43_Click;
+          //  E5.Click += pictureBox43_Click;
             // 
             // E7
             // 
@@ -653,7 +653,7 @@
             E7.SizeMode = PictureBoxSizeMode.StretchImage;
             E7.TabIndex = 37;
             E7.TabStop = false;
-            E7.Click += E7_Click;
+           // E7.Click += E7_Click;
             // 
             // E6
             // 
@@ -702,7 +702,7 @@
             H2.SizeMode = PictureBoxSizeMode.Zoom;
             H2.TabIndex = 64;
             H2.TabStop = false;
-            H2.Click += H2_Click;
+           // H2.Click += H2_Click;
             // 
             // H4
             // 
@@ -727,7 +727,7 @@
             H6.SizeMode = PictureBoxSizeMode.StretchImage;
             H6.TabIndex = 62;
             H6.TabStop = false;
-            H6.Click += H6_Click;
+           // H6.Click += H6_Click;
             // 
             // H8
             // 
@@ -740,7 +740,7 @@
             H8.SizeMode = PictureBoxSizeMode.StretchImage;
             H8.TabIndex = 61;
             H8.TabStop = false;
-            H8.Click += H8_Click;
+           // H8.Click += H8_Click;
             // 
             // H7
             // 
@@ -789,7 +789,7 @@
             G1.SizeMode = PictureBoxSizeMode.Zoom;
             G1.TabIndex = 56;
             G1.TabStop = false;
-            G1.Click += G1_Click;
+           // G1.Click += G1_Click;
             // 
             // G3
             // 
@@ -802,7 +802,7 @@
             G3.SizeMode = PictureBoxSizeMode.Zoom;
             G3.TabIndex = 55;
             G3.TabStop = false;
-            G3.Click += G3_Click;
+            //G3.Click += G3_Click;
             // 
             // G5
             // 
@@ -814,7 +814,7 @@
             G5.SizeMode = PictureBoxSizeMode.Zoom;
             G5.TabIndex = 54;
             G5.TabStop = false;
-            G5.Click += G5_Click;
+          //  G5.Click += G5_Click;
             // 
             // G7
             // 
@@ -827,7 +827,7 @@
             G7.SizeMode = PictureBoxSizeMode.StretchImage;
             G7.TabIndex = 53;
             G7.TabStop = false;
-            G7.Click += G7_Click;
+            //G7.Click += G7_Click;
             // 
             // G6
             // 

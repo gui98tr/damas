@@ -1614,11 +1614,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LABSC3\\Downloads\\damas-main (1)\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj",
+      "projectUniqueName": "C:\\Users\\LABSC3\\Downloads\\damas-main (2)\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj",
       "projectName": "WinFormsApp3",
-      "projectPath": "C:\\Users\\LABSC3\\Downloads\\damas-main (1)\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj",
+      "projectPath": "C:\\Users\\LABSC3\\Downloads\\damas-main (2)\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj",
       "packagesPath": "C:\\Users\\LABSC3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LABSC3\\Downloads\\damas-main (1)\\damas-main\\WinFormsApp3\\obj\\",
+      "outputPath": "C:\\Users\\LABSC3\\Downloads\\damas-main (2)\\damas-main\\WinFormsApp3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LABSC3\\AppData\\Roaming\\NuGet\\NuGet.Config",
