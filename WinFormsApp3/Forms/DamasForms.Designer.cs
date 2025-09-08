@@ -170,7 +170,6 @@
             // 
             // A8
             // 
-            A8.BackColor = SystemColors.ActiveCaption;
             A8.Cursor = Cursors.Hand;
             A8.Location = new Point(23, 23);
             A8.Name = "A8";
@@ -180,7 +179,6 @@
             // 
             // A2
             // 
-            A2.BackColor = SystemColors.ActiveCaption;
             A2.Cursor = Cursors.Hand;
             A2.Location = new Point(23, 315);
             A2.Name = "A2";
@@ -190,7 +188,6 @@
             // 
             // A4
             // 
-            A4.BackColor = SystemColors.ActiveCaption;
             A4.Cursor = Cursors.Hand;
             A4.Location = new Point(23, 216);
             A4.Name = "A4";
@@ -200,7 +197,6 @@
             // 
             // A6
             // 
-            A6.BackColor = SystemColors.ActiveCaption;
             A6.Cursor = Cursors.Hand;
             A6.Location = new Point(23, 118);
             A6.Name = "A6";
@@ -219,6 +215,7 @@
             A7.SizeMode = PictureBoxSizeMode.StretchImage;
             A7.TabIndex = 5;
             A7.TabStop = false;
+            //A7.Click += A7_Click;
             // 
             // A5
             // 
@@ -230,6 +227,7 @@
             A5.SizeMode = PictureBoxSizeMode.Zoom;
             A5.TabIndex = 6;
             A5.TabStop = false;
+            //A5.Click += A5_Click;
             // 
             // A3
             // 
@@ -242,6 +240,7 @@
             A3.SizeMode = PictureBoxSizeMode.Zoom;
             A3.TabIndex = 7;
             A3.TabStop = false;
+            //A3.Click += A3_Click;
             // 
             // A1
             // 
@@ -254,6 +253,7 @@
             A1.SizeMode = PictureBoxSizeMode.Zoom;
             A1.TabIndex = 8;
             A1.TabStop = false;
+            //A1.Click += A1_Click;
             // 
             // B2
             // 
@@ -266,6 +266,7 @@
             B2.SizeMode = PictureBoxSizeMode.Zoom;
             B2.TabIndex = 16;
             B2.TabStop = false;
+            //B2.Click += B2_Click;
             // 
             // B4
             // 
@@ -277,6 +278,7 @@
             B4.SizeMode = PictureBoxSizeMode.Zoom;
             B4.TabIndex = 15;
             B4.TabStop = false;
+            //B4.Click += B4_Click;
             // 
             // B6
             // 
@@ -289,6 +291,7 @@
             B6.SizeMode = PictureBoxSizeMode.StretchImage;
             B6.TabIndex = 14;
             B6.TabStop = false;
+            //B6.Click += B6_Click;
             // 
             // B8
             // 
@@ -301,10 +304,10 @@
             B8.SizeMode = PictureBoxSizeMode.StretchImage;
             B8.TabIndex = 13;
             B8.TabStop = false;
+            //B8.Click += B8_Click;
             // 
             // B7
             // 
-            B7.BackColor = SystemColors.ActiveCaption;
             B7.Cursor = Cursors.Hand;
             B7.Location = new Point(73, 71);
             B7.Name = "B7";
@@ -314,7 +317,6 @@
             // 
             // B5
             // 
-            B5.BackColor = SystemColors.ActiveCaption;
             B5.Cursor = Cursors.Hand;
             B5.Location = new Point(73, 169);
             B5.Name = "B5";
@@ -324,7 +326,6 @@
             // 
             // B3
             // 
-            B3.BackColor = SystemColors.ActiveCaption;
             B3.Cursor = Cursors.Hand;
             B3.Location = new Point(73, 268);
             B3.Name = "B3";
@@ -334,7 +335,6 @@
             // 
             // B1
             // 
-            B1.BackColor = SystemColors.ActiveCaption;
             B1.Cursor = Cursors.Hand;
             B1.Location = new Point(73, 364);
             B1.Name = "B1";
@@ -353,6 +353,7 @@
             D2.SizeMode = PictureBoxSizeMode.Zoom;
             D2.TabIndex = 32;
             D2.TabStop = false;
+            //D2.Click += D2_Click;
             // 
             // D4
             // 
@@ -364,6 +365,7 @@
             D4.SizeMode = PictureBoxSizeMode.Zoom;
             D4.TabIndex = 31;
             D4.TabStop = false;
+            //D4.Click += D4_Click;
             // 
             // D6
             // 
@@ -376,6 +378,7 @@
             D6.SizeMode = PictureBoxSizeMode.StretchImage;
             D6.TabIndex = 30;
             D6.TabStop = false;
+            //D6.Click += D6_Click;
             // 
             // D8
             // 
@@ -388,10 +391,10 @@
             D8.SizeMode = PictureBoxSizeMode.StretchImage;
             D8.TabIndex = 29;
             D8.TabStop = false;
+            //D8.Click += D8_Click;
             // 
             // D7
             // 
-            D7.BackColor = SystemColors.ActiveCaption;
             D7.Cursor = Cursors.Hand;
             D7.Location = new Point(174, 70);
             D7.Name = "D7";
@@ -401,7 +404,6 @@
             // 
             // D5
             // 
-            D5.BackColor = SystemColors.ActiveCaption;
             D5.Cursor = Cursors.Hand;
             D5.Location = new Point(174, 168);
             D5.Name = "D5";
@@ -411,7 +413,6 @@
             // 
             // D3
             // 
-            D3.BackColor = SystemColors.ActiveCaption;
             D3.Cursor = Cursors.Hand;
             D3.Location = new Point(174, 267);
             D3.Name = "D3";
@@ -421,7 +422,6 @@
             // 
             // D1
             // 
-            D1.BackColor = SystemColors.ActiveCaption;
             D1.Cursor = Cursors.Hand;
             D1.Location = new Point(174, 363);
             D1.Name = "D1";
@@ -440,6 +440,7 @@
             C1.SizeMode = PictureBoxSizeMode.Zoom;
             C1.TabIndex = 24;
             C1.TabStop = false;
+            //C1.Click += C1_Click;
             // 
             // C3
             // 
@@ -452,6 +453,7 @@
             C3.SizeMode = PictureBoxSizeMode.Zoom;
             C3.TabIndex = 23;
             C3.TabStop = false;
+          //  C3.Click += C3_Click;
             // 
             // C5
             // 
@@ -463,6 +465,7 @@
             C5.SizeMode = PictureBoxSizeMode.Zoom;
             C5.TabIndex = 22;
             C5.TabStop = false;
+          //  C5.Click += C5_Click;
             // 
             // C7
             // 
@@ -475,20 +478,20 @@
             C7.SizeMode = PictureBoxSizeMode.StretchImage;
             C7.TabIndex = 21;
             C7.TabStop = false;
+          //  C7.Click += C7_Click;
             // 
-            // C6
+            // pictureBox29
             // 
-            C6.BackColor = SystemColors.ActiveCaption;
             C6.Cursor = Cursors.Hand;
             C6.Location = new Point(124, 117);
-            C6.Name = "C6";
+            C6.Name = "pictureBox29";
             C6.Size = new Size(50, 50);
             C6.TabIndex = 20;
             C6.TabStop = false;
+           // C6.Click += pictureBox29_Click;
             // 
             // C4
             // 
-            C4.BackColor = SystemColors.ActiveCaption;
             C4.Cursor = Cursors.Hand;
             C4.Location = new Point(124, 215);
             C4.Name = "C4";
@@ -498,7 +501,6 @@
             // 
             // C2
             // 
-            C2.BackColor = SystemColors.ActiveCaption;
             C2.Cursor = Cursors.Hand;
             C2.Location = new Point(124, 314);
             C2.Name = "C2";
@@ -508,7 +510,6 @@
             // 
             // C8
             // 
-            C8.BackColor = SystemColors.ActiveCaption;
             C8.Cursor = Cursors.Hand;
             C8.Location = new Point(124, 22);
             C8.Name = "C8";
@@ -527,6 +528,7 @@
             F2.SizeMode = PictureBoxSizeMode.Zoom;
             F2.TabIndex = 48;
             F2.TabStop = false;
+          //  F2.Click += F2_Click;
             // 
             // F4
             // 
@@ -538,6 +540,7 @@
             F4.SizeMode = PictureBoxSizeMode.Zoom;
             F4.TabIndex = 47;
             F4.TabStop = false;
+          //  F4.Click += F4_Click;
             // 
             // F6
             // 
@@ -550,6 +553,7 @@
             F6.SizeMode = PictureBoxSizeMode.StretchImage;
             F6.TabIndex = 46;
             F6.TabStop = false;
+          //  F6.Click += F6_Click;
             // 
             // F8
             // 
@@ -562,10 +566,10 @@
             F8.SizeMode = PictureBoxSizeMode.StretchImage;
             F8.TabIndex = 45;
             F8.TabStop = false;
+          //  F8.Click += F8_Click;
             // 
             // F7
             // 
-            F7.BackColor = SystemColors.ActiveCaption;
             F7.Cursor = Cursors.Hand;
             F7.Location = new Point(274, 67);
             F7.Name = "F7";
@@ -575,7 +579,6 @@
             // 
             // F5
             // 
-            F5.BackColor = SystemColors.ActiveCaption;
             F5.Cursor = Cursors.Hand;
             F5.Location = new Point(274, 165);
             F5.Name = "F5";
@@ -585,7 +588,6 @@
             // 
             // F3
             // 
-            F3.BackColor = SystemColors.ActiveCaption;
             F3.Cursor = Cursors.Hand;
             F3.Location = new Point(274, 264);
             F3.Name = "F3";
@@ -595,7 +597,6 @@
             // 
             // F1
             // 
-            F1.BackColor = SystemColors.ActiveCaption;
             F1.Cursor = Cursors.Hand;
             F1.Location = new Point(274, 360);
             F1.Name = "F1";
@@ -614,6 +615,7 @@
             E1.SizeMode = PictureBoxSizeMode.Zoom;
             E1.TabIndex = 40;
             E1.TabStop = false;
+          //  E1.Click += E1_Click;
             // 
             // E3
             // 
@@ -626,17 +628,19 @@
             E3.SizeMode = PictureBoxSizeMode.Zoom;
             E3.TabIndex = 39;
             E3.TabStop = false;
+           // E3.Click += E3_Click;
             // 
-            // E5
+            // pictureBox43
             // 
             E5.BackColor = Color.Black;
             E5.Cursor = Cursors.Hand;
             E5.Location = new Point(224, 162);
-            E5.Name = "E5";
+            E5.Name = "pictureBox43";
             E5.Size = new Size(50, 50);
             E5.SizeMode = PictureBoxSizeMode.Zoom;
             E5.TabIndex = 38;
             E5.TabStop = false;
+          //  E5.Click += pictureBox43_Click;
             // 
             // E7
             // 
@@ -649,10 +653,10 @@
             E7.SizeMode = PictureBoxSizeMode.StretchImage;
             E7.TabIndex = 37;
             E7.TabStop = false;
+           // E7.Click += E7_Click;
             // 
             // E6
             // 
-            E6.BackColor = SystemColors.ActiveCaption;
             E6.Cursor = Cursors.Hand;
             E6.Location = new Point(224, 114);
             E6.Name = "E6";
@@ -660,19 +664,17 @@
             E6.TabIndex = 36;
             E6.TabStop = false;
             // 
-            // E4
+            // E5
             // 
-            E4.BackColor = SystemColors.ActiveCaption;
             E4.Cursor = Cursors.Hand;
             E4.Location = new Point(224, 212);
-            E4.Name = "E4";
+            E4.Name = "E5";
             E4.Size = new Size(50, 50);
             E4.TabIndex = 35;
             E4.TabStop = false;
             // 
             // E2
             // 
-            E2.BackColor = SystemColors.ActiveCaption;
             E2.Cursor = Cursors.Hand;
             E2.Location = new Point(224, 311);
             E2.Name = "E2";
@@ -682,7 +684,6 @@
             // 
             // E8
             // 
-            E8.BackColor = SystemColors.ActiveCaption;
             E8.Cursor = Cursors.Hand;
             E8.Location = new Point(224, 19);
             E8.Name = "E8";
@@ -701,6 +702,7 @@
             H2.SizeMode = PictureBoxSizeMode.Zoom;
             H2.TabIndex = 64;
             H2.TabStop = false;
+           // H2.Click += H2_Click;
             // 
             // H4
             // 
@@ -725,6 +727,7 @@
             H6.SizeMode = PictureBoxSizeMode.StretchImage;
             H6.TabIndex = 62;
             H6.TabStop = false;
+           // H6.Click += H6_Click;
             // 
             // H8
             // 
@@ -737,10 +740,10 @@
             H8.SizeMode = PictureBoxSizeMode.StretchImage;
             H8.TabIndex = 61;
             H8.TabStop = false;
+           // H8.Click += H8_Click;
             // 
             // H7
             // 
-            H7.BackColor = SystemColors.ActiveCaption;
             H7.Cursor = Cursors.Hand;
             H7.Location = new Point(374, 67);
             H7.Name = "H7";
@@ -750,7 +753,6 @@
             // 
             // H5
             // 
-            H5.BackColor = SystemColors.ActiveCaption;
             H5.Cursor = Cursors.Hand;
             H5.Location = new Point(374, 165);
             H5.Name = "H5";
@@ -760,7 +762,6 @@
             // 
             // H3
             // 
-            H3.BackColor = SystemColors.ActiveCaption;
             H3.Cursor = Cursors.Hand;
             H3.Location = new Point(374, 264);
             H3.Name = "H3";
@@ -770,7 +771,6 @@
             // 
             // H1
             // 
-            H1.BackColor = SystemColors.ActiveCaption;
             H1.Cursor = Cursors.Hand;
             H1.Location = new Point(374, 360);
             H1.Name = "H1";
@@ -789,6 +789,7 @@
             G1.SizeMode = PictureBoxSizeMode.Zoom;
             G1.TabIndex = 56;
             G1.TabStop = false;
+           // G1.Click += G1_Click;
             // 
             // G3
             // 
@@ -801,6 +802,7 @@
             G3.SizeMode = PictureBoxSizeMode.Zoom;
             G3.TabIndex = 55;
             G3.TabStop = false;
+            //G3.Click += G3_Click;
             // 
             // G5
             // 
@@ -812,6 +814,7 @@
             G5.SizeMode = PictureBoxSizeMode.Zoom;
             G5.TabIndex = 54;
             G5.TabStop = false;
+          //  G5.Click += G5_Click;
             // 
             // G7
             // 
@@ -824,10 +827,10 @@
             G7.SizeMode = PictureBoxSizeMode.StretchImage;
             G7.TabIndex = 53;
             G7.TabStop = false;
+            //G7.Click += G7_Click;
             // 
             // G6
             // 
-            G6.BackColor = SystemColors.ActiveCaption;
             G6.Cursor = Cursors.Hand;
             G6.Location = new Point(324, 114);
             G6.Name = "G6";
@@ -837,18 +840,15 @@
             // 
             // G4
             // 
-            G4.BackColor = SystemColors.ActiveCaption;
             G4.Cursor = Cursors.Hand;
             G4.Location = new Point(324, 212);
             G4.Name = "G4";
             G4.Size = new Size(50, 50);
             G4.TabIndex = 51;
             G4.TabStop = false;
-            G4.Click += G4_Click;
             // 
             // G2
             // 
-            G2.BackColor = SystemColors.ActiveCaption;
             G2.Cursor = Cursors.Hand;
             G2.Location = new Point(324, 311);
             G2.Name = "G2";
@@ -858,7 +858,6 @@
             // 
             // G8
             // 
-            G8.BackColor = SystemColors.ActiveCaption;
             G8.Cursor = Cursors.Hand;
             G8.Location = new Point(324, 19);
             G8.Name = "G8";
@@ -893,7 +892,7 @@
             // 
             P2.BackColor = Color.Black;
             P2.Image = (Image)resources.GetObject("P2.Image");
-            P2.Location = new Point(465, 96);
+            P2.Location = new Point(468, 96);
             P2.Name = "P2";
             P2.Size = new Size(50, 50);
             P2.SizeMode = PictureBoxSizeMode.StretchImage;
