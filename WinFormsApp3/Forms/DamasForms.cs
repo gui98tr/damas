@@ -156,8 +156,17 @@ namespace WinFormsApp3.Forms
                         int X = posicao2.X;
                         int Y = posicao2.Y;
                         PictureBox esquerda2 = tabuleiro[X - 1, Y + 1];
-                        if (Util.CompararImagem(esquerda.Image, P1.Image) == false && Util.CompararImagem(esquerda.Image, P2.Image) == false)
+                        PictureBox esquerda3 = tabuleiro[X - 1, Y - 3];
+                        if ((Util.CompararImagem(esquerda.Image, P2.Image) == false && Util.CompararImagem(esquerda.Image, P2.Image) == false && Util.CompararImagem(esquerda2.Image, P2.Image) == false && Util.CompararImagem(esquerda2.Image, P2.Image) == false))
+                        {
                             esquerda2.BackColor = Color.Red;
+
+                        }
+                        if ((Util.CompararImagem(esquerda.Image, P2.Image) == false && Util.CompararImagem(esquerda.Image, P2.Image) == false && Util.CompararImagem(esquerda3.Image, P2.Image) == false && Util.CompararImagem(esquerda3.Image, P2.Image) == false))
+                        {
+                            esquerda3.BackColor = Color.Firebrick;
+                        }
+
                     }
                 }
                 catch (Exception ex) { }
@@ -172,15 +181,20 @@ namespace WinFormsApp3.Forms
                         int X = posicao2.X;
                         int Y = posicao2.Y;
                         PictureBox direita2 = tabuleiro[X + 1, Y + 1];
-                        if (Util.CompararImagem(direita.Image, P1.Image) == false && Util.CompararImagem(direita.Image, P2.Image) == false)
+                        PictureBox direita3 = tabuleiro[X + 1, Y - 3];
+                        if (Util.CompararImagem(direita2.Image, P1.Image) == false && Util.CompararImagem(direita2.Image, P2.Image) == false)
+                        {
                             direita2.BackColor = Color.DarkRed;
+                        }
+                        if (Util.CompararImagem(direita3.Image, P1.Image) == false && Util.CompararImagem(direita3.Image, P2.Image) == false)
+                            direita3.BackColor = Color.Maroon;
                     }
                 }
                 catch (Exception ex) { }
 
 
             }
-            else if (Convert.ToInt32(LP1.Text) % 2 == 1 && Util.CompararImagem(pictureBox_clicada.Image, P2.Image) /* preto */)
+            if (Convert.ToInt32(LP1.Text) % 2 == 1 && Util.CompararImagem(pictureBox_clicada.Image, P2.Image) /* preto */)
             {
                 int x = posicao.X;
                 int y = posicao.Y;
@@ -196,10 +210,19 @@ namespace WinFormsApp3.Forms
                         int X = posicao2.X;
                         int Y = posicao2.Y;
                         PictureBox esquerda2 = tabuleiro[X - 1, Y - 1];
-                        if (Util.CompararImagem(esquerda.Image, P2.Image) == false && Util.CompararImagem(esquerda.Image, P2.Image) == false)
-                            esquerda2.BackColor = Color.DarkRed;
+                        /* criar exquerda4 pra localizar peça de capitura para traz*/ 
+                        PictureBox esquerda3 = tabuleiro[X - 1, Y + 3];
+                        if ((Util.CompararImagem(esquerda.Image, P2.Image) == false && Util.CompararImagem(esquerda.Image, P2.Image) == false && Util.CompararImagem(esquerda2.Image, P2.Image) == false && Util.CompararImagem(esquerda2.Image, P2.Image) == false))
+                        {
+                            esquerda2.BackColor = Color.Red;
+                        }
+                        if ((Util.CompararImagem(esquerda.Image, P2.Image) == false && Util.CompararImagem(esquerda.Image, P2.Image) == false && Util.CompararImagem(esquerda3.Image, P2.Image) == false && Util.CompararImagem(esquerda3.Image, P2.Image) == false))
+                        {
+                            esquerda3.BackColor = Color.Firebrick;
+
+                        }
+                        }   
                     }
-                }
                 catch (Exception ex) { }
                 try
                 {
@@ -212,8 +235,13 @@ namespace WinFormsApp3.Forms
                         int X = posicao2.X;
                         int Y = posicao2.Y;
                         PictureBox direita2 = tabuleiro[X + 1, Y - 1];
-                        if (Util.CompararImagem(direita.Image, P2.Image) == false && Util.CompararImagem(direita.Image, P2.Image) == false)
-                            direita2.BackColor = Color.Red;
+                        PictureBox direita3 = tabuleiro[X + 1, Y + 3];
+                        if ((Util.CompararImagem(direita.Image, P1.Image) == false && Util.CompararImagem(direita.Image, P2.Image) == false && Util.CompararImagem(direita2.Image, P1.Image) == false && Util.CompararImagem(direita2.Image, P2.Image) == false))
+                        {
+                            direita2.BackColor = Color.DarkRed;
+                        }
+                        if((Util.CompararImagem(direita.Image, P1.Image) == false && Util.CompararImagem(direita.Image, P2.Image) == false && Util.CompararImagem(direita3.Image, P1.Image) == false && Util.CompararImagem(direita3.Image, P2.Image) == false))
+                            direita3.BackColor = Color.Maroon;
                     }
                 }
                 catch (Exception ex) { }
@@ -304,41 +332,43 @@ namespace WinFormsApp3.Forms
                         Ps1.Image = Ps3.Image;
                         Ps3.Image = A8.Image;
                         Ps4.Image = A8.Image;
-                        while (true)
+                        /*while (true)
                         {
-                            Point point = new Point(x, y);
+                            Point point = new Point(recuperarPosicaoNoTabuleiro(Ps1).X, recuperarPosicaoNoTabuleiro(Ps1).Y);
                             PictureBox Ps5 = PodeComer(point);
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y + 1)
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y + 1)
                             {
                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X + 1, recuperarPosicaoNoTabuleiro(Ps5).Y + 1];
                                 Ps6.Image = Ps1.Image;
                                 Ps5.Image = A8.Image;
                                 Ps1.Image = A8.Image;
                             }
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y + 1)
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y + 1)
                             {
                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X - 1, recuperarPosicaoNoTabuleiro(Ps5).Y + 1];
                                 Ps6.Image = Ps1.Image;
                                 Ps5.Image = A8.Image;
                                 Ps1.Image = A8.Image;
                             }
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y - 1)
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y - 1)
                             {
                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X + 1, recuperarPosicaoNoTabuleiro(Ps5).Y - 1];
                                 Ps6.Image = Ps1.Image;
                                 Ps5.Image = A8.Image;
                                 Ps1.Image = A8.Image;
                             }
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y - 1)
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y - 1)
                             {
                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X - 1, recuperarPosicaoNoTabuleiro(Ps5).Y - 1];
                                 Ps6.Image = Ps1.Image;
                                 Ps5.Image = A8.Image;
                                 Ps1.Image = A8.Image;
                             }
-                            x++;
-                            y++;
-                        }
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == true)
+                            {
+                                break;
+                            }
+                        }*/
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     if (Ps1.BackColor == Color.DarkRed)
@@ -348,41 +378,46 @@ namespace WinFormsApp3.Forms
                         Ps1.Image = Ps3.Image;
                         Ps3.Image = A8.Image;
                         Ps4.Image = A8.Image;
-                        while (true)
-                        {
-                            Point point = new Point(x, y);
-                            PictureBox Ps5 = PodeComer(point);
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y + 1)
-                            {
-                                PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X + 1, recuperarPosicaoNoTabuleiro(Ps5).Y + 1];
-                                Ps6.Image = Ps1.Image;
-                                Ps5.Image = A8.Image;
-                                Ps1.Image = A8.Image;
-                            }
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y + 1)
-                            {
-                                PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X - 1, recuperarPosicaoNoTabuleiro(Ps5).Y + 1];
-                                Ps6.Image = Ps1.Image;
-                                Ps5.Image = A8.Image;
-                                Ps1.Image = A8.Image;
-                            }
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y - 1)
-                            {
-                                PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X + 1, recuperarPosicaoNoTabuleiro(Ps5).Y - 1];
-                                Ps6.Image = Ps1.Image;
-                                Ps5.Image = A8.Image;
-                                Ps1.Image = A8.Image;
-                            }
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y - 1)
-                            {
-                                PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X - 1, recuperarPosicaoNoTabuleiro(Ps5).Y - 1];
-                                Ps6.Image = Ps1.Image;
-                                Ps5.Image = A8.Image;
-                                Ps1.Image = A8.Image;
-                            }
-                            x++;
-                            y++;
-                        }
+                        /* while (true)
+                         {
+                             Point point = new Point(recuperarPosicaoNoTabuleiro(Ps1).X, recuperarPosicaoNoTabuleiro(Ps1).Y);
+                             PictureBox Ps5 = PodeComer(point);
+                             if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y + 1)
+                             {
+                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X + 1, recuperarPosicaoNoTabuleiro(Ps5).Y + 1];
+                                 Ps6.Image = Ps1.Image;
+                                 Ps5.Image = A8.Image;
+                                 Ps1.Image = A8.Image;
+                             }
+                             if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y + 1)
+                             {
+                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X - 1, recuperarPosicaoNoTabuleiro(Ps5).Y + 1];
+                                 Ps6.Image = Ps1.Image;
+                                 Ps5.Image = A8.Image;
+                                 Ps1.Image = A8.Image;
+                             }
+                             if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y - 1)
+                             {
+                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X + 1, recuperarPosicaoNoTabuleiro(Ps5).Y - 1];
+                                 Ps6.Image = Ps1.Image;
+                                 Ps5.Image = A8.Image;
+                                 Ps1.Image = A8.Image;
+                             }
+                             if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y - 1)
+                             {
+                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X - 1, recuperarPosicaoNoTabuleiro(Ps5).Y - 1];
+                                 Ps6.Image = Ps1.Image;
+                                 Ps5.Image = A8.Image;
+                                 Ps1.Image = A8.Image;
+                             }
+                             x++;
+                             y++;
+                             if (Util.CompararImagem(Ps5.Image, Ps1.Image) == true)
+                             {
+
+                                 break;
+                             }
+                         }*/
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     A1.BackColor = Color.Black;
@@ -451,32 +486,32 @@ namespace WinFormsApp3.Forms
                         Ps1.Image = Ps3.Image;
                         Ps3.Image = A8.Image;
                         Ps4.Image = A8.Image;
-                        while (true)
+                       /* while (true)
                         {
-                            Point point = new Point(x, y);
+                            Point point = new Point(recuperarPosicaoNoTabuleiro(Ps1).X, recuperarPosicaoNoTabuleiro(Ps1).Y);
                             PictureBox Ps5 = PodeComer(point);
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y + 1)
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y + 1)
                             {
                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X + 1, recuperarPosicaoNoTabuleiro(Ps5).Y + 1];
                                 Ps6.Image = Ps1.Image;
                                 Ps5.Image = A8.Image;
                                 Ps1.Image = A8.Image;
                             }
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y + 1)
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y + 1)
                             {
                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X - 1, recuperarPosicaoNoTabuleiro(Ps5).Y + 1];
                                 Ps6.Image = Ps1.Image;
                                 Ps5.Image = A8.Image;
                                 Ps1.Image = A8.Image;
                             }
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y - 1)
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y - 1)
                             {
                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X + 1, recuperarPosicaoNoTabuleiro(Ps5).Y - 1];
                                 Ps6.Image = Ps1.Image;
                                 Ps5.Image = A8.Image;
                                 Ps1.Image = A8.Image;
                             }
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y - 1)
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y - 1)
                             {
                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X - 1, recuperarPosicaoNoTabuleiro(Ps5).Y - 1];
                                 Ps6.Image = Ps1.Image;
@@ -485,7 +520,11 @@ namespace WinFormsApp3.Forms
                             }
                             x++;
                             y++;
-                        }
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == true)
+                            {
+                                break;
+                            }
+                        }*/
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     if (Ps1.BackColor == Color.DarkRed)
@@ -495,41 +534,44 @@ namespace WinFormsApp3.Forms
                         Ps1.Image = Ps3.Image;
                         Ps3.Image = A8.Image;
                         Ps4.Image = A8.Image;
-                        while (true)
+                      /*  while (true)
                         {
-                            Point point = new Point(x, y);
+                            Point point = new Point(recuperarPosicaoNoTabuleiro(Ps1).X, recuperarPosicaoNoTabuleiro(Ps1).Y);
                             PictureBox Ps5 = PodeComer(point);
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y + 1)
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y + 1)
                             {
                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X + 1, recuperarPosicaoNoTabuleiro(Ps5).Y + 1];
                                 Ps6.Image = Ps1.Image;
                                 Ps5.Image = A8.Image;
                                 Ps1.Image = A8.Image;
                             }
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y + 1)
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y + 1)
                             {
                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X - 1, recuperarPosicaoNoTabuleiro(Ps5).Y + 1];
                                 Ps6.Image = Ps1.Image;
                                 Ps5.Image = A8.Image;
                                 Ps1.Image = A8.Image;
                             }
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y - 1)
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X + 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y - 1)
                             {
                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X + 1, recuperarPosicaoNoTabuleiro(Ps5).Y - 1];
                                 Ps6.Image = Ps1.Image;
                                 Ps5.Image = A8.Image;
                                 Ps1.Image = A8.Image;
                             }
-                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == x - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == y - 1)
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == false && recuperarPosicaoNoTabuleiro(Ps5).X == point.X - 1 && recuperarPosicaoNoTabuleiro(Ps5).Y == point.Y - 1)
                             {
                                 PictureBox Ps6 = tabuleiro[recuperarPosicaoNoTabuleiro(Ps5).X - 1, recuperarPosicaoNoTabuleiro(Ps5).Y - 1];
                                 Ps6.Image = Ps1.Image;
                                 Ps5.Image = A8.Image;
                                 Ps1.Image = A8.Image;
                             }
-                            x++;
-                            y++;
-                        }
+                            if (Util.CompararImagem(Ps5.Image, Ps1.Image) == true)
+                            {
+                                
+                                break;
+                            }
+                        }*/
                         LP1.Text = Convert.ToString(Convert.ToInt32(LP1.Text) + 1);
                     }
                     A1.BackColor = Color.Black;
