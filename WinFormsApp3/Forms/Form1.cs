@@ -35,18 +35,23 @@ namespace WinFormsApp3
             {
                 //if(usuario2 != null)
                 //{
-                    DamasForms damas = new DamasForms();
-                    damas.ShowDialog();
-                    this.Close();
+                DamasForms damas = new DamasForms();
+                damas.ShowDialog();
+                this.Close();
                 //}
 
                 //else
-                  //  labelerro.ForeColor = Color.Red;
+                //  labelerro.ForeColor = Color.Red;
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 labelerro.ForeColor = Color.Red;
             }
+        }
+
+        private void txtnome_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
