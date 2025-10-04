@@ -688,7 +688,6 @@
             H4.SizeMode = PictureBoxSizeMode.Zoom;
             H4.TabIndex = 63;
             H4.TabStop = false;
-            H4.Click += H4_Click;
             // 
             // H6
             // 
