@@ -1,3 +1,5 @@
+using WinFormsApp3.Forms;
+
 namespace WinFormsApp3
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace WinFormsApp3
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new SingInForm1());
+            Application.Run(new DamasForms());
         }
     }
 }
