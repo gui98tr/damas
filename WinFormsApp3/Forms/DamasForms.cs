@@ -162,8 +162,7 @@ namespace WinFormsApp3.Forms
             }
         }
 
-        private void MostrarMovimentosPossiveis(Point posicao, bool ehCombo = false, 
-            bool red = true, bool darkred = true, bool fire = true, bool maroon = true)
+        private void MostrarMovimentosPossiveis(Point posicao, bool ehCombo = false)
         {
             ResetarCores();
 
@@ -189,12 +188,12 @@ namespace WinFormsApp3.Forms
                         {
                             PictureBox destino = tabuleiro[x - 2, y + 2];
                             if (!Util.CompararImagem(destino.Image, P1.Image) &&
-                                !Util.CompararImagem(destino.Image, P2.Image) && red)
+                                !Util.CompararImagem(destino.Image, P2.Image))
                             {
                                 destino.BackColor = Color.Red;
                                 temCaptura = true;
                             }
-                            if(ehCombo && fire)
+                            if(ehCombo)
                             {
                                 PictureBox destinob = tabuleiro[x - 2, y - 2];
                                 if (!Util.CompararImagem(destinob.Image, P1.Image) &&
@@ -222,12 +221,12 @@ namespace WinFormsApp3.Forms
                         {
                             PictureBox destino = tabuleiro[x + 2, y + 2];
                             if (!Util.CompararImagem(destino.Image, P1.Image) &&
-                                !Util.CompararImagem(destino.Image, P2.Image) && darkred)
+                                !Util.CompararImagem(destino.Image, P2.Image))
                             {
                                 destino.BackColor = Color.DarkRed;
                                 temCaptura = true;
                             }
-                            if (ehCombo && maroon)
+                            if (ehCombo)
                             {
                                 PictureBox destinob = tabuleiro[x + 2, y - 2];
                                 if (!Util.CompararImagem(destinob.Image, P1.Image) &&
@@ -285,12 +284,12 @@ namespace WinFormsApp3.Forms
                         {
                             PictureBox destino = tabuleiro[x - 2, y - 2];
                             if (!Util.CompararImagem(destino.Image, P1.Image) &&
-                                !Util.CompararImagem(destino.Image, P2.Image) && red)
+                                !Util.CompararImagem(destino.Image, P2.Image))
                             {
                                 destino.BackColor = Color.Red;
                                 temCaptura = true;
                             }
-                            if (ehCombo && fire)
+                            if (ehCombo)
                             {
                                 PictureBox destinoc = tabuleiro[x - 2, y + 2];
                                 if (!Util.CompararImagem(destinoc.Image, P1.Image) &&
@@ -317,12 +316,12 @@ namespace WinFormsApp3.Forms
                         {
                             PictureBox destino = tabuleiro[x + 2, y - 2];
                             if (!Util.CompararImagem(destino.Image, P1.Image) &&
-                                !Util.CompararImagem(destino.Image, P2.Image) && darkred)
+                                !Util.CompararImagem(destino.Image, P2.Image))
                             {
                                 destino.BackColor = Color.DarkRed;
                                 temCaptura = true;
                             }
-                            if (ehCombo && fire)
+                            if (ehCombo)
                             {
                                 PictureBox destinoc = tabuleiro[x + 2, y + 2];
                                 if (!Util.CompararImagem(destinoc.Image, P1.Image) &&
@@ -412,17 +411,8 @@ namespace WinFormsApp3.Forms
                 if (podeCapturarNovamente)
                 {
                     // Mostra as capturas disponíveis
-                    if (xOrigem - 1 == xMeio && yOrigem + 1 == yMeio)
-                        MostrarMovimentosPossiveis(destino, true ,false,true,true,true);
-                    else
-                    if (xOrigem + 1 == xMeio && yOrigem - 1 == yMeio)
-                        MostrarMovimentosPossiveis(destino, true, true, true, false, true);
-                    else
-                    if (xOrigem + 1 == xMeio && yOrigem + 1 == yMeio)
-                        MostrarMovimentosPossiveis(destino, true, true, false, true, true);
-                    else
-                    if (xOrigem - 1 == xMeio && yOrigem - 1 == yMeio)
-                        MostrarMovimentosPossiveis(destino, true, true, true, true, false);
+                    MostrarMovimentosPossiveis(destino, true);
+                    tabuleiro[xOrigem,yOrigem].BackColor = Color.Black;
                 }
                 else
                 {
