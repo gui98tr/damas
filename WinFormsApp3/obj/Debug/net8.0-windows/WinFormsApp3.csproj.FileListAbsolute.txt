@@ -380,3 +380,4 @@ C:\Users\guigui\Downloads\damas-main\WinFormsApp3\obj\Debug\net8.0-windows\refin
 C:\Users\guigui\Downloads\damas-main\WinFormsApp3\obj\Debug\net8.0-windows\WinFormsApp3.pdb
 C:\Users\guigui\Downloads\damas-main\WinFormsApp3\obj\Debug\net8.0-windows\WinFormsApp3.genruntimeconfig.cache
 C:\Users\guigui\Downloads\damas-main\WinFormsApp3\obj\Debug\net8.0-windows\ref\WinFormsApp3.dll
+C:\Users\LABSC3\Downloads\damas-main\damas-main\WinFormsApp3\obj\Debug\net8.0-windows\WinFormsApp3.Forms.FinalForm.resources

@@ -13,8 +13,14 @@ namespace WinFormsApp3.Forms
 {
     public partial class DamasForms : Form
     {
+        int segundosPretas = 0;
+        int segundosBrancas = 0;
+
         const int ALTURA = 8;
         const int LARGURA = 8;
+
+        int pecasBrancas = 12;
+        int pecasPretas = 12;
 
         PictureBox[,] tabuleiro = new PictureBox[ALTURA, LARGURA];
         PictureBox pecaSelecionada = null; // Nova variável para controlar a peça selecionada
@@ -193,7 +199,7 @@ namespace WinFormsApp3.Forms
                                 destino.BackColor = Color.Red;
                                 temCaptura = true;
                             }
-                            if(ehCombo)
+                            if (ehCombo)
                             {
                                 PictureBox destinob = tabuleiro[x - 2, y - 2];
                                 if (!Util.CompararImagem(destinob.Image, P1.Image) &&
@@ -203,7 +209,7 @@ namespace WinFormsApp3.Forms
                                     temCaptura = true;
                                 }
                             }
-                            
+
                         }
                         catch { }
                     }
@@ -387,6 +393,48 @@ namespace WinFormsApp3.Forms
                 pecaSelecionada = null;
                 ResetarCores();
                 ProximoTurno();
+                //Brancas chegaram no Final
+                if(recuperarPosicaoNoTabuleiro(casaDestino).Y == 7 && Convert.ToInt32(LP1.Text) % 2 == 1)
+                {
+                    //Graduar B
+                    if(recuperarPosicaoNoTabuleiro(casaDestino).X == 1)
+                    {
+
+                    }
+                    if (recuperarPosicaoNoTabuleiro(casaDestino).X == 3)
+                    {
+
+                    }
+                    if (recuperarPosicaoNoTabuleiro(casaDestino).X == 5)
+                    {
+
+                    }
+                    if (recuperarPosicaoNoTabuleiro(casaDestino).X == 7)
+                    {
+
+                    }
+                }
+                //Pretas chegaram no Final
+                if (recuperarPosicaoNoTabuleiro(casaDestino).Y == 0 && Convert.ToInt32(LP1.Text) % 2 != 1)
+                {
+                    //Graduar P
+                    if (recuperarPosicaoNoTabuleiro(casaDestino).X == 0)
+                    {
+
+                    }
+                    if (recuperarPosicaoNoTabuleiro(casaDestino).X == 2)
+                    {
+
+                    }
+                    if (recuperarPosicaoNoTabuleiro(casaDestino).X == 4)
+                    {
+
+                    }
+                    if (recuperarPosicaoNoTabuleiro(casaDestino).X == 6)
+                    {
+
+                    }
+                }
             }
             // Captura (distância 2)
             else if (Math.Abs(xDestino - xOrigem) == 2)
@@ -396,13 +444,19 @@ namespace WinFormsApp3.Forms
                 int xMeio = (xOrigem + xDestino) / 2;
                 int yMeio = (yOrigem + yDestino) / 2;
                 tabuleiro[xMeio, yMeio].Image = null;
-               
-                
+
+
 
                 // Move a peça
                 casaDestino.Image = pecaSelecionada.Image;
                 pecaSelecionada.Image = null;
 
+                string ganhou = Vitoria();
+                if(ganhou != null)
+                {
+                    FinalForm finalForm = new FinalForm(ganhou);
+                    finalForm.ShowDialog();
+                }
                 // Verifica se pode capturar novamente
                 pecaSelecionada = casaDestino;
                 ResetarCores();
@@ -412,7 +466,8 @@ namespace WinFormsApp3.Forms
                 {
                     // Mostra as capturas disponíveis
                     MostrarMovimentosPossiveis(destino, true);
-                    tabuleiro[xOrigem,yOrigem].BackColor = Color.Black;
+                    tabuleiro[xOrigem, yOrigem].BackColor = Color.Black;
+                    tabuleiro[xMeio, yMeio].BackColor = Color.Black;
                 }
                 else
                 {
@@ -512,7 +567,20 @@ namespace WinFormsApp3.Forms
         private void ProximoTurno()
         {
             int turnoAtual = Convert.ToInt32(LP1.Text);
+            // Vez das pretas
+            if (turnoAtual % 2 == 0)
+            {
+                timerPretas.Start();
+                timerBrancas.Stop();
+            }
+            // Vez das brancas
+            else
+            {
+                timerBrancas.Start();
+                timerPretas.Stop();
+            }
             LP1.Text = (turnoAtual + 1).ToString();
+
         }
 
         private Point recuperarPosicaoNoTabuleiro(PictureBox pictureBox)
@@ -528,6 +596,95 @@ namespace WinFormsApp3.Forms
                 }
             }
             return new Point(0, 0);
+        }
+
+        private void timerBrancas_Tick(object sender, EventArgs e)
+        {
+            segundosBrancas++;
+            lblBrancasTempo.Text = "Tempo: " + segundosBrancas.ToString();
+        }
+
+        private void timerPretas_Tick(object sender, EventArgs e)
+        {
+            segundosPretas++;
+            lblPretasTempo.Text = "Tempo: " + segundosPretas.ToString();
+        }
+        private string Vitoria()
+        {
+            UtilCompImg Util = new UtilCompImg();
+            // Tem Peça Branca
+            if (   Util.CompararImagem(A1.Image, P1.Image) == false
+                && Util.CompararImagem(A3.Image, P1.Image) == false
+                && Util.CompararImagem(A5.Image, P1.Image) == false
+                && Util.CompararImagem(A7.Image, P1.Image) == false
+                && Util.CompararImagem(C1.Image, P1.Image) == false
+                && Util.CompararImagem(C3.Image, P1.Image) == false
+                && Util.CompararImagem(C5.Image, P1.Image) == false
+                && Util.CompararImagem(C7.Image, P1.Image) == false
+                && Util.CompararImagem(B2.Image, P1.Image) == false
+                && Util.CompararImagem(B4.Image, P1.Image) == false
+                && Util.CompararImagem(B6.Image, P1.Image) == false
+                && Util.CompararImagem(B8.Image, P1.Image) == false
+                && Util.CompararImagem(D2.Image, P1.Image) == false
+                && Util.CompararImagem(D4.Image, P1.Image) == false
+                && Util.CompararImagem(D6.Image, P1.Image) == false
+                && Util.CompararImagem(D8.Image, P1.Image) == false
+                && Util.CompararImagem(E1.Image, P1.Image) == false
+                && Util.CompararImagem(E3.Image, P1.Image) == false
+                && Util.CompararImagem(E5.Image, P1.Image) == false
+                && Util.CompararImagem(E7.Image, P1.Image) == false
+                && Util.CompararImagem(F2.Image, P1.Image) == false
+                && Util.CompararImagem(F4.Image, P1.Image) == false
+                && Util.CompararImagem(F6.Image, P1.Image) == false
+                && Util.CompararImagem(F8.Image, P1.Image) == false
+                && Util.CompararImagem(G1.Image, P1.Image) == false
+                && Util.CompararImagem(G3.Image, P1.Image) == false
+                && Util.CompararImagem(G5.Image, P1.Image) == false
+                && Util.CompararImagem(G7.Image, P1.Image) == false
+                && Util.CompararImagem(H2.Image, P1.Image) == false
+                && Util.CompararImagem(H4.Image, P1.Image) == false
+                && Util.CompararImagem(H6.Image, P1.Image) == false
+                && Util.CompararImagem(H8.Image, P1.Image) == false)
+            {
+                return "Pretas ganharam";
+            }
+            //Tem Peça Preta
+            if (Util.CompararImagem(A1.Image, P2.Image) == false
+                && Util.CompararImagem(A3.Image, P2.Image) == false
+                && Util.CompararImagem(A5.Image, P2.Image) == false
+                && Util.CompararImagem(A7.Image, P2.Image) == false
+                && Util.CompararImagem(C1.Image, P2.Image) == false
+                && Util.CompararImagem(C3.Image, P2.Image) == false
+                && Util.CompararImagem(C5.Image, P2.Image) == false
+                && Util.CompararImagem(C7.Image, P2.Image) == false
+                && Util.CompararImagem(B2.Image, P2.Image) == false
+                && Util.CompararImagem(B4.Image, P2.Image) == false
+                && Util.CompararImagem(B6.Image, P2.Image) == false
+                && Util.CompararImagem(B8.Image, P2.Image) == false
+                && Util.CompararImagem(D2.Image, P2.Image) == false
+                && Util.CompararImagem(D4.Image, P2.Image) == false
+                && Util.CompararImagem(D6.Image, P2.Image) == false
+                && Util.CompararImagem(D8.Image, P2.Image) == false
+                && Util.CompararImagem(E1.Image, P2.Image) == false
+                && Util.CompararImagem(E3.Image, P2.Image) == false
+                && Util.CompararImagem(E5.Image, P2.Image) == false
+                && Util.CompararImagem(E7.Image, P2.Image) == false
+                && Util.CompararImagem(F2.Image, P2.Image) == false
+                && Util.CompararImagem(F4.Image, P2.Image) == false
+                && Util.CompararImagem(F6.Image, P2.Image) == false
+                && Util.CompararImagem(F8.Image, P2.Image) == false
+                && Util.CompararImagem(G1.Image, P2.Image) == false
+                && Util.CompararImagem(G3.Image, P2.Image) == false
+                && Util.CompararImagem(G5.Image, P2.Image) == false
+                && Util.CompararImagem(G7.Image, P2.Image) == false
+                && Util.CompararImagem(H2.Image, P2.Image) == false
+                && Util.CompararImagem(H4.Image, P1.Image) == false
+                && Util.CompararImagem(H6.Image, P1.Image) == false
+                && Util.CompararImagem(H8.Image, P1.Image) == false)
+            {
+                return "Brancas ganharam";
+            }
+            return null;
         }
     }
 }
