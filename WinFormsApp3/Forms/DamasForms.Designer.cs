@@ -6,6 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        System.ComponentModel.ComponentResourceManager resources;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -29,7 +30,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DamasForms));
+            resources = new System.ComponentModel.ComponentResourceManager(typeof(DamasForms));
             A8 = new PictureBox();
             A2 = new PictureBox();
             A4 = new PictureBox();
