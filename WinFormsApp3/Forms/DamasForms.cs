@@ -16,6 +16,11 @@ namespace WinFormsApp3.Forms
 {
     public partial class DamasForms : Form
     {
+        // novas func da dama localizar alvo para matar otr peca
+        PictureBox alvoRainha = null;
+        //localizar caminho da dama para colorir de preto
+        List<PictureBox> caminhoRainha = new List<PictureBox>();
+
         int segundosPretas = 0;
         int segundosBrancas = 0;
 
@@ -144,7 +149,9 @@ namespace WinFormsApp3.Forms
                     pictureBox_clicada.BackColor == Color.Red ||
                     pictureBox_clicada.BackColor == Color.DarkRed ||
                     pictureBox_clicada.BackColor == Color.Firebrick ||
-                    pictureBox_clicada.BackColor == Color.Maroon)
+                    pictureBox_clicada.BackColor == Color.Maroon ||
+                    pictureBox_clicada.BackColor == Color.Green ||
+                    pictureBox_clicada.BackColor == Color.DarkGreen)
                 {
                     // Movimento válido - executa
                     MovimentarPeça(posicao);
@@ -295,6 +302,7 @@ namespace WinFormsApp3.Forms
                             {
                                 PictureBox direitac = tabuleiro[x + i, y + i];
                                 direitac.BackColor = Color.Green;
+                                caminhoRainha.Add(direitac);
                                 if (Util.CompararImagem(direitac.Image, P1.Image) ||
                                    Util.CompararImagem(direitac.Image, P2.Image))
                                 {
@@ -302,8 +310,9 @@ namespace WinFormsApp3.Forms
                                         dc = false;
                                     else if(Util.CompararImagem(direitac.Image, P2.Image))
                                     {
+                                        alvoRainha = tabuleiro[x + i, y + i];
                                         PictureBox direitac2 = tabuleiro[x + i + 1, y + i + 1];
-                                        direitac2.BackColor = Color.Red;
+                                        direitac2.BackColor = Color.DarkGreen;
                                         dc = false;
                                     }
                                 }
@@ -625,10 +634,11 @@ namespace WinFormsApp3.Forms
             {
 
                 // Remove a peça capturada
+                // TENTATIVA DE COMER COM A RAINHA
                 int xMeio = (xOrigem + xDestino) / 2;
                 int yMeio = (yOrigem + yDestino) / 2;
-                tabuleiro[xMeio, yMeio].Image = null;
 
+                tabuleiro[xMeio, yMeio].Image = null;
 
 
                 // Move a peça
@@ -658,6 +668,18 @@ namespace WinFormsApp3.Forms
                     pecaSelecionada = null;
                     ProximoTurno();
                 }
+            }
+            else if (Util.CompararImagem(pecaSelecionada.Image, DamaB()) || Util.CompararImagem(pecaSelecionada.Image, DamaP()))
+            {
+                alvoRainha.Image = null;
+                casaDestino.Image = pecaSelecionada.Image;
+                pecaSelecionada.Image = null;
+                foreach(PictureBox picPosicao in caminhoRainha)
+                {
+                    picPosicao.Image = null;
+                    picPosicao.BackColor = Color.Black;
+                }
+                caminhoRainha.Clear();
             }
         }
 
