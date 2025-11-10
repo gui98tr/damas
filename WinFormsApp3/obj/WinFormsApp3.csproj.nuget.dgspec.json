@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\labsc3\\Downloads\\damas-main\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj": {}
+    "C:\\Users\\labsc3\\Downloads\\damas-main (1)\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\labsc3\\Downloads\\damas-main\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj": {
+    "C:\\Users\\labsc3\\Downloads\\damas-main (1)\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\labsc3\\Downloads\\damas-main\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj",
+        "projectUniqueName": "C:\\Users\\labsc3\\Downloads\\damas-main (1)\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj",
         "projectName": "WinFormsApp3",
-        "projectPath": "C:\\Users\\labsc3\\Downloads\\damas-main\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj",
+        "projectPath": "C:\\Users\\labsc3\\Downloads\\damas-main (1)\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj",
         "packagesPath": "C:\\Users\\labsc3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\labsc3\\Downloads\\damas-main\\damas-main\\WinFormsApp3\\obj\\",
+        "outputPath": "C:\\Users\\labsc3\\Downloads\\damas-main (1)\\damas-main\\WinFormsApp3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\labsc3\\AppData\\Roaming\\NuGet\\NuGet.Config",

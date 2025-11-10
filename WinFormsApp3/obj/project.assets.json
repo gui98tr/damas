@@ -1609,19 +1609,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LABSC3\\.nuget\\packages\\": {}
+    "C:\\Users\\labsc3\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LABSC3\\Downloads\\damas-main\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj",
+      "projectUniqueName": "C:\\Users\\labsc3\\Downloads\\damas-main (1)\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj",
       "projectName": "WinFormsApp3",
-      "projectPath": "C:\\Users\\LABSC3\\Downloads\\damas-main\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj",
-      "packagesPath": "C:\\Users\\LABSC3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LABSC3\\Downloads\\damas-main\\damas-main\\WinFormsApp3\\obj\\",
+      "projectPath": "C:\\Users\\labsc3\\Downloads\\damas-main (1)\\damas-main\\WinFormsApp3\\WinFormsApp3.csproj",
+      "packagesPath": "C:\\Users\\labsc3\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\labsc3\\Downloads\\damas-main (1)\\damas-main\\WinFormsApp3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LABSC3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\labsc3\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
