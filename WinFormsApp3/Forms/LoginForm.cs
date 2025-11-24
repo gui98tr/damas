@@ -36,11 +36,13 @@ namespace WinFormsApp3.Forms
         private void btnentrar_Click(object sender, EventArgs e)
         {
             string nome = nometxt.Text;
+            string email = emailtxt.Text;
             string senha = senhatxt.Text;
-            if(nome.Length != null || senha.Length != null)
+            if(nome.Length != null || senha.Length != null || email.Length != null)
             {
                 if (senha.Length < 6)
                 {
+                    lblMenssage2.ForeColor = Color.Gray;
                     lblMensagem.ForeColor = Color.Red;
                     lblMensagem.Text = "A senha deve ter pelo menos 6 caracteres.";
                     return;
@@ -48,12 +50,14 @@ namespace WinFormsApp3.Forms
 
                 if (nome.Length < 3)
                 {
-                    lblMensagem.ForeColor = Color.Red;
+                    lblMensagem.ForeColor = Color.Gray;
+                    lblMenssage2.ForeColor = Color.Red;
                     lblMenssage2.Text = "O nome de usuário deve ter pelo menos 3 caracteres.";
                     return;
                 }
                 Usuario usuario = new Usuario();
                 usuario.nome = nome;
+                usuario.email = email;
                 usuario.senha = senha;
                 UsuarioRepositorio repo = new UsuarioRepositorio(BdUtil.ConnectionString);
                 repo.InserirUsuario(usuario);

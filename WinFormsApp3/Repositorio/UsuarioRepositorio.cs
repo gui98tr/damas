@@ -22,10 +22,11 @@ namespace WinFormsApp3
             using (var connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
-                string query = "INSERT INTO usuario (username, senha) VALUES (@Username, @Senha)";
+                string query = "INSERT INTO usuario (nome, email, senha) VALUES (@Nome, @Email, @Senha)";
                 using (var command = new MySqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Username", usuario.nome);
+                    command.Parameters.AddWithValue("@Nome", usuario.nome);
+                    command.Parameters.AddWithValue("@Email", usuario.email);
                     command.Parameters.AddWithValue("@Senha", usuario.senha);
                     linhasAfetadas = command.ExecuteNonQuery();
                 }
@@ -33,25 +34,28 @@ namespace WinFormsApp3
             return linhasAfetadas;
         }
 
-        public Usuario ObterUsuario(string nome, string senha)
+        public Usuario ObterUsuario(string nome, string email, string senha)
         {
             Usuario usuario = null;
             using (var connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
-                string query = "SELECT username, senha FROM usuario WHERE username = @Nome AND senha = @Senha";
+                string query = "SELECT nome, email, senha FROM usuario WHERE nome = @Nome AND email = @Email AND senha = @Senha";
                 using (var command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Nome", nome);
+                    command.Parameters.AddWithValue("@Email", email);
                     command.Parameters.AddWithValue("@Senha", senha);
 
                     using (var reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
+                            
                             usuario = new Usuario
                             {
-                                nome = reader.GetString("username"),
+                                nome = reader.GetString("nome"),
+                                email = reader.GetString("email"),
                                 senha = reader.GetString("senha")
                             };
                         }

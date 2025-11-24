@@ -38,6 +38,8 @@
             labelerro = new Label();
             RdbBrancas = new RadioButton();
             RdbPretas = new RadioButton();
+            label3 = new Label();
+            txtemail = new TextBox();
             SuspendLayout();
             // 
             // btnlogin
@@ -75,7 +77,7 @@
             // 
             // txtnome
             // 
-            txtnome.Location = new Point(50, 64);
+            txtnome.Location = new Point(50, 49);
             txtnome.Name = "txtnome";
             txtnome.Size = new Size(168, 23);
             txtnome.TabIndex = 3;
@@ -83,7 +85,7 @@
             // 
             // txtsenha
             // 
-            txtsenha.Location = new Point(50, 130);
+            txtsenha.Location = new Point(50, 133);
             txtsenha.Name = "txtsenha";
             txtsenha.Size = new Size(168, 23);
             txtsenha.TabIndex = 4;
@@ -92,7 +94,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(233, 67);
+            label1.Location = new Point(233, 52);
             label1.Name = "label1";
             label1.Size = new Size(100, 15);
             label1.TabIndex = 5;
@@ -102,7 +104,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(254, 133);
+            label2.Location = new Point(254, 136);
             label2.Name = "label2";
             label2.Size = new Size(39, 15);
             label2.TabIndex = 6;
@@ -113,7 +115,7 @@
             labelerro.AutoSize = true;
             labelerro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelerro.ForeColor = Color.FromArgb(50, 50, 50);
-            labelerro.Location = new Point(50, 194);
+            labelerro.Location = new Point(40, 205);
             labelerro.Name = "labelerro";
             labelerro.Size = new Size(309, 20);
             labelerro.TabIndex = 7;
@@ -122,24 +124,41 @@
             // RdbBrancas
             // 
             RdbBrancas.AutoSize = true;
-            RdbBrancas.Location = new Point(43, 186);
+            RdbBrancas.Location = new Point(65, 172);
             RdbBrancas.Name = "RdbBrancas";
-            RdbBrancas.Size = new Size(94, 19);
+            RdbBrancas.Size = new Size(62, 19);
             RdbBrancas.TabIndex = 8;
             RdbBrancas.TabStop = true;
-            RdbBrancas.Text = "radioButton1";
+            RdbBrancas.Text = "Branco";
             RdbBrancas.UseVisualStyleBackColor = true;
             // 
             // RdbPretas
             // 
             RdbPretas.AutoSize = true;
-            RdbPretas.Location = new Point(233, 186);
+            RdbPretas.Location = new Point(255, 172);
             RdbPretas.Name = "RdbPretas";
-            RdbPretas.Size = new Size(94, 19);
+            RdbPretas.Size = new Size(53, 19);
             RdbPretas.TabIndex = 9;
             RdbPretas.TabStop = true;
-            RdbPretas.Text = "radioButton2";
+            RdbPretas.Text = "Preto";
             RdbPretas.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = SystemColors.Control;
+            label3.Location = new Point(233, 96);
+            label3.Name = "label3";
+            label3.Size = new Size(36, 15);
+            label3.TabIndex = 11;
+            label3.Text = "Email";
+            // 
+            // txtemail
+            // 
+            txtemail.Location = new Point(50, 93);
+            txtemail.Name = "txtemail";
+            txtemail.Size = new Size(168, 23);
+            txtemail.TabIndex = 10;
             // 
             // SingInForm1
             // 
@@ -147,6 +166,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(50, 50, 50);
             ClientSize = new Size(400, 374);
+            Controls.Add(label3);
+            Controls.Add(txtemail);
             Controls.Add(RdbPretas);
             Controls.Add(RdbBrancas);
             Controls.Add(labelerro);
@@ -175,5 +196,7 @@
         private Label labelerro;
         private RadioButton RdbBrancas;
         private RadioButton RdbPretas;
+        private Label label3;
+        private TextBox txtemail;
     }
 }

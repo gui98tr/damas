@@ -24,17 +24,37 @@ namespace WinFormsApp3
 
         private void btnentrar_Click(object sender, EventArgs e)
         {
-           /* UsuarioRepositorio repo = new UsuarioRepositorio(BdUtil.ConnectionString);
+            UsuarioRepositorio repo = new UsuarioRepositorio(BdUtil.ConnectionString);
             string nome = txtnome.Text;
+            string email = txtemail.Text;
             string senha = txtsenha.Text;
             Usuario usuario1 = new Usuario();
             usuario1.nome = nome;
            usuario1.senha = senha;
             Usuario usuario2 = new Usuario();
-           usuario2 = repo.ObterUsuario(nome, senha);*/
+            usuario2 = repo.ObterUsuario(nome,email,senha);
+
             try
             {
-                if(RdbBrancas.Checked)
+                if (usuario2 != null)
+                {
+                    try
+                    {
+                        DamasForms damas = new DamasForms();
+                        damas.ShowDialog();
+                        this.Close();
+                    }
+                    catch
+                    {
+                        labelerro.BackColor = Color.Red;
+                    }
+                }
+                else
+                {
+                    labelerro.BackColor = Color.Red;
+                }
+
+                /*if(RdbBrancas.Checked)
                 {
                     Usuario usuario = new Usuario();
                     usuario.nome = "Guilherme";
@@ -58,12 +78,13 @@ namespace WinFormsApp3
                     this.Close();
                 }
                 else
-                {
-                    // Joga sem usuário, como se fosse local
-                    DamasForms damas = new DamasForms();
-                    damas.ShowDialog();
-                    this.Close();
-                }
+                {*/
+                // Joga sem usuário, como se fosse local
+
+                // DamasForms damas = new DamasForms();
+                //  damas.ShowDialog();
+                //  this.Close();
+                // }
 
 
                 //if(usuario2 != null)

@@ -18,14 +18,15 @@ namespace WinFormsApp3.Forms
             lblVitoria.Text = gg;
         }
 
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void lblVitoria_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnsair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
