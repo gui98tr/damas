@@ -41,7 +41,7 @@ namespace WinFormsApp3.Forms
         public DamasForms(Usuario _usuario = null)
         {
             usuario = _usuario;
-            
+
             InitializeComponent();
 
             // Inicializar o contador de lances
@@ -472,7 +472,7 @@ namespace WinFormsApp3.Forms
                 try
                 {
                     PictureBox esquerda = tabuleiro[x - 1, y - 1];
-                    if (Util.CompararImagem(esquerda.Image, P1.Image) || Util.CompararImagem(esquerda.Image, DamaB()))
+                    if (Util.CompararImagem(esquerda.Image, P1.Image))
                     {
                         // Pode capturar
                         try
@@ -508,7 +508,7 @@ namespace WinFormsApp3.Forms
                 try
                 {
                     PictureBox direita = tabuleiro[x + 1, y - 1];
-                    if (Util.CompararImagem(direita.Image, P1.Image) || Util.CompararImagem(direita.Image, DamaB()))
+                    if (Util.CompararImagem(direita.Image, P1.Image))
                     {
                         // Pode capturar
                         try
@@ -754,7 +754,7 @@ namespace WinFormsApp3.Forms
                 }
             }
             // Captura (distância 2)
-            else if (Math.Abs(xDestino - xOrigem) <= 2)
+            else if (Math.Abs(xDestino - xOrigem) == 2)
             {
 
                 // Remove a peça capturada
@@ -814,20 +814,6 @@ namespace WinFormsApp3.Forms
                         ProximoTurno();
 
                     }
-                    /*if(pecasBrancas == 0)
-                    {
-                        string gg = "Vitoria Das Pretas";
-                        FinalForm fim = new FinalForm(gg);
-                        fim.ShowDialog();
-                        this.Close();
-                    }
-                    else 
-                    {
-                        string gg = "Vitoria Das brancas";
-                        FinalForm fim = new FinalForm(gg);
-                        fim.ShowDialog();
-                        this.Close();
-                    }*/
                     ProximoTurno();
                 }
             }
@@ -949,8 +935,7 @@ namespace WinFormsApp3.Forms
                 timerBrancas.Start();
                 timerPretas.Stop();
             }
-            LP1.Text = (turnoAtual + 1).ToString();
-            /*if(usuario == null)
+            if(usuario == null)
                 LP1.Text = (turnoAtual + 1).ToString();
             // se eu entrei nesse else, é pq estou jogando remoto
             else
@@ -963,7 +948,7 @@ namespace WinFormsApp3.Forms
                  * pR.AtualizarTurnoPartida(LP1.Text);
                  * 
                  */
-
+            }
 
 
         }
@@ -1063,9 +1048,9 @@ namespace WinFormsApp3.Forms
                 && Util.CompararImagem(G5.Image, P2.Image) == false
                 && Util.CompararImagem(G7.Image, P2.Image) == false
                 && Util.CompararImagem(H2.Image, P2.Image) == false
-                && Util.CompararImagem(H4.Image, P2.Image) == false
-                && Util.CompararImagem(H6.Image, P2.Image) == false
-                && Util.CompararImagem(H8.Image, P2.Image) == false)
+                && Util.CompararImagem(H4.Image, P1.Image) == false
+                && Util.CompararImagem(H6.Image, P1.Image) == false
+                && Util.CompararImagem(H8.Image, P1.Image) == false)
             {
                 return "Brancas ganharam";
             }

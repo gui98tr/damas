@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SingInForm1));
             btnlogin = new Button();
             btnentrar = new Button();
             btnsair = new Button();
@@ -77,7 +78,7 @@
             // 
             // txtnome
             // 
-            txtnome.Location = new Point(50, 49);
+            txtnome.Location = new Point(50, 38);
             txtnome.Name = "txtnome";
             txtnome.Size = new Size(168, 23);
             txtnome.TabIndex = 3;
@@ -85,7 +86,7 @@
             // 
             // txtsenha
             // 
-            txtsenha.Location = new Point(50, 133);
+            txtsenha.Location = new Point(50, 130);
             txtsenha.Name = "txtsenha";
             txtsenha.Size = new Size(168, 23);
             txtsenha.TabIndex = 4;
@@ -94,7 +95,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(233, 52);
+            label1.Location = new Point(233, 41);
             label1.Name = "label1";
             label1.Size = new Size(100, 15);
             label1.TabIndex = 5;
@@ -104,7 +105,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(254, 136);
+            label2.Location = new Point(254, 133);
             label2.Name = "label2";
             label2.Size = new Size(39, 15);
             label2.TabIndex = 6;
@@ -115,7 +116,7 @@
             labelerro.AutoSize = true;
             labelerro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelerro.ForeColor = Color.FromArgb(50, 50, 50);
-            labelerro.Location = new Point(40, 205);
+            labelerro.Location = new Point(50, 194);
             labelerro.Name = "labelerro";
             labelerro.Size = new Size(309, 20);
             labelerro.TabIndex = 7;
@@ -124,30 +125,30 @@
             // RdbBrancas
             // 
             RdbBrancas.AutoSize = true;
-            RdbBrancas.Location = new Point(65, 172);
+            RdbBrancas.Location = new Point(43, 186);
             RdbBrancas.Name = "RdbBrancas";
-            RdbBrancas.Size = new Size(62, 19);
+            RdbBrancas.Size = new Size(94, 19);
             RdbBrancas.TabIndex = 8;
             RdbBrancas.TabStop = true;
-            RdbBrancas.Text = "Branco";
+            RdbBrancas.Text = "radioButton1";
             RdbBrancas.UseVisualStyleBackColor = true;
             // 
             // RdbPretas
             // 
             RdbPretas.AutoSize = true;
-            RdbPretas.Location = new Point(255, 172);
+            RdbPretas.Location = new Point(233, 186);
             RdbPretas.Name = "RdbPretas";
-            RdbPretas.Size = new Size(53, 19);
+            RdbPretas.Size = new Size(94, 19);
             RdbPretas.TabIndex = 9;
             RdbPretas.TabStop = true;
-            RdbPretas.Text = "Preto";
+            RdbPretas.Text = "radioButton2";
             RdbPretas.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(233, 96);
+            label3.Location = new Point(254, 85);
             label3.Name = "label3";
             label3.Size = new Size(36, 15);
             label3.TabIndex = 11;
@@ -155,7 +156,7 @@
             // 
             // txtemail
             // 
-            txtemail.Location = new Point(50, 93);
+            txtemail.Location = new Point(50, 82);
             txtemail.Name = "txtemail";
             txtemail.Size = new Size(168, 23);
             txtemail.TabIndex = 10;
@@ -178,6 +179,7 @@
             Controls.Add(btnsair);
             Controls.Add(btnentrar);
             Controls.Add(btnlogin);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "SingInForm1";
             Text = "Singin";
             ResumeLayout(false);

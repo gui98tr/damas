@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WinFormsApp3
 {
@@ -51,7 +52,7 @@ namespace WinFormsApp3
                     {
                         if (reader.Read())
                         {
-                            
+
                             usuario = new Usuario
                             {
                                 nome = reader.GetString("nome"),

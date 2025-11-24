@@ -30,9 +30,9 @@ namespace WinFormsApp3
             string senha = txtsenha.Text;
             Usuario usuario1 = new Usuario();
             usuario1.nome = nome;
-           usuario1.senha = senha;
+            usuario1.senha = senha;
             Usuario usuario2 = new Usuario();
-            usuario2 = repo.ObterUsuario(nome,email,senha);
+            usuario2 = repo.ObterUsuario(nome, email, senha);
 
             try
             {
@@ -53,38 +53,6 @@ namespace WinFormsApp3
                 {
                     labelerro.BackColor = Color.Red;
                 }
-
-                /*if(RdbBrancas.Checked)
-                {
-                    Usuario usuario = new Usuario();
-                    usuario.nome = "Guilherme";
-                    usuario.senha = "123";
-                    usuario.pecas = cor.brancas;
-
-                    DamasForms damas = new DamasForms(usuario);
-                    damas.ShowDialog();
-                    this.Close();
-
-                }
-                else if (RdbPretas.Checked)
-                {
-                    Usuario usuario = new Usuario();
-                    usuario.nome = "João";
-                    usuario.senha = "123";
-                    usuario.pecas = cor.pretas;
-
-                    DamasForms damas = new DamasForms(usuario);
-                    damas.ShowDialog();
-                    this.Close();
-                }
-                else
-                {*/
-                // Joga sem usuário, como se fosse local
-
-                // DamasForms damas = new DamasForms();
-                //  damas.ShowDialog();
-                //  this.Close();
-                // }
 
 
                 //if(usuario2 != null)

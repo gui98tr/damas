@@ -105,7 +105,6 @@
             Letreiro = new Label();
             timerBrancas = new System.Windows.Forms.Timer(components);
             timerPretas = new System.Windows.Forms.Timer(components);
-            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)A8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)A2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)A4).BeginInit();
@@ -173,12 +172,10 @@
             ((System.ComponentModel.ISupportInitialize)P1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)P2).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // A8
             // 
-            A8.BackColor = SystemColors.ButtonFace;
             A8.Cursor = Cursors.Hand;
             A8.Location = new Point(23, 23);
             A8.Name = "A8";
@@ -188,7 +185,6 @@
             // 
             // A2
             // 
-            A2.BackColor = SystemColors.ButtonFace;
             A2.Cursor = Cursors.Hand;
             A2.Location = new Point(23, 323);
             A2.Name = "A2";
@@ -198,7 +194,6 @@
             // 
             // A4
             // 
-            A4.BackColor = SystemColors.ButtonFace;
             A4.Cursor = Cursors.Hand;
             A4.Location = new Point(23, 223);
             A4.Name = "A4";
@@ -208,7 +203,6 @@
             // 
             // A6
             // 
-            A6.BackColor = SystemColors.ButtonFace;
             A6.Cursor = Cursors.Hand;
             A6.Location = new Point(23, 123);
             A6.Name = "A6";
@@ -312,7 +306,6 @@
             // 
             // B7
             // 
-            B7.BackColor = SystemColors.ButtonFace;
             B7.Cursor = Cursors.Hand;
             B7.Location = new Point(73, 73);
             B7.Name = "B7";
@@ -322,7 +315,6 @@
             // 
             // B5
             // 
-            B5.BackColor = SystemColors.ButtonFace;
             B5.Cursor = Cursors.Hand;
             B5.Location = new Point(73, 173);
             B5.Name = "B5";
@@ -332,7 +324,6 @@
             // 
             // B3
             // 
-            B3.BackColor = SystemColors.ButtonFace;
             B3.Cursor = Cursors.Hand;
             B3.Location = new Point(73, 273);
             B3.Name = "B3";
@@ -342,7 +333,6 @@
             // 
             // B1
             // 
-            B1.BackColor = SystemColors.ButtonFace;
             B1.Cursor = Cursors.Hand;
             B1.Location = new Point(73, 373);
             B1.Name = "B1";
@@ -399,7 +389,6 @@
             // 
             // D7
             // 
-            D7.BackColor = SystemColors.ButtonFace;
             D7.Cursor = Cursors.Hand;
             D7.Location = new Point(173, 73);
             D7.Name = "D7";
@@ -409,7 +398,6 @@
             // 
             // D5
             // 
-            D5.BackColor = SystemColors.ButtonFace;
             D5.Cursor = Cursors.Hand;
             D5.Location = new Point(173, 173);
             D5.Name = "D5";
@@ -419,7 +407,6 @@
             // 
             // D3
             // 
-            D3.BackColor = SystemColors.ButtonFace;
             D3.Cursor = Cursors.Hand;
             D3.Location = new Point(173, 273);
             D3.Name = "D3";
@@ -429,7 +416,6 @@
             // 
             // D1
             // 
-            D1.BackColor = SystemColors.ButtonFace;
             D1.Cursor = Cursors.Hand;
             D1.Location = new Point(173, 373);
             D1.Name = "D1";
@@ -486,7 +472,6 @@
             // 
             // C6
             // 
-            C6.BackColor = SystemColors.ButtonFace;
             C6.Cursor = Cursors.Hand;
             C6.Location = new Point(123, 123);
             C6.Name = "C6";
@@ -496,7 +481,6 @@
             // 
             // C4
             // 
-            C4.BackColor = SystemColors.ButtonFace;
             C4.Cursor = Cursors.Hand;
             C4.Location = new Point(123, 223);
             C4.Name = "C4";
@@ -506,7 +490,6 @@
             // 
             // C2
             // 
-            C2.BackColor = SystemColors.ButtonFace;
             C2.Cursor = Cursors.Hand;
             C2.Location = new Point(123, 323);
             C2.Name = "C2";
@@ -516,7 +499,6 @@
             // 
             // C8
             // 
-            C8.BackColor = SystemColors.ButtonFace;
             C8.Cursor = Cursors.Hand;
             C8.Location = new Point(123, 23);
             C8.Name = "C8";
@@ -573,7 +555,6 @@
             // 
             // F7
             // 
-            F7.BackColor = SystemColors.ButtonFace;
             F7.Cursor = Cursors.Hand;
             F7.Location = new Point(273, 73);
             F7.Name = "F7";
@@ -583,7 +564,6 @@
             // 
             // F5
             // 
-            F5.BackColor = SystemColors.ButtonFace;
             F5.Cursor = Cursors.Hand;
             F5.Location = new Point(273, 173);
             F5.Name = "F5";
@@ -593,7 +573,6 @@
             // 
             // F3
             // 
-            F3.BackColor = SystemColors.ButtonFace;
             F3.Cursor = Cursors.Hand;
             F3.Location = new Point(273, 273);
             F3.Name = "F3";
@@ -603,7 +582,6 @@
             // 
             // F1
             // 
-            F1.BackColor = SystemColors.ButtonFace;
             F1.Cursor = Cursors.Hand;
             F1.Location = new Point(273, 373);
             F1.Name = "F1";
@@ -669,7 +647,6 @@
             // 
             // E4
             // 
-            E4.BackColor = SystemColors.ButtonFace;
             E4.Cursor = Cursors.Hand;
             E4.Location = new Point(223, 223);
             E4.Name = "E4";
@@ -679,7 +656,6 @@
             // 
             // E2
             // 
-            E2.BackColor = SystemColors.ButtonFace;
             E2.Cursor = Cursors.Hand;
             E2.Location = new Point(223, 323);
             E2.Name = "E2";
@@ -689,7 +665,6 @@
             // 
             // E8
             // 
-            E8.BackColor = SystemColors.ButtonFace;
             E8.Cursor = Cursors.Hand;
             E8.Location = new Point(223, 23);
             E8.Name = "E8";
@@ -746,7 +721,6 @@
             // 
             // H7
             // 
-            H7.BackColor = SystemColors.ButtonFace;
             H7.Cursor = Cursors.Hand;
             H7.Location = new Point(373, 73);
             H7.Name = "H7";
@@ -756,7 +730,6 @@
             // 
             // H5
             // 
-            H5.BackColor = SystemColors.ButtonFace;
             H5.Cursor = Cursors.Hand;
             H5.Location = new Point(373, 173);
             H5.Name = "H5";
@@ -766,7 +739,6 @@
             // 
             // H3
             // 
-            H3.BackColor = SystemColors.ButtonFace;
             H3.Cursor = Cursors.Hand;
             H3.Location = new Point(373, 273);
             H3.Name = "H3";
@@ -776,7 +748,6 @@
             // 
             // H1
             // 
-            H1.BackColor = SystemColors.ButtonFace;
             H1.Cursor = Cursors.Hand;
             H1.Location = new Point(373, 373);
             H1.Name = "H1";
@@ -833,7 +804,6 @@
             // 
             // G6
             // 
-            G6.BackColor = SystemColors.ButtonFace;
             G6.Cursor = Cursors.Hand;
             G6.Location = new Point(323, 123);
             G6.Name = "G6";
@@ -843,7 +813,6 @@
             // 
             // G4
             // 
-            G4.BackColor = SystemColors.ButtonFace;
             G4.Cursor = Cursors.Hand;
             G4.Location = new Point(323, 223);
             G4.Name = "G4";
@@ -853,7 +822,6 @@
             // 
             // G2
             // 
-            G2.BackColor = SystemColors.ButtonFace;
             G2.Cursor = Cursors.Hand;
             G2.Location = new Point(323, 323);
             G2.Name = "G2";
@@ -863,7 +831,6 @@
             // 
             // G8
             // 
-            G8.BackColor = SystemColors.ButtonFace;
             G8.Cursor = Cursors.Hand;
             G8.Location = new Point(323, 23);
             G8.Name = "G8";
@@ -919,7 +886,6 @@
             // 
             panel1.AutoSize = true;
             panel1.BackColor = SystemColors.ActiveCaption;
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblBrancasTempo);
             panel1.Controls.Add(lblPretasTempo);
             panel1.Controls.Add(E5);
@@ -1035,16 +1001,6 @@
             timerPretas.Interval = 1000;
             timerPretas.Tick += timerPretas_Tick;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = SystemColors.ButtonFace;
-            pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Location = new Point(223, 123);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(50, 50);
-            pictureBox1.TabIndex = 72;
-            pictureBox1.TabStop = false;
-            // 
             // DamasForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1055,6 +1011,7 @@
             ClientSize = new Size(616, 508);
             Controls.Add(Letreiro);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "DamasForms";
             Text = "DamasForms";
             ((System.ComponentModel.ISupportInitialize)A8).EndInit();
@@ -1125,7 +1082,6 @@
             ((System.ComponentModel.ISupportInitialize)P2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1205,6 +1161,5 @@
         private System.Windows.Forms.Timer timerPretas;
         private Label lblPretasTempo;
         private Label lblBrancasTempo;
-        private PictureBox pictureBox1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             nometxt = new TextBox();
             senhatxt = new TextBox();
             btnvoltar = new Button();
@@ -37,13 +38,11 @@
             label3 = new Label();
             lblMensagem = new Label();
             lblMenssage2 = new Label();
-            labelemal = new Label();
-            emailtxt = new TextBox();
             SuspendLayout();
             // 
             // nometxt
             // 
-            nometxt.Location = new Point(44, 73);
+            nometxt.Location = new Point(44, 83);
             nometxt.Name = "nometxt";
             nometxt.Size = new Size(163, 23);
             nometxt.TabIndex = 0;
@@ -83,7 +82,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(238, 81);
+            label1.Location = new Point(238, 91);
             label1.Name = "label1";
             label1.Size = new Size(100, 15);
             label1.TabIndex = 4;
@@ -129,31 +128,12 @@
             lblMenssage2.Size = new Size(0, 15);
             lblMenssage2.TabIndex = 8;
             // 
-            // labelemal
-            // 
-            labelemal.AutoSize = true;
-            labelemal.ForeColor = SystemColors.ControlLightLight;
-            labelemal.Location = new Point(238, 120);
-            labelemal.Name = "labelemal";
-            labelemal.Size = new Size(36, 15);
-            labelemal.TabIndex = 10;
-            labelemal.Text = "Email";
-            // 
-            // emailtxt
-            // 
-            emailtxt.Location = new Point(44, 112);
-            emailtxt.Name = "emailtxt";
-            emailtxt.Size = new Size(163, 23);
-            emailtxt.TabIndex = 9;
-            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(50, 50, 50);
             ClientSize = new Size(397, 305);
-            Controls.Add(labelemal);
-            Controls.Add(emailtxt);
             Controls.Add(lblMenssage2);
             Controls.Add(lblMensagem);
             Controls.Add(label3);
@@ -163,6 +143,7 @@
             Controls.Add(btnvoltar);
             Controls.Add(senhatxt);
             Controls.Add(nometxt);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LoginForm";
             Text = "Login";
             Load += LoginForm_Load;
@@ -181,8 +162,5 @@
         private Label label3;
         private Label lblMensagem;
         private Label lblMenssage2;
-        private TextBox textBox1;
-        private Label labelemal;
-        private TextBox emailtxt;
     }
 }

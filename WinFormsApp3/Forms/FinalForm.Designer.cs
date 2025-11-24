@@ -28,38 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FinalForm));
+            btnFechar = new Button();
             lblVitoria = new Label();
-            btnsair = new Button();
             SuspendLayout();
+            // 
+            // btnFechar
+            // 
+            btnFechar.Location = new Point(156, 110);
+            btnFechar.Name = "btnFechar";
+            btnFechar.Size = new Size(75, 23);
+            btnFechar.TabIndex = 0;
+            btnFechar.Text = "button1";
+            btnFechar.UseVisualStyleBackColor = true;
+            btnFechar.Click += btnFechar_Click;
             // 
             // lblVitoria
             // 
             lblVitoria.AutoSize = true;
-            lblVitoria.Location = new Point(133, 54);
+            lblVitoria.Location = new Point(172, 50);
             lblVitoria.Name = "lblVitoria";
             lblVitoria.Size = new Size(38, 15);
             lblVitoria.TabIndex = 1;
             lblVitoria.Text = "label1";
             lblVitoria.Click += lblVitoria_Click;
             // 
-            // btnsair
-            // 
-            btnsair.BackColor = Color.Maroon;
-            btnsair.Location = new Point(133, 115);
-            btnsair.Name = "btnsair";
-            btnsair.Size = new Size(116, 35);
-            btnsair.TabIndex = 3;
-            btnsair.Text = "Fechar";
-            btnsair.UseVisualStyleBackColor = false;
-            btnsair.Click += btnsair_Click;
-            // 
             // FinalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(402, 186);
-            Controls.Add(btnsair);
             Controls.Add(lblVitoria);
+            Controls.Add(btnFechar);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FinalForm";
             Text = "FinalForm";
             ResumeLayout(false);
@@ -67,7 +68,8 @@
         }
 
         #endregion
+
+        private Button btnFechar;
         private Label lblVitoria;
-        private Button btnsair;
     }
 }
