@@ -37,8 +37,6 @@
             label1 = new Label();
             label2 = new Label();
             labelerro = new Label();
-            RdbBrancas = new RadioButton();
-            RdbPretas = new RadioButton();
             label3 = new Label();
             txtemail = new TextBox();
             SuspendLayout();
@@ -122,28 +120,6 @@
             labelerro.TabIndex = 7;
             labelerro.Text = "usuario ou senha incorretos tente novamente.";
             // 
-            // RdbBrancas
-            // 
-            RdbBrancas.AutoSize = true;
-            RdbBrancas.Location = new Point(43, 186);
-            RdbBrancas.Name = "RdbBrancas";
-            RdbBrancas.Size = new Size(94, 19);
-            RdbBrancas.TabIndex = 8;
-            RdbBrancas.TabStop = true;
-            RdbBrancas.Text = "radioButton1";
-            RdbBrancas.UseVisualStyleBackColor = true;
-            // 
-            // RdbPretas
-            // 
-            RdbPretas.AutoSize = true;
-            RdbPretas.Location = new Point(233, 186);
-            RdbPretas.Name = "RdbPretas";
-            RdbPretas.Size = new Size(94, 19);
-            RdbPretas.TabIndex = 9;
-            RdbPretas.TabStop = true;
-            RdbPretas.Text = "radioButton2";
-            RdbPretas.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -169,8 +145,6 @@
             ClientSize = new Size(400, 374);
             Controls.Add(label3);
             Controls.Add(txtemail);
-            Controls.Add(RdbPretas);
-            Controls.Add(RdbBrancas);
             Controls.Add(labelerro);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -196,8 +170,6 @@
         private Label label1;
         private Label label2;
         private Label labelerro;
-        private RadioButton RdbBrancas;
-        private RadioButton RdbPretas;
         private Label label3;
         private TextBox txtemail;
     }

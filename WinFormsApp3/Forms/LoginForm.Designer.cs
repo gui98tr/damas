@@ -38,11 +38,13 @@
             label3 = new Label();
             lblMensagem = new Label();
             lblMenssage2 = new Label();
+            label4 = new Label();
+            emailtxt = new TextBox();
             SuspendLayout();
             // 
             // nometxt
             // 
-            nometxt.Location = new Point(44, 83);
+            nometxt.Location = new Point(44, 79);
             nometxt.Name = "nometxt";
             nometxt.Size = new Size(163, 23);
             nometxt.TabIndex = 0;
@@ -82,7 +84,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(238, 91);
+            label1.Location = new Point(238, 87);
             label1.Name = "label1";
             label1.Size = new Size(100, 15);
             label1.TabIndex = 4;
@@ -128,12 +130,31 @@
             lblMenssage2.Size = new Size(0, 15);
             lblMenssage2.TabIndex = 8;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = SystemColors.ControlLightLight;
+            label4.Location = new Point(238, 122);
+            label4.Name = "label4";
+            label4.Size = new Size(100, 15);
+            label4.TabIndex = 10;
+            label4.Text = "Nome De Usuario";
+            // 
+            // emailtxt
+            // 
+            emailtxt.Location = new Point(44, 114);
+            emailtxt.Name = "emailtxt";
+            emailtxt.Size = new Size(163, 23);
+            emailtxt.TabIndex = 9;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(50, 50, 50);
             ClientSize = new Size(397, 305);
+            Controls.Add(label4);
+            Controls.Add(emailtxt);
             Controls.Add(lblMenssage2);
             Controls.Add(lblMensagem);
             Controls.Add(label3);
@@ -162,5 +183,7 @@
         private Label label3;
         private Label lblMensagem;
         private Label lblMenssage2;
+        private Label label4;
+        private TextBox emailtxt;
     }
 }

@@ -36,6 +36,7 @@ namespace WinFormsApp3.Forms
         private void btnentrar_Click(object sender, EventArgs e)
         {
             string nome = nometxt.Text;
+            string email = emailtxt.Text;
             string senha = senhatxt.Text;
             if(nome.Length != null || senha.Length != null)
             {
@@ -54,6 +55,7 @@ namespace WinFormsApp3.Forms
                 }
                 Usuario usuario = new Usuario();
                 usuario.nome = nome;
+                usuario.email = email;
                 usuario.senha = senha;
                 UsuarioRepositorio repo = new UsuarioRepositorio(BdUtil.ConnectionString);
                 repo.InserirUsuario(usuario);

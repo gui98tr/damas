@@ -105,6 +105,8 @@
             Letreiro = new Label();
             timerBrancas = new System.Windows.Forms.Timer(components);
             timerPretas = new System.Windows.Forms.Timer(components);
+            D_P = new PictureBox();
+            D_B = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)A8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)A2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)A4).BeginInit();
@@ -172,6 +174,8 @@
             ((System.ComponentModel.ISupportInitialize)P1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)P2).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)D_P).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)D_B).BeginInit();
             SuspendLayout();
             // 
             // A8
@@ -886,6 +890,7 @@
             // 
             panel1.AutoSize = true;
             panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(lblBrancasTempo);
             panel1.Controls.Add(lblPretasTempo);
             panel1.Controls.Add(E5);
@@ -1001,6 +1006,28 @@
             timerPretas.Interval = 1000;
             timerPretas.Tick += timerPretas_Tick;
             // 
+            // D_P
+            // 
+            D_P.BackColor = Color.Black;
+            D_P.Image = (Image)resources.GetObject("D_P.Image");
+            D_P.Location = new Point(345, 11);
+            D_P.Name = "D_P";
+            D_P.Size = new Size(30, 29);
+            D_P.SizeMode = PictureBoxSizeMode.StretchImage;
+            D_P.TabIndex = 72;
+            D_P.TabStop = false;
+            // 
+            // D_B
+            // 
+            D_B.BackColor = Color.Black;
+            D_B.Image = (Image)resources.GetObject("D_B.Image");
+            D_B.Location = new Point(167, 12);
+            D_B.Name = "D_B";
+            D_B.Size = new Size(30, 29);
+            D_B.SizeMode = PictureBoxSizeMode.StretchImage;
+            D_B.TabIndex = 73;
+            D_B.TabStop = false;
+            // 
             // DamasForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1009,11 +1036,14 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.Gray;
             ClientSize = new Size(616, 508);
+            Controls.Add(D_B);
+            Controls.Add(D_P);
             Controls.Add(Letreiro);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "DamasForms";
             Text = "DamasForms";
+            Load += DamasForms_Load;
             ((System.ComponentModel.ISupportInitialize)A8).EndInit();
             ((System.ComponentModel.ISupportInitialize)A2).EndInit();
             ((System.ComponentModel.ISupportInitialize)A4).EndInit();
@@ -1082,6 +1112,8 @@
             ((System.ComponentModel.ISupportInitialize)P2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)D_P).EndInit();
+            ((System.ComponentModel.ISupportInitialize)D_B).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1161,5 +1193,7 @@
         private System.Windows.Forms.Timer timerPretas;
         private Label lblPretasTempo;
         private Label lblBrancasTempo;
+        private PictureBox D_P;
+        private PictureBox D_B;
     }
 }
