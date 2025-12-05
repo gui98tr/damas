@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp3.Util;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WinFormsApp3.Forms
@@ -35,6 +36,7 @@ namespace WinFormsApp3.Forms
 
         private void btnentrar_Click(object sender, EventArgs e)
         {
+            HashUtil hashUtil = new HashUtil();
             string nome = nometxt.Text;
             string email = emailtxt.Text;
             string senha = senhatxt.Text;
@@ -56,7 +58,7 @@ namespace WinFormsApp3.Forms
                 Usuario usuario = new Usuario();
                 usuario.nome = nome;
                 usuario.email = email;
-                usuario.senha = senha;
+                usuario.senha = hashUtil.GerarHashSha256(senha);
                 UsuarioRepositorio repo = new UsuarioRepositorio(BdUtil.ConnectionString);
                 repo.InserirUsuario(usuario);
                 this.Close();

@@ -9,7 +9,7 @@ namespace WinFormsApp3.Util
 {
     internal class HashUtil
     {
-        public static string GerarHashSha256(string texto)
+        public string GerarHashSha256(string texto)
         {
             using (SHA256 sha = SHA256.Create())
             {

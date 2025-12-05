@@ -74,7 +74,6 @@
             E1 = new PictureBox();
             E3 = new PictureBox();
             E5 = new PictureBox();
-            E7 = new PictureBox();
             E6 = new PictureBox();
             E4 = new PictureBox();
             E2 = new PictureBox();
@@ -100,6 +99,7 @@
             P2 = new PictureBox();
             label1 = new Label();
             panel1 = new Panel();
+            E7 = new PictureBox();
             lblBrancasTempo = new Label();
             lblPretasTempo = new Label();
             Letreiro = new Label();
@@ -150,7 +150,6 @@
             ((System.ComponentModel.ISupportInitialize)E1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)E3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)E5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)E7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)E6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)E4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)E2).BeginInit();
@@ -174,6 +173,7 @@
             ((System.ComponentModel.ISupportInitialize)P1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)P2).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)E7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)D_P).BeginInit();
             ((System.ComponentModel.ISupportInitialize)D_B).BeginInit();
             SuspendLayout();
@@ -628,18 +628,6 @@
             E5.TabIndex = 38;
             E5.TabStop = false;
             // 
-            // E7
-            // 
-            E7.BackColor = Color.Black;
-            E7.Cursor = Cursors.Hand;
-            E7.Image = (Image)resources.GetObject("E7.Image");
-            E7.Location = new Point(223, 73);
-            E7.Name = "E7";
-            E7.Size = new Size(50, 50);
-            E7.SizeMode = PictureBoxSizeMode.StretchImage;
-            E7.TabIndex = 37;
-            E7.TabStop = false;
-            // 
             // E6
             // 
             E6.Cursor = Cursors.Hand;
@@ -891,6 +879,7 @@
             panel1.AutoSize = true;
             panel1.BackColor = SystemColors.ActiveCaption;
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(E7);
             panel1.Controls.Add(lblBrancasTempo);
             panel1.Controls.Add(lblPretasTempo);
             panel1.Controls.Add(E5);
@@ -955,7 +944,6 @@
             panel1.Controls.Add(E3);
             panel1.Controls.Add(D6);
             panel1.Controls.Add(D4);
-            panel1.Controls.Add(E7);
             panel1.Controls.Add(D2);
             panel1.Controls.Add(E6);
             panel1.Controls.Add(E8);
@@ -966,6 +954,19 @@
             panel1.RightToLeft = RightToLeft.No;
             panel1.Size = new Size(583, 447);
             panel1.TabIndex = 70;
+            // 
+            // E7
+            // 
+            E7.BackColor = Color.Black;
+            E7.Cursor = Cursors.Hand;
+            E7.Image = (Image)resources.GetObject("E7.Image");
+            E7.Location = new Point(223, 73);
+            E7.Name = "E7";
+            E7.Size = new Size(50, 50);
+            E7.SizeMode = PictureBoxSizeMode.StretchImage;
+            E7.TabIndex = 72;
+            E7.TabStop = false;
+            E7.Click += E7_Click;
             // 
             // lblBrancasTempo
             // 
@@ -1087,7 +1088,6 @@
             ((System.ComponentModel.ISupportInitialize)E1).EndInit();
             ((System.ComponentModel.ISupportInitialize)E3).EndInit();
             ((System.ComponentModel.ISupportInitialize)E5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)E7).EndInit();
             ((System.ComponentModel.ISupportInitialize)E6).EndInit();
             ((System.ComponentModel.ISupportInitialize)E4).EndInit();
             ((System.ComponentModel.ISupportInitialize)E2).EndInit();
@@ -1112,6 +1112,7 @@
             ((System.ComponentModel.ISupportInitialize)P2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)E7).EndInit();
             ((System.ComponentModel.ISupportInitialize)D_P).EndInit();
             ((System.ComponentModel.ISupportInitialize)D_B).EndInit();
             ResumeLayout(false);
@@ -1162,7 +1163,6 @@
         private PictureBox E1;
         private PictureBox E3;
         private PictureBox E5;
-        private PictureBox E7;
         private PictureBox E6;
         private PictureBox E4;
         private PictureBox E2;
@@ -1195,5 +1195,6 @@
         private Label lblBrancasTempo;
         private PictureBox D_P;
         private PictureBox D_B;
+        private PictureBox E7;
     }
 }

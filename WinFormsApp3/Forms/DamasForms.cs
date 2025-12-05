@@ -196,7 +196,10 @@ namespace WinFormsApp3.Forms
                     pictureBox_clicada.BackColor == Color.DarkGreen)
                 {
                     // Movimento válido - executa
-                    MovimentarPeça(posicao);
+                    if (pictureBox_clicada.BackColor == Color.Green)
+                        MovimentarPeça(posicao, true);
+                    else
+                        MovimentarPeça(posicao, false);
                 }
                 else
                 {
@@ -253,17 +256,29 @@ namespace WinFormsApp3.Forms
                                 destino.BackColor = Color.Red;
                                 temCaptura = true;
                             }
-                                PictureBox destinob = tabuleiro[x - 2, y - 2];
-                                if (!Util.CompararImagem(destinob.Image, P1.Image) &&
-                                    !Util.CompararImagem(destinob.Image, P2.Image) &&
-                                !Util.CompararImagem(destino.Image, DamaB()) &&
-                                !Util.CompararImagem(destino.Image, DamaP()) &&
-                                Util.CompararImagem(tabuleiro[x - 1, y - 1].Image, P2.Image))
-                                {
-                                    destinob.BackColor = Color.Firebrick;
-                                    temCaptura = true;
-                                }
-
+                        }
+                        catch { }
+                    }
+                }
+                catch { }
+                // Movimento diagonal esquerda-baixo
+                try
+                {
+                    PictureBox esquerdab = tabuleiro[x - 1, y - 1];
+                    if (Util.CompararImagem(esquerdab.Image, P2.Image) || Util.CompararImagem(esquerdab.Image, DamaP()))
+                    {
+                        // Pode capturar
+                        try
+                        {
+                            PictureBox destinob = tabuleiro[x - 2, y - 2];
+                            if (!Util.CompararImagem(destinob.Image, P1.Image) &&
+                                !Util.CompararImagem(destinob.Image, P2.Image) &&
+                                !Util.CompararImagem(destinob.Image, DamaB()) &&
+                                !Util.CompararImagem(destinob.Image, DamaP()))
+                            {
+                                destinob.BackColor = Color.Firebrick;
+                                temCaptura = true;
+                            }
                         }
                         catch { }
                     }
@@ -288,19 +303,34 @@ namespace WinFormsApp3.Forms
                                 destino.BackColor = Color.DarkRed;
                                 temCaptura = true;
                             }
-
-                                PictureBox destinob = tabuleiro[x + 2, y - 2];
-                                if (!Util.CompararImagem(destinob.Image, P1.Image) &&
-                                    !Util.CompararImagem(destinob.Image, P2.Image) &&
-                                !Util.CompararImagem(destinob.Image, DamaB()) &&
-                                !Util.CompararImagem(destinob.Image, DamaP()) &&
-                                Util.CompararImagem(tabuleiro[x + 1, y - 1].Image, P2.Image))
-                                {
-                                    destinob.BackColor = Color.Maroon;
-                                    temCaptura = true;
-                                }
                         }
                         catch { }
+
+                    }
+                }
+                catch { }
+                try
+                {
+                    // Movimento diagonal direita-baixo
+                    PictureBox direitab = tabuleiro[x + 1, y - 1];
+                    if (Util.CompararImagem(direitab.Image, P2.Image) || Util.CompararImagem(direitab.Image, DamaP()))
+                    {
+                        // Pode capturar
+                        try
+                        {
+                            PictureBox destinob = tabuleiro[x + 2, y - 2];
+                            if (!Util.CompararImagem(destinob.Image, P1.Image) &&
+                                !Util.CompararImagem(destinob.Image, P2.Image) &&
+                            !Util.CompararImagem(destinob.Image, DamaB()) &&
+                            !Util.CompararImagem(destinob.Image, DamaP()) &&
+                            (Util.CompararImagem(tabuleiro[x + 1, y - 1].Image, P2.Image) || Util.CompararImagem(tabuleiro[x + 1, y - 1].Image, DamaP())))
+                            {
+                                destinob.BackColor = Color.Maroon;
+                                temCaptura = true;
+                            }
+                        }
+                        catch { }
+
                     }
                 }
                 catch { }
@@ -332,7 +362,7 @@ namespace WinFormsApp3.Forms
                     }
                     catch { }
                 }
-                if (Util.CompararImagem(tabuleiro[x, y].Image, DamaB()))
+                if (turno == 1 && Util.CompararImagem(tabuleiro[x, y].Image, DamaB()))
                 {
                     // Verificando todas as posicoes da rainha
                     bool dc = true;
@@ -500,7 +530,7 @@ namespace WinFormsApp3.Forms
                                         esquerdab.BackColor = Color.Black;
                                         ed = false;
                                     }
-                                        
+
                                     else if (Util.CompararImagem(esquerdab.Image, P2.Image) || Util.CompararImagem(esquerdab.Image, DamaP()))
                                     {
                                         PictureBox esquerdab2 = tabuleiro[x - i - 1, y - i - 1];
@@ -572,7 +602,7 @@ namespace WinFormsApp3.Forms
                                         esquerdac.BackColor = Color.Black;
                                         ec = false;
                                     }
-                                        
+
                                     else if (Util.CompararImagem(esquerdac.Image, P2.Image) || Util.CompararImagem(esquerdac.Image, DamaP()))
                                     {
                                         PictureBox esquerdac2 = tabuleiro[x - i - 1, y + i + 1];
@@ -642,7 +672,7 @@ namespace WinFormsApp3.Forms
                 try
                 {
                     PictureBox esquerda = tabuleiro[x - 1, y - 1];
-                    if (Util.CompararImagem(esquerda.Image, P1.Image))
+                    if (Util.CompararImagem(esquerda.Image, P1.Image) || Util.CompararImagem(esquerda.Image, DamaB()))
                     {
                         // Pode capturar
                         try
@@ -656,16 +686,28 @@ namespace WinFormsApp3.Forms
                                 destino.BackColor = Color.Red;
                                 temCaptura = true;
                             }
-                                PictureBox destinoc = tabuleiro[x - 2, y + 2];
-                                if (!Util.CompararImagem(destinoc.Image, P1.Image) &&
-                                    !Util.CompararImagem(destinoc.Image, P2.Image) &&
-                                !Util.CompararImagem(destinoc.Image, DamaB()) &&
-                                !Util.CompararImagem(destinoc.Image, DamaP()) &&
-                                Util.CompararImagem(tabuleiro[x - 1, y + 1].Image, P1.Image))
-                                {
-                                    destinoc.BackColor = Color.Firebrick;
-                                    temCaptura = true;
-                                }
+                        }
+                        catch { }
+                    }
+                }
+                catch { }
+                try
+                {
+                    PictureBox esquerdac = tabuleiro[x - 1, y + 1];
+                    if (Util.CompararImagem(esquerdac.Image, P1.Image) || Util.CompararImagem(esquerdac.Image, DamaB()))
+                    {
+                        // Pode capturar
+                        try
+                        {
+                            PictureBox destinoc = tabuleiro[x - 2, y + 2];
+                            if (!Util.CompararImagem(destinoc.Image, P1.Image) &&
+                                !Util.CompararImagem(destinoc.Image, P2.Image) &&
+                            !Util.CompararImagem(destinoc.Image, DamaB()) &&
+                            !Util.CompararImagem(destinoc.Image, DamaP()))
+                            {
+                                destinoc.BackColor = Color.Firebrick;
+                                temCaptura = true;
+                            }
                         }
                         catch { }
                     }
@@ -673,10 +715,11 @@ namespace WinFormsApp3.Forms
                 catch { }
 
                 // Movimento diagonal direita-baixo
+
                 try
                 {
                     PictureBox direita = tabuleiro[x + 1, y - 1];
-                    if (Util.CompararImagem(direita.Image, P1.Image))
+                    if (Util.CompararImagem(direita.Image, P1.Image) || Util.CompararImagem(direita.Image, DamaB()))
                     {
                         // Pode capturar
                         try
@@ -690,18 +733,27 @@ namespace WinFormsApp3.Forms
                                 destino.BackColor = Color.DarkRed;
                                 temCaptura = true;
                             }
-                            if (ehCombo)
+                        }
+                        catch { }
+                    }
+                }
+                catch { }
+                try
+                {
+                    PictureBox direitac = tabuleiro[x + 1, y + 1];
+                    if (Util.CompararImagem(direitac.Image, P1.Image) || Util.CompararImagem(direitac.Image, DamaB()))
+                    {
+                        // Pode capturar
+                        try
+                        {
+                            PictureBox destinoc = tabuleiro[x + 2, y + 2];
+                            if (!Util.CompararImagem(destinoc.Image, P1.Image) &&
+                                !Util.CompararImagem(destinoc.Image, P2.Image) &&
+                            !Util.CompararImagem(destinoc.Image, DamaB()) &&
+                            !Util.CompararImagem(destinoc.Image, DamaP()))
                             {
-                                PictureBox destinoc = tabuleiro[x + 2, y + 2];
-                                if (!Util.CompararImagem(destinoc.Image, P1.Image) &&
-                                    !Util.CompararImagem(destinoc.Image, P2.Image) &&
-                                !Util.CompararImagem(destinoc.Image, DamaB()) &&
-                                !Util.CompararImagem(destinoc.Image, DamaP()) &&
-                                Util.CompararImagem(tabuleiro[x + 1, y + 1].Image, P1.Image))
-                                {
-                                    destinoc.BackColor = Color.Maroon;
-                                    temCaptura = true;
-                                }
+                                destinoc.BackColor = Color.Maroon;
+                                temCaptura = true;
                             }
                         }
                         catch { }
@@ -739,7 +791,7 @@ namespace WinFormsApp3.Forms
                     catch { }
                 }
                 //Dama
-                if (Util.CompararImagem(tabuleiro[x, y].Image, DamaP()))
+                if (turno == 0 && Util.CompararImagem(tabuleiro[x, y].Image, DamaP()))
                 {
                     bool dc = true;
                     bool dd = true;
@@ -762,7 +814,7 @@ namespace WinFormsApp3.Forms
                                         direitac.BackColor = Color.Black;
                                         dc = false;
                                     }
-                                        
+
                                     else if (Util.CompararImagem(direitac.Image, P1.Image) || Util.CompararImagem(direitac.Image, DamaB()))
                                     {
                                         alvoRainha = tabuleiro[x + i, y + i];
@@ -908,7 +960,7 @@ namespace WinFormsApp3.Forms
                                         esquerdab.BackColor = Color.Black;
                                         ed = false;
                                     }
-                                        
+
                                     else if (Util.CompararImagem(esquerdab.Image, P1.Image) || Util.CompararImagem(esquerdab.Image, DamaB()))
                                     {
                                         PictureBox esquerdab2 = tabuleiro[x - i - 1, y - i - 1];
@@ -981,7 +1033,7 @@ namespace WinFormsApp3.Forms
                                         esquerdac.BackColor = Color.Black;
                                         ec = false;
                                     }
-                                        
+
                                     else if (Util.CompararImagem(esquerdac.Image, P1.Image) || Util.CompararImagem(esquerdac.Image, DamaB()))
                                     {
                                         PictureBox esquerdac2 = tabuleiro[x - i - 1, y + i + 1];
@@ -1040,7 +1092,7 @@ namespace WinFormsApp3.Forms
             }
         }
 
-        private void MovimentarPeça(Point destino)
+        private void MovimentarPeça(Point destino, bool dmt)
         {
             if (pecaSelecionada == null) return;
 
@@ -1092,11 +1144,11 @@ namespace WinFormsApp3.Forms
                     pecaSelecionada = null;
 
                     ResetarCores();
-                    
+
                 }
             }
             // Captura (distância 2)
-            else if (Math.Abs(xDestino - xOrigem) == 2)
+            else if (Math.Abs(xDestino - xOrigem) <= 2)
             {
 
                 // Remove a peça capturada
@@ -1105,12 +1157,34 @@ namespace WinFormsApp3.Forms
                 int yMeio = (yOrigem + yDestino) / 2;
 
                 // Move a peça
-                if (Util.CompararImagem(pecaSelecionada.Image, P1.Image) || Util.CompararImagem(pecaSelecionada.Image, P2.Image))
+                if (Math.Abs(xDestino - xOrigem) <= 2 && Util.CompararImagem(pecaSelecionada.Image, P1.Image) || Util.CompararImagem(pecaSelecionada.Image, P2.Image))
                 {
                     casaDestino.Image = pecaSelecionada.Image;
                     pecaSelecionada.Image = null;
+                    tabuleiro[xMeio, yMeio].Image = null;
                 }
-                else if (!Util.CompararImagem(tabuleiro[xMeio, yMeio].Image, P1.Image) || !Util.CompararImagem(tabuleiro[xMeio, yMeio].Image, P2.Image))
+                if ((Util.CompararImagem(pecaSelecionada.Image, DamaB()) || Util.CompararImagem(pecaSelecionada.Image, DamaP())) && dmt == false)
+                {
+                    casaDestino.Image = pecaSelecionada.Image;
+                    pecaSelecionada.Image = null;
+                    if (xDestino > xOrigem && yDestino > yOrigem)//diagonal cima -->
+                    {
+                        tabuleiro[xDestino - 1, yDestino - 1].Image = null;
+                    }
+                    if (xDestino < xOrigem && yDestino > yOrigem)//diagonal cima <--
+                    {
+                        tabuleiro[xDestino + 1, yDestino - 1].Image = null;
+                    }
+                    if (xDestino > xOrigem && yDestino < yOrigem)//diagonal baixo -->
+                    {
+                        tabuleiro[xDestino - 1, yDestino + 1].Image = null;
+                    }
+                    if (xDestino < xOrigem && yDestino < yOrigem)//diagonal baixp <--
+                    {
+                        tabuleiro[xDestino + 1, yDestino + 1].Image = null;
+                    }
+                }
+                else if ((Util.CompararImagem(pecaSelecionada.Image, DamaB()) || Util.CompararImagem(pecaSelecionada.Image, DamaP())) && dmt == true)
                 {
                     casaDestino.Image = pecaSelecionada.Image;
                     pecaSelecionada.Image = null;
@@ -1118,9 +1192,8 @@ namespace WinFormsApp3.Forms
                 }
 
 
-                tabuleiro[xMeio, yMeio].Image = null;
 
-               
+
 
                 string ganhou = Vitoria();
                 if (ganhou != null)
@@ -1169,6 +1242,7 @@ namespace WinFormsApp3.Forms
                     }
                     ProximoTurno();
                 }
+
 
             }
             else if (Util.CompararImagem(pecaSelecionada.Image, DamaB()) || Util.CompararImagem(pecaSelecionada.Image, DamaP()))
@@ -1338,7 +1412,7 @@ namespace WinFormsApp3.Forms
         {
             UtilCompImg Util = new UtilCompImg();
             // Tem Peça Branca
-            if (Util.CompararImagem(A1.Image, P1.Image) == false
+            if ((Util.CompararImagem(A1.Image, P1.Image) == false
                 && Util.CompararImagem(A3.Image, P1.Image) == false
                 && Util.CompararImagem(A5.Image, P1.Image) == false
                 && Util.CompararImagem(A7.Image, P1.Image) == false
@@ -1369,12 +1443,44 @@ namespace WinFormsApp3.Forms
                 && Util.CompararImagem(H2.Image, P1.Image) == false
                 && Util.CompararImagem(H4.Image, P1.Image) == false
                 && Util.CompararImagem(H6.Image, P1.Image) == false
-                && Util.CompararImagem(H8.Image, P1.Image) == false)
+                && Util.CompararImagem(H8.Image, P1.Image) == false) &&
+                (Util.CompararImagem(A1.Image, DamaB()) == false
+                && Util.CompararImagem(A3.Image, DamaB()) == false
+                && Util.CompararImagem(A5.Image, DamaB()) == false
+                && Util.CompararImagem(A7.Image, DamaB()) == false
+                && Util.CompararImagem(C1.Image, DamaB()) == false
+                && Util.CompararImagem(C3.Image, DamaB()) == false
+                && Util.CompararImagem(C5.Image, DamaB()) == false
+                && Util.CompararImagem(B2.Image, DamaB()) == false
+                && Util.CompararImagem(C7.Image, DamaB()) == false
+                && Util.CompararImagem(B4.Image, DamaB()) == false
+                && Util.CompararImagem(B6.Image, DamaB()) == false
+                && Util.CompararImagem(B8.Image, DamaB()) == false
+                && Util.CompararImagem(D2.Image, DamaB()) == false
+                && Util.CompararImagem(D4.Image, DamaB()) == false
+                && Util.CompararImagem(D6.Image, DamaB()) == false
+                && Util.CompararImagem(D8.Image, DamaB()) == false
+                && Util.CompararImagem(E1.Image, DamaB()) == false
+                && Util.CompararImagem(E3.Image, DamaB()) == false
+                && Util.CompararImagem(E5.Image, DamaB()) == false
+                && Util.CompararImagem(E7.Image, DamaB()) == false
+                && Util.CompararImagem(F2.Image, DamaB()) == false
+                && Util.CompararImagem(F4.Image, DamaB()) == false
+                && Util.CompararImagem(F6.Image, DamaB()) == false
+                && Util.CompararImagem(F8.Image, DamaB()) == false
+                && Util.CompararImagem(G1.Image, DamaB()) == false
+                && Util.CompararImagem(G3.Image, DamaB()) == false
+                && Util.CompararImagem(G5.Image, DamaB()) == false
+                && Util.CompararImagem(G7.Image, DamaB()) == false
+                && Util.CompararImagem(H2.Image, DamaB()) == false
+                && Util.CompararImagem(H4.Image, DamaB()) == false
+                && Util.CompararImagem(H6.Image, DamaB()) == false
+                && Util.CompararImagem(H8.Image, DamaB()) == false))
             {
                 return "Pretas ganharam";
             }
             //Tem Peça Preta
-            if (Util.CompararImagem(A1.Image, P2.Image) == false
+            if ((Util.CompararImagem(A1.Image, P2.Image) == false
                 && Util.CompararImagem(A3.Image, P2.Image) == false
                 && Util.CompararImagem(A5.Image, P2.Image) == false
                 && Util.CompararImagem(A7.Image, P2.Image) == false
@@ -1405,7 +1511,39 @@ namespace WinFormsApp3.Forms
                 && Util.CompararImagem(H2.Image, P2.Image) == false
                 && Util.CompararImagem(H4.Image, P1.Image) == false
                 && Util.CompararImagem(H6.Image, P1.Image) == false
-                && Util.CompararImagem(H8.Image, P1.Image) == false)
+                && Util.CompararImagem(H8.Image, P1.Image) == false) &&
+                  (Util.CompararImagem(A1.Image, DamaP()) == false
+                && Util.CompararImagem(A3.Image, DamaP()) == false
+                && Util.CompararImagem(A5.Image, DamaP()) == false
+                && Util.CompararImagem(A7.Image, DamaP()) == false
+                && Util.CompararImagem(C1.Image, DamaP()) == false
+                && Util.CompararImagem(C3.Image, DamaP()) == false
+                && Util.CompararImagem(C5.Image, DamaP()) == false
+                && Util.CompararImagem(B2.Image, DamaP()) == false
+                && Util.CompararImagem(C7.Image, DamaP()) == false
+                && Util.CompararImagem(B4.Image, DamaP()) == false
+                && Util.CompararImagem(B6.Image, DamaP()) == false
+                && Util.CompararImagem(B8.Image, DamaP()) == false
+                && Util.CompararImagem(D2.Image, DamaP()) == false
+                && Util.CompararImagem(D4.Image, DamaP()) == false
+                && Util.CompararImagem(D6.Image, DamaP()) == false
+                && Util.CompararImagem(D8.Image, DamaP()) == false
+                && Util.CompararImagem(E1.Image, DamaP()) == false
+                && Util.CompararImagem(E3.Image, DamaP()) == false
+                && Util.CompararImagem(E5.Image, DamaP()) == false
+                && Util.CompararImagem(E7.Image, DamaP()) == false
+                && Util.CompararImagem(F2.Image, DamaP()) == false
+                && Util.CompararImagem(F4.Image, DamaP()) == false
+                && Util.CompararImagem(F6.Image, DamaP()) == false
+                && Util.CompararImagem(F8.Image, DamaP()) == false
+                && Util.CompararImagem(G1.Image, DamaP()) == false
+                && Util.CompararImagem(G3.Image, DamaP()) == false
+                && Util.CompararImagem(G5.Image, DamaP()) == false
+                && Util.CompararImagem(G7.Image, DamaP()) == false
+                && Util.CompararImagem(H2.Image, DamaP()) == false
+                && Util.CompararImagem(H4.Image, DamaP()) == false
+                && Util.CompararImagem(H6.Image, DamaP()) == false
+                && Util.CompararImagem(H8.Image, DamaP()) == false))
             {
                 return "Brancas ganharam";
             }
@@ -1426,6 +1564,12 @@ namespace WinFormsApp3.Forms
 
         private void DamasForms_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void E7_Click(object sender, EventArgs e)
+        {
+
 
         }
     }

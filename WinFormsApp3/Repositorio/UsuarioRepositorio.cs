@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WinFormsApp3.Util;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WinFormsApp3
@@ -37,6 +38,7 @@ namespace WinFormsApp3
 
         public Usuario ObterUsuario(string nome, string email, string senha)
         {
+            HashUtil hashUtil = new HashUtil();
             Usuario usuario = null;
             using (var connection = new MySqlConnection(_connectionString))
             {
@@ -46,7 +48,7 @@ namespace WinFormsApp3
                 {
                     command.Parameters.AddWithValue("@Nome", nome);
                     command.Parameters.AddWithValue("@Email", email);
-                    command.Parameters.AddWithValue("@Senha", senha);
+                    command.Parameters.AddWithValue("@Senha", hashUtil.GerarHashSha256(senha));
 
                     using (var reader = command.ExecuteReader())
                     {
